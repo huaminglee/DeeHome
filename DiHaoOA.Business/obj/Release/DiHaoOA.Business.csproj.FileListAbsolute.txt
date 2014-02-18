@@ -5,3 +5,10 @@ E:\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.pdb
 E:\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.csprojResolveAssemblyReference.cache
 E:\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.dll
 E:\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.pdb
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\bin\Release\DiHaoOA.Business.dll
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\bin\Release\DiHaoOA.Business.pdb
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.dll
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.pdb
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\obj\Release\DiHaoOA.Business.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\obj\Release\DiHaoOA.Business.dll
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Business\obj\Release\DiHaoOA.Business.pdb

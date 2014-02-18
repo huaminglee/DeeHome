@@ -4,3 +4,9 @@ E:\DiHaoOA\DiHaoOA.DataContract\bin\Release\DiHaoOA.DataContract.pdb
 E:\DiHaoOA\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.dll
 E:\DiHaoOA\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.pdb
 E:\DiHaoOA\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\bin\Release\DiHaoOA.DataContract.dll.config
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\bin\Release\DiHaoOA.DataContract.dll
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\bin\Release\DiHaoOA.DataContract.pdb
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.dll
+F:\WorkSpace\Git\DeeHome\DiHaoOA.DataContract\obj\Release\DiHaoOA.DataContract.pdb

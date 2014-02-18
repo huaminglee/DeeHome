@@ -13,6 +13,9 @@ namespace DiHaoOA.WinForm.Forms
     public interface IAddFormStrategy
     {
         void AddForm(BaseForm form);
+
+
+        void Test();
     }
 
     public class BaseForm : Form
