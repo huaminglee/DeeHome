@@ -1,0 +1,16 @@
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.dll.config
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.DataContract.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.DataContract.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.csprojResolveAssemblyReference.cache
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.pdb
+E:\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.dll.config
+E:\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.dll
+E:\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.Security.pdb
+E:\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.DataContract.dll
+E:\DiHaoOA\DiHaoOA.Security\bin\Debug\DiHaoOA.DataContract.pdb
+E:\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.csprojResolveAssemblyReference.cache
+E:\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.dll
+E:\DiHaoOA\DiHaoOA.Security\obj\Debug\DiHaoOA.Security.pdb

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0FE37AF1-741A-4D72-8701-1C50C77C6710}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiHaoOA.Business</RootNamespace>
+    <AssemblyName>DiHaoOA.Business</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Manager\AddCustomerManager.cs" />
+    <Compile Include="Manager\AddInformationAssistantManager.cs" />
+    <Compile Include="Manager\AllListForMarketingManager.cs" />
+    <Compile Include="Manager\AllListManager.cs" />
+    <Compile Include="Manager\AllMarketingCustomerManager.cs" />
+    <Compile Include="Manager\CustomerManager.cs" />
+    <Compile Include="Manager\CustomerTraceManager.cs" />
+    <Compile Include="Manager\DisplayVisitContentManager.cs" />
+    <Compile Include="Manager\EditEmployeeManager.cs" />
+    <Compile Include="Manager\EditMessengerManager.cs" />
+    <Compile Include="Manager\EditUnSubordinateIAManager.cs" />
+    <Compile Include="Manager\EmployeeManager.cs" />
+    <Compile Include="Manager\InformationAssistantManager.cs" />
+    <Compile Include="Manager\ModifyCustomerManager.cs" />
+    <Compile Include="Manager\MySubordinateManager.cs" />
+    <Compile Include="Manager\RevisitPopUpManager.cs" />
+    <Compile Include="Manager\UnSubordinateCustomerManager.cs" />
+    <Compile Include="Manager\UnSubordinateMessengerListManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiHaoOA.DataContract\DiHaoOA.DataContract.csproj">
+      <Project>{D5362556-DAED-4858-850B-D80DB164E070}</Project>
+      <Name>DiHaoOA.DataContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.dll.config
+F:\WorkSpace\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.csprojResolveAssemblyReference.cache
+E:\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.dll.config
+E:\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.dll
+E:\DiHaoOA\DiHaoOA.DataContract\bin\Debug\DiHaoOA.DataContract.pdb
+E:\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.csprojResolveAssemblyReference.cache
+E:\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.dll
+E:\DiHaoOA\DiHaoOA.DataContract\obj\Debug\DiHaoOA.DataContract.pdb

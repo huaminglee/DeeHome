@@ -1,0 +1,14 @@
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.Business.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.Business.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.DataContract.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.DataContract.pdb
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.csprojResolveAssemblyReference.cache
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.dll
+F:\WorkSpace\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.pdb
+E:\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.Business.dll
+E:\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.Business.pdb
+E:\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.DataContract.dll
+E:\DiHaoOA\DiHaoOA.Business\bin\Debug\DiHaoOA.DataContract.pdb
+E:\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.csprojResolveAssemblyReference.cache
+E:\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.dll
+E:\DiHaoOA\DiHaoOA.Business\obj\Debug\DiHaoOA.Business.pdb

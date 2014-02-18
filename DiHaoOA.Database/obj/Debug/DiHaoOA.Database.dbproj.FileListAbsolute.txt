@@ -1,0 +1,16 @@
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA.Database.deploymanifest
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA.Database.dbschema
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\obj\Debug\DiHaoOA.Database.dbschema
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Script.PreDeployment.sql
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Script.PostDeployment.sql
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqlsettings
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqldeployment
+F:\WorkSpace\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqlcmdvars
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Script.PreDeployment.sql
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Script.PostDeployment.sql
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqlsettings
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqldeployment
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA_Database.sqlcmdvars
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA.Database.deploymanifest
+E:\DiHaoOA\DiHaoOA.Database\sql\debug\DiHaoOA.Database.dbschema
+E:\DiHaoOA\DiHaoOA.Database\obj\Debug\DiHaoOA.Database.dbschema

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5362556-DAED-4858-850B-D80DB164E070}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiHaoOA.DataContract</RootNamespace>
+    <AssemblyName>DiHaoOA.DataContract</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="DAO\AddCustomerDAO.cs" />
+    <Compile Include="DAO\AddInformationAssistantDAO.cs" />
+    <Compile Include="DAO\AllListDAO.cs" />
+    <Compile Include="DAO\AllListForMarketingDAO.cs" />
+    <Compile Include="DAO\AllMarketingCustomerDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\CustomerTraceDAO.cs" />
+    <Compile Include="DAO\DisplayVisitContentDAO.cs" />
+    <Compile Include="DAO\EditEmployeeDAO.cs" />
+    <Compile Include="DAO\EditMessengerDAO.cs" />
+    <Compile Include="DAO\EditUnSubordinateIADAO.cs" />
+    <Compile Include="DAO\InformationAssistantDAO.cs" />
+    <Compile Include="DAO\ModifyCustomerDAO.cs" />
+    <Compile Include="DAO\MySubordinateDAO.cs" />
+    <Compile Include="DAO\RevisitPopUpDAO.cs" />
+    <Compile Include="DAO\UnSubordinateCustomerDAO.cs" />
+    <Compile Include="DAO\UnSubordinateMessengerListDAO.cs" />
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\InformationAssistant.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\Role.cs" />
+    <Compile Include="ProcessDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

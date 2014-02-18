@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuConfiguration>
+  <SalesManMenu id="mInformation" name="︾信息管理" eventCode="InforManage">
+    <ChildMenu eventCode="InforAllList">全部列表</ChildMenu>
+    <ChildMenu eventCode="金">金牌信息员</ChildMenu>
+    <ChildMenu eventCode="银">银牌信息员</ChildMenu>
+    <ChildMenu eventCode="铜">铜牌信息员</ChildMenu>
+    <ChildMenu eventCode="铁">铁牌信息员</ChildMenu>
+  </SalesManMenu>
+  <SalesManMenu id="mCustomerTrace" name="》客户跟踪" eventCode="CustomerTrace">
+	<ChildMenu eventCode="正跟踪">正跟踪</ChildMenu>
+	<ChildMenu eventCode="已提交">已提交</ChildMenu>
+	<ChildMenu eventCode="已放弃">已放弃</ChildMenu>
+	<ChildMenu eventCode="被打回">被打回</ChildMenu>
+  </SalesManMenu>
+  <SalesManMenu id="mCustomerConversation" name="》客户洽谈" eventCode="CustomerChat">
+	<ChildMenu eventCode="在谈">在谈</ChildMenu>
+	<ChildMenu eventCode="已签">已签</ChildMenu>
+	<ChildMenu eventCode="提交未签">提交未签</ChildMenu>
+	<ChildMenu eventCode="提交不准">提交不准</ChildMenu>
+	<ChildMenu eventCode="未签">未签</ChildMenu>
+	<ChildMenu eventCode="不准">不准</ChildMenu>
+  </SalesManMenu>
+  <SalesManMenu id="mCustomerConversation" name="》信息员" eventCode="Messenger">
+  </SalesManMenu>
+  <SalesManMenu id="mCustomerConversation" name="》集成管理" eventCode="IntegratedManagement">
+  </SalesManMenu>
+  
+  <SalesManagerMenu id="mInformation" name="︾信息管理" eventCode="InforManage">
+    <ChildMenu eventCode="InforAllList">全部列表</ChildMenu>
+    <ChildMenu eventCode="金">金牌信息员</ChildMenu>
+    <ChildMenu eventCode="银">银牌信息员</ChildMenu>
+    <ChildMenu eventCode="铜">铜牌信息员</ChildMenu>
+    <ChildMenu eventCode="铁">铁牌信息员</ChildMenu>
+  </SalesManagerMenu>
+  <SalesManagerMenu id="mCustomerTrace" name="》客户跟踪" eventCode="CustomerTrace">
+	<ChildMenu eventCode="正跟踪">正跟踪</ChildMenu>
+	<ChildMenu eventCode="已提交">已提交</ChildMenu>
+	<ChildMenu eventCode="已放弃">已放弃</ChildMenu>
+	<ChildMenu eventCode="被打回">被打回</ChildMenu>
+  </SalesManagerMenu>
+  <SalesManagerMenu id="mCustomerConversation" name="》客户洽谈" eventCode="CustomerChat">
+	<ChildMenu eventCode="在谈">在谈</ChildMenu>
+	<ChildMenu eventCode="已签">已签</ChildMenu>
+	<ChildMenu eventCode="提交未签">提交未签</ChildMenu>
+	<ChildMenu eventCode="提交不准">提交不准</ChildMenu>
+	<ChildMenu eventCode="未签">未签</ChildMenu>
+	<ChildMenu eventCode="不准">不准</ChildMenu>
+  </SalesManagerMenu>
+  <SalesManagerMenu id="mManager" name="》经理" eventCode="Manager">
+	<ChildMenu eventCode="我的下属">我的下属</ChildMenu>
+	<ChildMenu eventCode="未隶属信息员">未隶属信息员</ChildMenu>
+	<ChildMenu eventCode="未隶属客户">未隶属客户</ChildMenu>
+	<ChildMenu eventCode="信息员列表">信息员列表</ChildMenu>
+	<ChildMenu eventCode="客户列表">客户列表</ChildMenu>
+	<ChildMenu eventCode="被删除的信息员">被删除的信息员</ChildMenu>
+	<ChildMenu eventCode="被删除的客户列表">被删除的客户列表</ChildMenu>
+	<ChildMenu eventCode="市场打回列表">市场打回列表</ChildMenu>
+  </SalesManagerMenu>
+</MenuConfiguration>
+
+

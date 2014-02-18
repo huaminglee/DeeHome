@@ -1,0 +1,8 @@
+E:\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll.config
+E:\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll
+E:\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.pdb
+E:\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.dll
+E:\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.pdb
+E:\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.csprojResolveAssemblyReference.cache
+E:\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.dll
+E:\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.pdb
