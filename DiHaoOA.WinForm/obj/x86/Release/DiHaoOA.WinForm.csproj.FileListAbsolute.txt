@@ -93,3 +93,6 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.csproj.
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe.manifest
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.application
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.OrderDescription.resources
+D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\bin\Release\DiHaoOA.WinForm.exe.config
+D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe
+D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.pdb
