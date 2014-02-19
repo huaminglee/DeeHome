@@ -56,6 +56,7 @@
     <Compile Include="DAO\InformationAssistantDAO.cs" />
     <Compile Include="DAO\ModifyCustomerDAO.cs" />
     <Compile Include="DAO\MySubordinateDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\RevisitPopUpDAO.cs" />
     <Compile Include="DAO\UnSubordinateCustomerDAO.cs" />
     <Compile Include="DAO\UnSubordinateMessengerListDAO.cs" />

@@ -92,3 +92,4 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.ReVisit
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.csproj.GenerateResource.Cache
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe.manifest
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.application
+F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.OrderDescription.resources

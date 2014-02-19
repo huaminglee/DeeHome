@@ -54,6 +54,7 @@
     <Compile Include="Manager\InformationAssistantManager.cs" />
     <Compile Include="Manager\ModifyCustomerManager.cs" />
     <Compile Include="Manager\MySubordinateManager.cs" />
+    <Compile Include="Manager\OrderManager.cs" />
     <Compile Include="Manager\RevisitPopUpManager.cs" />
     <Compile Include="Manager\UnSubordinateCustomerManager.cs" />
     <Compile Include="Manager\UnSubordinateMessengerListManager.cs" />

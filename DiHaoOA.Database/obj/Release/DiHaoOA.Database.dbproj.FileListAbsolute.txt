@@ -6,3 +6,11 @@ E:\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Script.PostDeployment.sql
 E:\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlsettings
 E:\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqldeployment
 E:\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlcmdvars
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Script.PreDeployment.sql
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Script.PostDeployment.sql
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlsettings
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqldeployment
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlcmdvars
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA.Database.deploymanifest
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA.Database.dbschema
+F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\obj\Release\DiHaoOA.Database.dbschema

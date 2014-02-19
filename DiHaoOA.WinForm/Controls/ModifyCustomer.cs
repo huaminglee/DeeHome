@@ -11,6 +11,7 @@ using DiHaoOA.Business.Manager;
 using DiHaoOA.WinForm.Common;
 using DiHaoOA.WinForm;
 using DiHaoOA.DataContract;
+using DiHaoOA.WinForm.Forms;
 
 namespace DiHaoOA.Controls
 {
@@ -22,6 +23,7 @@ namespace DiHaoOA.Controls
         public Order order;
         public ReVisitPopUp popUp;
         RevisitPopUpManager revisitManager;
+        public OrderDescription orderDescriptionPopUp;
 
         public ModifyCustomer()
         {
@@ -74,22 +76,34 @@ namespace DiHaoOA.Controls
                 }
                 if (radioButtonFollowing.Checked)
                 {
-                    order.OrderStatus = "正跟踪";
+                    order.OrderStatus = OrderStatus.Following;
+                    ModifyOrderStatus(order, customer);
                 }
                 if (radioButtonGiveUp.Checked)
                 {
-                    order.OrderStatus = "已放弃";
+                    order.OrderStatus = OrderStatus.Discard;
+                    ModifyOrderStatus(order, customer);
                 }
                 if (radioButtonSubmit.Checked)
                 {
-                    order.OrderStatus = "已提交";
+                    order.OrderStatus = OrderStatus.Submitted;
+                    if (orderDescriptionPopUp == null)
+                        orderDescriptionPopUp = new OrderDescription();
+                    orderDescriptionPopUp.order = order;
+                    orderDescriptionPopUp.modifyCustomer = this;
+                    orderDescriptionPopUp.Show();
                 }
-                order.Customers = customer;
-                modifyCustomerManager.UpdateCustomer(order);
-                LoadDetailInformation(order.OrderId);
-                lblMsg.Text = "修改客户信息成功,当前订单状态为"+order.OrderStatus;
-                lblMsg.Show();
+                
             }
+        }
+
+        public void ModifyOrderStatus(Order order,Customer customer)
+        {
+            order.Customers = customer;
+            modifyCustomerManager.UpdateCustomer(order);
+            LoadDetailInformation(order.OrderId);
+            lblMsg.Text = "修改客户信息成功,当前订单状态为" + order.OrderStatus;
+            lblMsg.Show();
         }
 
         private bool ValidateInput()
