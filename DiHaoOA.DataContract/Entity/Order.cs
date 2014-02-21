@@ -13,5 +13,6 @@ namespace DiHaoOA.DataContract.Entity
         public Employee Designer { get; set; }
         public string OrderStatus { get; set; }
         public Customer Customers { get; set; }
+        public string Description { get; set; }
     }
 }

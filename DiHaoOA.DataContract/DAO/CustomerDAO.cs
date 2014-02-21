@@ -193,5 +193,70 @@ namespace DiHaoOA.DataContract.DAO
                 return result;
             }
         }
+
+        public DataSet GetSubmittedCustomer(int pageIndex,int pageSize,string input,string procedureName)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand(procedureName, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                cmd.Parameters.AddWithValue("@TotalRecords", 0);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                try
+                {
+                    conn.Open();
+                    sda.Fill(result);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public DataSet GetOrderByOrderStatus(int pageIndex,int pageSize,string input,string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand("pro_GetOrderByOrderStatus", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus",orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                cmd.Parameters.AddWithValue("@TotalRecords", 0);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                try
+                {
+                    conn.Open();
+                    sda.Fill(result);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
     }
 }

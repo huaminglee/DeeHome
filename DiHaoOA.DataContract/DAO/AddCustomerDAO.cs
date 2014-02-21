@@ -58,7 +58,7 @@ namespace DiHaoOA.DataContract.DAO
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = @"Insert into CustomerOrder values(
                                         @OrderNumber,@RecordDate,
-                                        null,@OrderStatus,@CustomerOrderId)";
+                                        null,@OrderStatus,@CustomerOrderId,null)";
                     cmd.Parameters.AddWithValue("@OrderNumber", order.OrderNumber);
                     cmd.Parameters.AddWithValue("@RecordDate", order.RecordDate);
                     //cmd.Parameters.AddWithValue("@InformationAssistantOrderId", order.InformationAssistant.InformationAssistantId);

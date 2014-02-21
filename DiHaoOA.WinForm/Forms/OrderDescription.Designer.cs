@@ -147,7 +147,7 @@
             this.Controls.Add(this.pContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderDescription";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderDescription";
             this.pContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

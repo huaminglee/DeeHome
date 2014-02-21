@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DiHaoOA.DataContract.DAO;
 using System.Data;
+using DiHaoOA.DataContract.Entity;
 
 namespace DiHaoOA.Business.Manager
 {
@@ -54,6 +55,11 @@ namespace DiHaoOA.Business.Manager
         public void TransferInformationAssistant(string employeeId, int informationAssistantId)
         {
             informationAssistantDao.TransferInformationAssistant(employeeId, informationAssistantId);
+        }
+
+        public InformationAssistant GetInformationAssistantById(int informationAssistantId)
+        {
+            return informationAssistantDao.GetInformationAssistantById(informationAssistantId);
         }
     }
 }

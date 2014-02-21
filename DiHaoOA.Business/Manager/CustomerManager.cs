@@ -47,5 +47,15 @@ namespace DiHaoOA.Business.Manager
         {
             return customerDao.GetInformationAssistantIdByCustomerId(customerId);
         }
+
+        public DataSet GetSubmittedCustomer(int pageIndex, int pageSize, string input, string procedureName)
+        {
+            return customerDao.GetSubmittedCustomer(pageIndex, pageSize, input, procedureName);
+        }
+
+        public DataSet GetOrderByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            return customerDao.GetOrderByOrderStatus(pageIndex,pageSize,input,orderStatus);
+        }
     }
 }

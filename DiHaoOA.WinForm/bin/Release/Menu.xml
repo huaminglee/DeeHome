@@ -57,7 +57,18 @@
 	<ChildMenu eventCode="被删除的信息员">被删除的信息员</ChildMenu>
 	<ChildMenu eventCode="被删除的客户列表">被删除的客户列表</ChildMenu>
 	<ChildMenu eventCode="市场打回列表">市场打回列表</ChildMenu>
+	<ChildMenu eventCode="审批栏">审批栏</ChildMenu>
   </SalesManagerMenu>
+  
+  <DesignerMenu id="dCustomerConversation" name = "》客户洽谈" eventCode="CustomerChat">
+	<ChildMenu eventCode="在谈">在谈</ChildMenu>
+	<ChildMenu eventCode="已签">已签</ChildMenu>
+	<ChildMenu eventCode="提交未签">提交未签</ChildMenu>
+	<ChildMenu eventCode="提交不准">提交不准</ChildMenu>
+	<ChildMenu eventCode="未签">未签</ChildMenu>
+	<ChildMenu eventCode="不准">不准</ChildMenu>
+  </DesignerMenu>
+  
 </MenuConfiguration>
 
 

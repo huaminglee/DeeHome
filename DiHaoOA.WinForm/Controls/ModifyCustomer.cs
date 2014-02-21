@@ -76,29 +76,27 @@ namespace DiHaoOA.Controls
                 }
                 if (radioButtonFollowing.Checked)
                 {
-                    order.OrderStatus = OrderStatus.Following;
-                    ModifyOrderStatus(order, customer);
+                    ModifyOrderStatus(order, customer,OrderStatus.Following);
                 }
                 if (radioButtonGiveUp.Checked)
                 {
-                    order.OrderStatus = OrderStatus.Discard;
-                    ModifyOrderStatus(order, customer);
+                     ModifyOrderStatus(order, customer, OrderStatus.Discard);
                 }
                 if (radioButtonSubmit.Checked)
                 {
-                    order.OrderStatus = OrderStatus.Submitted;
                     if (orderDescriptionPopUp == null)
                         orderDescriptionPopUp = new OrderDescription();
                     orderDescriptionPopUp.order = order;
-                    orderDescriptionPopUp.modifyCustomer = this;
+                    orderDescriptionPopUp.customer = customer;
+                    orderDescriptionPopUp.OrderStatusChanged += new OrderDescription.ModifyOrderStatus(ModifyOrderStatus);
                     orderDescriptionPopUp.Show();
                 }
-                
             }
         }
 
-        public void ModifyOrderStatus(Order order,Customer customer)
+        public void ModifyOrderStatus(Order order,Customer customer,string orderStatus)
         {
+            order.OrderStatus = orderStatus;
             order.Customers = customer;
             modifyCustomerManager.UpdateCustomer(order);
             LoadDetailInformation(order.OrderId);

@@ -10,6 +10,14 @@ namespace DiHaoOA.DataContract
         public const string Following = "正跟踪";
         public const string Submitted = "已提交";
         public const string Discard = "已放弃";
+        public const string ContinueFollowing = "继续跟踪";
+        public const string SubmittedToDesigner = "提交单子";
+        public const string OnChatting = "在谈";
+        public const string SubmittedNotAllowed = "提交不准";
+        public const string SubmittedNotSigned = "提交未签";
+        public const string Signed = "已签";
+        public const string NotSigned = "未签";
+        public const string Denied = "不准";
     }
 
     public struct InformationAssistantLevels
@@ -30,6 +38,7 @@ namespace DiHaoOA.DataContract
         public const string DeleteCustomer = "被删除的客户列表";
         public const string MarketReturnBackList = "市场打回列表";
         public const string MySubordinate = "我的下属";
+        public const string Approval = "审批栏";
     }
 
     public struct VisitType

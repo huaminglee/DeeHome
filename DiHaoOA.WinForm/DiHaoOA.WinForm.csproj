@@ -120,6 +120,12 @@
     <Compile Include="Controls\AllMarketingCustomer.Designer.cs">
       <DependentUpon>AllMarketingCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ApprovalList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ApprovalList.Designer.cs">
+      <DependentUpon>ApprovalList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,18 @@
     <Compile Include="Controls\NavBar.designer.cs">
       <DependentUpon>NavBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OrderDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderList.Designer.cs">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PagingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +221,12 @@
     </Compile>
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForDesigner.Designer.cs">
+      <DependentUpon>DashboardForDesigner.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DashboardForSalesMan.cs">
       <SubType>Form</SubType>
@@ -276,6 +300,9 @@
     <EmbeddedResource Include="Controls\AllMarketingCustomer.resx">
       <DependentUpon>AllMarketingCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ApprovalList.resx">
+      <DependentUpon>ApprovalList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomerTrace.resx">
       <DependentUpon>CustomerTrace.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +330,12 @@
     <EmbeddedResource Include="Controls\NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderList.resx">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PagingControl.resx">
       <DependentUpon>PagingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForDesigner.resx">
+      <DependentUpon>DashboardForDesigner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForSalesMan.resx">
       <DependentUpon>DashboardForSalesMan.cs</DependentUpon>

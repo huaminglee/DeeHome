@@ -13,8 +13,6 @@ namespace DiHaoOA.WinForm.Forms
     public interface IAddFormStrategy
     {
         void AddForm(BaseForm form);
-
-        void AddMethodInHome();
     }
 
     public class BaseForm : Form

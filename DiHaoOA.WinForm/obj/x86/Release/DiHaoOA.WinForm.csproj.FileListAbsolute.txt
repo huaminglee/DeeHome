@@ -96,3 +96,7 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.O
 D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\bin\Release\DiHaoOA.WinForm.exe.config
 D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe
 D:\Projects\DeeHome\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.pdb
+F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.ApprovalList.resources
+F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetail.resources
+F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.DashboardForDesigner.resources
+F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderList.resources

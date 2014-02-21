@@ -32,6 +32,8 @@ namespace DiHaoOA.WinForm
         public const string InformationAssistantList = "InformationAssistantList";
         public const string MySubordinate = "MySubordinate";
         public const string DisplayVisitContent = "DisplayVisitContent";
+        public const string ApprovalList = "ApprovalList";
+        public const string OrderList = "OrderList";
     }
 
     public struct SearchInput

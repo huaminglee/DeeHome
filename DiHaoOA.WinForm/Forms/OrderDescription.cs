@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DiHaoOA.Business.Manager;
 using DiHaoOA.DataContract.Entity;
 using DiHaoOA.Controls;
+using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Forms
 {
@@ -16,7 +17,11 @@ namespace DiHaoOA.WinForm.Forms
     {
         OrderManager orderManager;
         public Order order;
-        public ModifyCustomer modifyCustomer;
+        public Customer customer;
+
+        public delegate void ModifyOrderStatus(Order order, Customer customer, string orderStatus);
+
+        public event ModifyOrderStatus OrderStatusChanged;
 
         public OrderDescription()
         {
@@ -27,7 +32,8 @@ namespace DiHaoOA.WinForm.Forms
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             orderManager.AddOrderDescription(txtContent.Text, order);
-           
+            this.OrderStatusChanged(order, customer, OrderStatus.Submitted);
+            this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

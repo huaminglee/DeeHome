@@ -26,12 +26,14 @@ namespace DiHaoOA.WinForm
         AllMarketingCustomer allMarketingCustomer;
         InformationAssistantList informationAssistantList;
         MySubordinate mySubordinate;
+        ApprovalList approvalList;
 
         const string pro_AllCustomersPaging = "pro_AllCustomersPaging";
         const string pro_DeletedCustomersPaging = "pro_DeletedCustomersPaging";
         const string pro_DeletedIAListPaging = "pro_DeletedIAListPaging";
         const string pro_AllListPagingForManager = "pro_AllListPagingForManager";
         const string pro_UnSubordinateCustomersPaging = "pro_UnSubordinateCustomersPaging";
+        const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
 
         public DashboardForSalesManager()
         {
@@ -110,8 +112,34 @@ namespace DiHaoOA.WinForm
             {
                 ShowSpecificMenu();
                 AddMySubordinate();
-
             }
+            if (childMenu == ManagerChildMenu.Approval)
+            {
+                ShowSpecificMenu();
+                AddApprovalList(pro_ApprovalListForMarketingManager);
+                approvalList.ClearSearchText();
+                approvalList.ReLoadData();
+            }
+        }
+
+        private void AddApprovalList(string pro_ApprovalListForMarketingManager)
+        {
+            if (!panelContent.Contains(approvalList))
+            {
+                approvalList = new ApprovalList();
+                approvalList.Name = DiHaoUserControl.ApprovalList;
+                approvalList.procedureName = pro_ApprovalListForMarketingManager;
+                approvalList.ParentPanel = pMainContent; ;
+                approvalList.NavigationBar = navBarForSalesManager;
+                approvalList.employee = employee;
+                approvalList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(approvalList);
+            }
+            else
+            {
+                approvalList.Show();
+            }
+            approvalList.procedureName = pro_ApprovalListForMarketingManager;
         }
 
 
