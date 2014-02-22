@@ -17,7 +17,7 @@
 			<Metadata Name="CompatibilityMode" Value="100" />
 		</CustomData>
 		<CustomData Category="Permissions" Type="XmlPermissions">
-			<Metadata Name="FileName" Value="E:\DIHAOOA\DIHAOOA.DATABASE\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+			<Metadata Name="FileName" Value="D:\PROJECTS\DIHAOOA\DIHAOOA.DATABASE\PROPERTIES\DATABASE.SQLPERMISSIONS" />
 		</CustomData>
 	</Header>
 	<Model>
@@ -447,6 +447,22 @@
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[CustomerOrder].[Description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1312,6 +1328,7 @@
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllCustomersPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -1376,7 +1393,6 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -1667,6 +1683,7 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllListPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -1705,7 +1722,6 @@ select Row_Number() over(order by VisitDateTime) rowNumber ,
 where rowNumber between @startRow and @lastRow
 order by gridColumnleftRevisitTime,VisitDateTime]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -1894,6 +1910,7 @@ order by gridColumnleftRevisitTime,VisitDateTime]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllListPagingForManager]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -1939,7 +1956,6 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2139,7 +2155,364 @@ return @TotalRecords]]></Value>
 				<Property Name="HeaderContents" Value="create&#x9;procedure [dbo].[pro_AllListPagingForManager]&#xD;&#xA;@pageIndex int,&#xD;&#xA;@pageSize int,&#xD;&#xA;@input nvarchar(max),&#xD;&#xA;@BlackEmployeeId nvarchar(50),&#xD;&#xA;@TotalRecords int output&#xD;&#xA;as" />
 			</Annotation>
 		</Element>
+		<Element Type="ISql100Procedure" Name="[dbo].[pro_ApprovalListForMarketingManager]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = N'已提交'
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = N'已提交'
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_ApprovalListForMarketingManager].[@pageIndex]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_ApprovalListForMarketingManager].[@pageSize]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[DesignerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_ApprovalListForMarketingManager].[@BlackEmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_ApprovalListForMarketingManager].[@input]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPersonNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson2Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson3Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[DesignerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_ApprovalListForMarketingManager].[@TotalRecords]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPersonNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson2Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson3Number]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_ApprovalListForMarketingManager].[@pageIndex]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_ApprovalListForMarketingManager].[@pageSize]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_ApprovalListForMarketingManager].[@input]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_ApprovalListForMarketingManager].[@BlackEmployeeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_ApprovalListForMarketingManager].[@TotalRecords]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2752" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="Create procedure [dbo].[pro_ApprovalListForMarketingManager]&#xD;&#xA;@pageIndex int,&#xD;&#xA;@pageSize int,&#xD;&#xA;@input nvarchar(500),&#xD;&#xA;@BlackEmployeeId nvarchar(50),&#xD;&#xA;@TotalRecords int output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_DeletedCustomersPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -2201,7 +2574,6 @@ where e.EmployeeId = @BlackEmployeeId
    or @input='')
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2483,6 +2855,7 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_DeletedIAListPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -2528,7 +2901,6 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2728,7 +3100,383 @@ return @TotalRecords]]></Value>
 				<Property Name="HeaderContents" Value="create&#x9;procedure [dbo].[pro_DeletedIAListPaging]&#xD;&#xA;@pageIndex int,&#xD;&#xA;@pageSize int,&#xD;&#xA;@input nvarchar(max),&#xD;&#xA;@BlackEmployeeId nvarchar(50),&#xD;&#xA;@TotalRecords int output&#xD;&#xA;as" />
 			</Annotation>
 		</Element>
+		<Element Type="ISql100Procedure" Name="[dbo].[pro_GetOrderByOrderStatus]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@pageIndex]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@pageSize]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[DesignerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@BlackEmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@orderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@input]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPersonNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson2Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson3Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[DesignerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[EmployeeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[pro_GetOrderByOrderStatus].[@TotalRecords]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[OrderNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CustomerOrder].[RecordDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DecorationAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InformationAssistant].[InformationAssistantName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employee].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPersonNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson2Number]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ContactPerson3Number]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@pageIndex]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@pageSize]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@orderStatus]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@input]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@BlackEmployeeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[pro_GetOrderByOrderStatus].[@TotalRecords]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2782" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="Create procedure [dbo].[pro_GetOrderByOrderStatus]&#xD;&#xA;@pageIndex int,&#xD;&#xA;@pageSize int,&#xD;&#xA;@orderStatus nvarchar(50),&#xD;&#xA;@input nvarchar(500),&#xD;&#xA;@BlackEmployeeId nvarchar(50),&#xD;&#xA;@TotalRecords int output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_OrdersPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -2770,7 +3518,6 @@ where o.orderStatus = @orderStatus
   )as tempTable
 where rowNumber between @startRow and @lastRow]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2992,6 +3739,7 @@ where rowNumber between @startRow and @lastRow]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_UnSubordinateCustomersPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -3051,7 +3799,6 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -3315,6 +4062,7 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_UnSubordinateMessengerList]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -3336,7 +4084,6 @@ select gridColumnInformationAssistantId,gridColumnName,gridColumnPhone,gridColum
 			) as tempTable
 where rowNumber between @startRow and @lastRow]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -3423,6 +4170,7 @@ where rowNumber between @startRow and @lastRow]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_VisitContentPaging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -3449,7 +4197,6 @@ and i.EmployeeId = @EmployeeId
 and CONVERT(varchar(100), r.RevisitDateTime, 111)=CONVERT(varchar(100), getdate(), 111)
 return @TotalRecords]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />

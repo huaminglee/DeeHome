@@ -1,6 +1,6 @@
 ﻿namespace DiHaoOA.WinForm.Forms
 {
-    partial class DashboardForDesigner
+    partial class DashboardForDesignerManager
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForDesigner));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForDesignerManager));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeaderHeader = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@
             this.panelcontent = new System.Windows.Forms.Panel();
             this.pMainContent = new System.Windows.Forms.Panel();
             this.pNavBar = new System.Windows.Forms.Panel();
-            this.navBarForDesigner = new DiHaoOA.Controls.NavBar();
+            this.navBarForDesignerManager = new DiHaoOA.Controls.NavBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +62,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(924, 74);
-            this.panelHeader.TabIndex = 1;
+            this.panelHeader.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -100,7 +100,6 @@
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "返回登录界面";
             this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // lblReturn
             // 
@@ -136,7 +135,7 @@
             this.panelfooter.Location = new System.Drawing.Point(0, 629);
             this.panelfooter.Name = "panelfooter";
             this.panelfooter.Size = new System.Drawing.Size(924, 29);
-            this.panelfooter.TabIndex = 2;
+            this.panelfooter.TabIndex = 3;
             // 
             // lblDateTime2
             // 
@@ -169,7 +168,7 @@
             this.panelcontent.Location = new System.Drawing.Point(0, 74);
             this.panelcontent.Name = "panelcontent";
             this.panelcontent.Size = new System.Drawing.Size(924, 555);
-            this.panelcontent.TabIndex = 3;
+            this.panelcontent.TabIndex = 4;
             // 
             // pMainContent
             // 
@@ -183,23 +182,23 @@
             // pNavBar
             // 
             this.pNavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.pNavBar.Controls.Add(this.navBarForDesigner);
+            this.pNavBar.Controls.Add(this.navBarForDesignerManager);
             this.pNavBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pNavBar.Location = new System.Drawing.Point(0, 0);
             this.pNavBar.Name = "pNavBar";
             this.pNavBar.Size = new System.Drawing.Size(129, 551);
             this.pNavBar.TabIndex = 1;
             // 
-            // navBarForDesigner
+            // navBarForDesignerManager
             // 
-            this.navBarForDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.navBarForDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarForDesigner.Location = new System.Drawing.Point(0, 0);
-            this.navBarForDesigner.Margin = new System.Windows.Forms.Padding(2);
-            this.navBarForDesigner.MenuItems = ((System.Collections.ArrayList)(resources.GetObject("navBarForDesigner.MenuItems")));
-            this.navBarForDesigner.Name = "navBarForDesigner";
-            this.navBarForDesigner.Size = new System.Drawing.Size(129, 551);
-            this.navBarForDesigner.TabIndex = 1;
+            this.navBarForDesignerManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.navBarForDesignerManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navBarForDesignerManager.Location = new System.Drawing.Point(0, 0);
+            this.navBarForDesignerManager.Margin = new System.Windows.Forms.Padding(2);
+            this.navBarForDesignerManager.MenuItems = ((System.Collections.ArrayList)(resources.GetObject("navBarForDesignerManager.MenuItems")));
+            this.navBarForDesignerManager.Name = "navBarForDesignerManager";
+            this.navBarForDesignerManager.Size = new System.Drawing.Size(129, 551);
+            this.navBarForDesignerManager.TabIndex = 1;
             // 
             // timer
             // 
@@ -207,7 +206,7 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // DashboardForDesigner
+            // DashboardForDesignerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,11 +214,10 @@
             this.Controls.Add(this.panelcontent);
             this.Controls.Add(this.panelfooter);
             this.Controls.Add(this.panelHeader);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DashboardForDesigner";
+            this.Name = "DashboardForDesignerManager";
             this.Text = "OA企业办公系统";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForDesigner_FormClosed);
-            this.Load += new System.EventHandler(this.DashboardForDesigner_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForDesignerManager_FormClosed);
+            this.Load += new System.EventHandler(this.DashboardForDesignerManager_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -247,7 +245,7 @@
         private System.Windows.Forms.Panel panelcontent;
         private System.Windows.Forms.Panel pMainContent;
         private System.Windows.Forms.Panel pNavBar;
-        private DiHaoOA.Controls.NavBar navBarForDesigner;
+        private DiHaoOA.Controls.NavBar navBarForDesignerManager;
         private System.Windows.Forms.Timer timer;
     }
 }

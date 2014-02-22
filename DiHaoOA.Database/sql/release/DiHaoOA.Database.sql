@@ -10,13 +10,14 @@ SET NUMERIC_ROUNDABORT OFF;
 
 GO
 :setvar DatabaseName "DiHaoOA"
-:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
-:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
+
+GO
+USE [master]
 
 GO
 :on error exit
-GO
-USE [master]
 GO
 IF (DB_ID(N'$(DatabaseName)') IS NOT NULL
     AND DATABASEPROPERTYEX(N'$(DatabaseName)','Status') <> N'ONLINE')
@@ -147,6 +148,7 @@ ELSE
 
 GO
 USE [$(DatabaseName)]
+
 GO
 IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
     EXECUTE sp_fulltext_database 'enable';
@@ -200,12 +202,13 @@ PRINT N'Creating [dbo].[CustomerOrder]...';
 
 GO
 CREATE TABLE [dbo].[CustomerOrder] (
-    [OrderId]     INT           IDENTITY (1, 1) NOT NULL,
-    [OrderNumber] INT           NOT NULL,
-    [RecordDate]  DATETIME      NULL,
-    [DesignerId]  NVARCHAR (50) NULL,
-    [OrderStatus] NVARCHAR (50) NULL,
-    [CustomerId]  INT           NULL,
+    [OrderId]     INT            IDENTITY (1, 1) NOT NULL,
+    [OrderNumber] INT            NOT NULL,
+    [RecordDate]  DATETIME       NULL,
+    [DesignerId]  NVARCHAR (50)  NULL,
+    [OrderStatus] NVARCHAR (50)  NULL,
+    [CustomerId]  INT            NULL,
+    [Description] NVARCHAR (MAX) NULL,
     CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([OrderId] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY],
     CONSTRAINT [Unique_Order] UNIQUE NONCLUSTERED ([OrderNumber] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
@@ -555,6 +558,80 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords
 GO
+PRINT N'Creating [dbo].[pro_ApprovalListForMarketingManager]...';
+
+
+GO
+Create procedure [dbo].[pro_ApprovalListForMarketingManager]
+@pageIndex int,
+@pageSize int,
+@input nvarchar(500),
+@BlackEmployeeId nvarchar(50),
+@TotalRecords int output
+as
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = N'已提交'
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = N'已提交'
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords
+GO
 PRINT N'Creating [dbo].[pro_DeletedCustomersPaging]...';
 
 
@@ -677,6 +754,81 @@ select @TotalRecords = count(*)
       or InformationAssistantName like '%'+@input+'%'
       or e.Name like '%'+@input+'%'
       or @input = '')
+return @TotalRecords
+GO
+PRINT N'Creating [dbo].[pro_GetOrderByOrderStatus]...';
+
+
+GO
+Create procedure [dbo].[pro_GetOrderByOrderStatus]
+@pageIndex int,
+@pageSize int,
+@orderStatus nvarchar(50),
+@input nvarchar(500),
+@BlackEmployeeId nvarchar(50),
+@TotalRecords int output
+as
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
 return @TotalRecords
 GO
 PRINT N'Creating [dbo].[pro_OrdersPaging]...';

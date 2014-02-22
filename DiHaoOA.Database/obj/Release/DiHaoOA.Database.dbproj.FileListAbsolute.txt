@@ -14,3 +14,11 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlcmdvar
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA.Database.deploymanifest
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\sql\release\DiHaoOA.Database.dbschema
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Database\obj\Release\DiHaoOA.Database.dbschema
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Script.PreDeployment.sql
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Script.PostDeployment.sql
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlsettings
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqldeployment
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA_Database.sqlcmdvars
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA.Database.deploymanifest
+D:\Projects\DiHaoOA\DiHaoOA.Database\sql\release\DiHaoOA.Database.dbschema
+D:\Projects\DiHaoOA\DiHaoOA.Database\obj\Release\DiHaoOA.Database.dbschema

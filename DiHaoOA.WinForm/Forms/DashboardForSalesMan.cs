@@ -181,7 +181,7 @@ namespace DiHaoOA
             }
             if (lblDateTime.Location.X == lblDateTime2.Location.X)
             {
-                //lblDateTime2.Visible = false;
+                lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
         }

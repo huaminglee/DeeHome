@@ -69,6 +69,15 @@
 	<ChildMenu eventCode="不准">不准</ChildMenu>
   </DesignerMenu>
   
+  <DesignerManagerMenu id="dCustomerConversation" name = "》客户洽谈" eventCode="CustomerChat">
+	<ChildMenu eventCode="在谈">在谈</ChildMenu>
+	<ChildMenu eventCode="已签">已签</ChildMenu>
+	<ChildMenu eventCode="提交未签">提交未签</ChildMenu>
+	<ChildMenu eventCode="提交不准">提交不准</ChildMenu>
+	<ChildMenu eventCode="未签">未签</ChildMenu>
+	<ChildMenu eventCode="不准">不准</ChildMenu>
+  </DesignerManagerMenu>
+  
 </MenuConfiguration>
 
 

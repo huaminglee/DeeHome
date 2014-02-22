@@ -9,26 +9,14 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Xml.Linq;
 using DiHaoOA.Controls;
-using DiHaoOA.WinForm.Controls;
-using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Forms
 {
-    public partial class DashboardForDesigner : BaseForm
+    public partial class DashboardForDesignerManager : BaseForm
     {
-        OrderList orderList;
-
-        public DashboardForDesigner()
+        public DashboardForDesignerManager()
         {
             InitializeComponent();
-        }
-
-        private void ShowSpecificMenu()
-        {
-            foreach (Control control in pMainContent.Controls)
-            {
-                control.Visible = false;
-            }
         }
 
         private void LoadMenu()
@@ -36,7 +24,7 @@ namespace DiHaoOA.WinForm.Forms
             ArrayList NavItems = new ArrayList();
             string path = Application.StartupPath + @"\Menu.xml";
             XElement menus = XElement.Load(path);
-            foreach (var menu in menus.Elements("DesignerMenu"))
+            foreach (var menu in menus.Elements("DesignerManagerMenu"))
             {
                 string menuItem = menu.Attribute("name").Value;
                 string eventCode = menu.Attribute("eventCode").Value;
@@ -50,15 +38,10 @@ namespace DiHaoOA.WinForm.Forms
                 nv.childNavItems = childNavItems;
                 NavItems.Add(nv);
             }
-            navBarForDesigner.MenuItems = NavItems;
-            navBarForDesigner.RenderMenu();
-            navBarForDesigner.OnMenuSelection += new EventHandler(childbtnbtn_Click);
+            navBarForDesignerManager.MenuItems = NavItems;
+            navBarForDesignerManager.RenderMenu();
+            navBarForDesignerManager.OnMenuSelection += new EventHandler(childbtnbtn_Click);
 
-        }
-
-        public void SetUserInfor(string userName)
-        {
-            userInfo.SetUserInfor(userName);
         }
 
         public void LoadDashboardForDesigner()
@@ -66,35 +49,20 @@ namespace DiHaoOA.WinForm.Forms
             this.Height = 768;
             this.Width = 1250;
             lblDateTime.Text = GetDateInfor();
-            AddOrderList();
-            //navBarForDesigner.ChangeNavItem("CustomerChat", "已谈");
-            orderList.orderStatus = OrderStatus.OnChatting;
-            orderList.ReLoadData();
         }
 
-        private void AddOrderList()
+        public void SetUserInfor(string userName)
         {
-            if (!pMainContent.Contains(orderList))
-            {
-                orderList = new OrderList();
-                pMainContent.Controls.Add(orderList);
-            }
-            orderList.Name = DiHaoUserControl.OrderList;
-            orderList.ParentPanel = pMainContent;
-            orderList.NavigationBar = navBarForDesigner;
-            orderList.employee = employee;
-            orderList.Dock = DockStyle.Fill;
-            orderList.Show();
+            userInfo.SetUserInfor(userName);
         }
 
         private void childbtnbtn_Click(object sender, EventArgs e)
         {
             Label btn = (Label)sender;
-            orderList.orderStatus = btn.Name;
-            orderList.ReLoadData();
+           
         }
 
-        private void DashboardForDesigner_Load(object sender, EventArgs e)
+        private void DashboardForDesignerManager_Load(object sender, EventArgs e)
         {
             LoadMenu();
             lblDateTime2.Text = GetDateInfor();
@@ -102,15 +70,7 @@ namespace DiHaoOA.WinForm.Forms
             lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
-            this.Hide();
-        }
-
-        private void DashboardForDesigner_FormClosed(object sender, FormClosedEventArgs e)
+        private void DashboardForDesignerManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
@@ -136,6 +96,5 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
         }
-
     }
 }

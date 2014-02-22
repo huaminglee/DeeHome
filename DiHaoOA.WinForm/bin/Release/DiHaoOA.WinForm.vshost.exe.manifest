@@ -65,7 +65,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+CGP+7rIS7kq3JdEhqfutX5XkU8=</dsig:DigestValue>
+        <dsig:DigestValue>8CxAfurES0N0eTEu1MBmNDq8DKo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -94,14 +94,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="424960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="434176">
       <assemblyIdentity name="DiHaoOA.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xr6hujHn3S9QTN7lLaE63bJTbns=</dsig:DigestValue>
+        <dsig:DigestValue>VJuinBwLDf1W9bikx6N97vj9Sjw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

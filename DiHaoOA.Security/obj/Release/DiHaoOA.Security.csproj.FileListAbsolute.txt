@@ -14,3 +14,11 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.pdb
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Security\obj\Release\DiHaoOA.Security.csprojResolveAssemblyReference.cache
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Security\obj\Release\DiHaoOA.Security.dll
 F:\WorkSpace\Git\DeeHome\DiHaoOA.Security\obj\Release\DiHaoOA.Security.pdb
+D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll.config
+D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll
+D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.pdb
+D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.dll
+D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.pdb
+D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.csprojResolveAssemblyReference.cache
+D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.dll
+D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.pdb

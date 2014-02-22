@@ -27,6 +27,7 @@ namespace DiHaoOA
         DashboardForSalesMan dashboard;
         DashboardForSalesManager managerDashboard;
         DashboardForDesigner designerDashboard;
+        DashboardForDesignerManager designerManagerDashboard;
         EditEmployee editEmployeeboard;
         EmployeeManager empManager;
 
@@ -98,8 +99,15 @@ namespace DiHaoOA
             }
             if (role == Roles.DesignerManager)
             {
-                //TODO
-                MessageBox.Show("DesignerManager's Dashboard");
+                if (designerManagerDashboard == null)
+                {
+                    designerManagerDashboard = new DashboardForDesignerManager();
+                }
+                designerManagerDashboard.employee = employee;
+                designerManagerDashboard.dashboardEntry = this;
+                designerManagerDashboard.SetUserInfor(employee.Name);
+                designerManagerDashboard.Show();
+                //MessageBox.Show("DesignerManager's Dashboard");
             }
             if (role == Roles.GeneralManager)
             {

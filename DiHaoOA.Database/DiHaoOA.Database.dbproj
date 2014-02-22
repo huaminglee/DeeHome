@@ -203,5 +203,11 @@
     <Build Include="Tables\CustomerRevisit.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="StoreProcedure\pro_ApprovalListForMarketingManager.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="StoreProcedure\pro_GetOrderByOrderStatus.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>
