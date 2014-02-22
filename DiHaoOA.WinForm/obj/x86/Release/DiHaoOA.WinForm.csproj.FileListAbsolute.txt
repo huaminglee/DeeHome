@@ -100,3 +100,6 @@ F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Control
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetail.resources
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.DashboardForDesigner.resources
 F:\WorkSpace\Git\DeeHome\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderList.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\bin\Release\DiHaoOA.WinForm.exe.config
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.pdb
