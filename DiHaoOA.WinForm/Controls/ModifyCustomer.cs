@@ -88,6 +88,7 @@ namespace DiHaoOA.Controls
                         orderDescriptionPopUp = new OrderDescription();
                     orderDescriptionPopUp.order = order;
                     orderDescriptionPopUp.customer = customer;
+                    orderDescriptionPopUp.ClearContent();
                     orderDescriptionPopUp.OrderStatusChanged += new OrderDescription.ModifyOrderStatus(ModifyOrderStatus);
                     orderDescriptionPopUp.Show();
                 }

@@ -6,6 +6,7 @@
 	[OrderStatus] [nvarchar](50) NULL,
 	[CustomerId] [int] NULL,
 	[Description] [nvarchar](max) NULL,
+	[AllocationDate] [datetime] NULL
  CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED 
 (
 	[OrderId] ASC

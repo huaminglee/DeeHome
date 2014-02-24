@@ -64,6 +64,8 @@ namespace DiHaoOA.WinForm.Forms
 
         private void DashboardForDesignerManager_Load(object sender, EventArgs e)
         {
+            this.Height = 768;
+            this.Width = 1250;
             LoadMenu();
             lblDateTime2.Text = GetDateInfor();
             lblDateTime.Text = GetDateInfor();

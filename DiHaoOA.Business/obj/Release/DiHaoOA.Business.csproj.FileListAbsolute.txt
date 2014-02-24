@@ -19,3 +19,10 @@ D:\Projects\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.pdb
 D:\Projects\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.csprojResolveAssemblyReference.cache
 D:\Projects\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.dll
 D:\Projects\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.Business.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.Business.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\bin\Release\DiHaoOA.DataContract.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Business\obj\Release\DiHaoOA.Business.pdb
