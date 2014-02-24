@@ -9,6 +9,7 @@ namespace DiHaoOA.DataContract
     {
         public const string Following = "正跟踪";
         public const string Submitted = "已提交";
+        public const string Rejected = "被打回";
         public const string Discard = "已放弃";
         public const string ContinueFollowing = "继续跟踪";
         public const string SubmittedToDesigner = "提交单子";

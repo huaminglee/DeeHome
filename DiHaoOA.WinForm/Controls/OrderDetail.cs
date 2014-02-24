@@ -28,12 +28,6 @@ namespace DiHaoOA.WinForm.Controls
         public void ClearContent()
         {
             txtCompany.Enabled = false;
-            txtContactPerson.Enabled = false;
-            txtContactPerson2.Enabled = false;
-            txtContactPerson2Number.Enabled = false;
-            txtContactPerson3.Enabled = false;
-            txtContactPerson3Number.Enabled = false;
-            txtContactPersonNumber.Enabled = false;
             txtDecorateAddress.Enabled = false;
             txtEmail.Enabled = false;
             txtRidePath.Enabled = false;
@@ -46,12 +40,6 @@ namespace DiHaoOA.WinForm.Controls
         {
             Order order = orderManager.GetOrderById(orderId);
             txtCompany.Text = order.Customers.CompanyName;
-            txtContactPerson.Text = order.Customers.ContactPerson;
-            txtContactPerson2.Text = order.Customers.ContactPerson2;
-            txtContactPerson2Number.Text = order.Customers.ContactPerson2Number;
-            txtContactPerson3.Text = order.Customers.ContactPerson3;
-            txtContactPerson3Number.Text = order.Customers.Contactperson3Number;
-            txtContactPersonNumber.Text = order.Customers.ContactPersonNumber;
             txtEmail.Text = order.Customers.Email;
             txtRidePath.Text = order.Customers.RidePath;
             txtUsableArea.Text = order.Customers.UsableArea;
@@ -78,8 +66,8 @@ namespace DiHaoOA.WinForm.Controls
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Following);
-            lblMsg.Text = "*订单已打回给业务员，状态为继续跟踪";
+            orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Rejected);
+            lblMsg.Text = "*订单已打回给业务员，状态为被打回";
             lblMsg.Visible = true;
         }
 

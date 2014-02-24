@@ -40,5 +40,10 @@ namespace DiHaoOA.WinForm.Forms
         {
             this.Hide();
         }
+
+        public void ClearContent()
+        {
+            txtContent.Clear();
+        }
     }
 }
