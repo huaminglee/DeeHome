@@ -147,7 +147,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = con;
                 cmd.CommandText = @"select ContactPersonNumber 
                                     from Customer
-                                    where ContactPersonNumber = @ContactPersonNumber";
+                                    where ContactPersonNumber = @ContactPersonNumber
+                                    or ContactPerson2Number = @ContactPersonNumber
+                                    or ContactPerson3Number = @ContactPersonNumber";
                 cmd.Parameters.AddWithValue("@ContactPersonNumber", phoneNumber);
                 try
                 {
@@ -181,7 +183,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = con;
                 cmd.CommandText = @"select ContactPersonNumber 
                                     from Customer
-                                    where ContactPerson2Number = @ContactPerson2Number";
+                                    where ContactPerson2Number = @ContactPerson2Number
+                                    or ContactPersonNumber = @ContactPerson2Number
+                                    or ContactPerson3Number = @ContactPerson2Number";
                 cmd.Parameters.AddWithValue("@ContactPerson2Number", phoneNumber2);
                 try
                 {
@@ -215,7 +219,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = con;
                 cmd.CommandText = @"select ContactPersonNumber 
                                     from Customer
-                                    where ContactPerson3Number = @ContactPerson3Number";
+                                    where ContactPerson3Number = @ContactPerson3Number
+                                    or ContactPersonNumber = @ContactPerson3Number
+                                    or ContactPerson2Number = @ContactPerson3Number";
                 cmd.Parameters.AddWithValue("@ContactPerson3Number", phoneNumber3);
                 try
                 {
@@ -250,7 +256,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.CommandText = @"select c.InformationAssistantId ,RecordDate,o.OrderNumber,OrderStatus 
                                     from dbo.CustomerOrder o ,dbo.Customer c 
                                     where o.CustomerId = c.CustomerId
-                                    and c.ContactPersonNumber = @ContactPersonNumber";
+                                    and (c.ContactPersonNumber = @ContactPersonNumber
+                                    or c.ContactPerson2Number = @ContactPersonNumber
+                                    or c.ContactPerson3Number = @ContactPersonNumber)";
                 cmd.Parameters.AddWithValue("@ContactPersonNumber", phoneNumber);
                 try
                 {
@@ -288,7 +296,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.CommandText = @"select c.InformationAssistantId ,RecordDate,o.OrderNumber,OrderStatus  
                                     from dbo.CustomerOrder o ,dbo.Customer c 
                                     where o.CustomerId = c.CustomerId
-                                    and c.ContactPerson2Number = @ContactPerson2Number";
+                                    and (c.ContactPerson2Number = @ContactPerson2Number
+                                    or c.ContactPersonNumber = @ContactPerson2Number
+                                    or c.ContactPerson3Number = @ContactPerson2Number)";
                 cmd.Parameters.AddWithValue("@ContactPerson2Number", phoneNumber2);
                 try
                 {
@@ -326,7 +336,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.CommandText = @"select c.InformationAssistantId ,RecordDate,o.OrderNumber,OrderStatus   
                                     from dbo.CustomerOrder o ,dbo.Customer c 
                                     where o.CustomerId = c.CustomerId
-                                    and c.ContactPerson3Number = @ContactPerson3Number";
+                                    and (c.ContactPerson3Number = @ContactPerson3Number
+                                    or c.ContactPerson2Number = @ContactPerson3Number
+                                    or c.ContactPersonNumber = @ContactPerson3Number)";
                 cmd.Parameters.AddWithValue("@ContactPerson3Number", phoneNumber3);
                 try
                 {

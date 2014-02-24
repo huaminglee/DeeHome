@@ -22,3 +22,11 @@ D:\Projects\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.pdb
 D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.csprojResolveAssemblyReference.cache
 D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.dll
 D:\Projects\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll.config
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.Security.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\bin\Release\DiHaoOA.DataContract.pdb
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.dll
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.Security\obj\Release\DiHaoOA.Security.pdb

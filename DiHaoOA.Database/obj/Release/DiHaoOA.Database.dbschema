@@ -17,7 +17,7 @@
 			<Metadata Name="CompatibilityMode" Value="100" />
 		</CustomData>
 		<CustomData Category="Permissions" Type="XmlPermissions">
-			<Metadata Name="FileName" Value="D:\PROJECTS\DIHAOOA\DIHAOOA.DATABASE\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+			<Metadata Name="FileName" Value="F:\WORKSPACE\GIT\DIHAOOA\DIHAOOA.DATABASE\PROPERTIES\DATABASE.SQLPERMISSIONS" />
 		</CustomData>
 	</Header>
 	<Model>
@@ -343,6 +343,23 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Customer].[WorkPlace]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Filegroup">
 				<Entry>
@@ -354,7 +371,6 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[CustomerOrder]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1328,7 +1344,6 @@
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllCustomersPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -1393,6 +1408,7 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -1683,7 +1699,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllListPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -1722,6 +1737,7 @@ select Row_Number() over(order by VisitDateTime) rowNumber ,
 where rowNumber between @startRow and @lastRow
 order by gridColumnleftRevisitTime,VisitDateTime]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -1910,7 +1926,6 @@ order by gridColumnleftRevisitTime,VisitDateTime]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_AllListPagingForManager]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -1956,6 +1971,7 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2156,7 +2172,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_ApprovalListForMarketingManager]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -2222,6 +2237,7 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2512,7 +2528,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_DeletedCustomersPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -2574,6 +2589,7 @@ where e.EmployeeId = @BlackEmployeeId
    or @input='')
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -2855,7 +2871,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_DeletedIAListPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -2901,6 +2916,7 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -3101,7 +3117,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_GetOrderByOrderStatus]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -3167,6 +3182,7 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -3476,7 +3492,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_OrdersPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -3518,6 +3533,7 @@ where o.orderStatus = @orderStatus
   )as tempTable
 where rowNumber between @startRow and @lastRow]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -3739,7 +3755,6 @@ where rowNumber between @startRow and @lastRow]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_UnSubordinateCustomersPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 begin
@@ -3799,6 +3814,7 @@ where e.EmployeeId != @BlackEmployeeId
 end
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -4062,7 +4078,6 @@ return @TotalRecords]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_UnSubordinateMessengerList]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -4084,6 +4099,7 @@ select gridColumnInformationAssistantId,gridColumnName,gridColumnPhone,gridColum
 			) as tempTable
 where rowNumber between @startRow and @lastRow]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
@@ -4170,7 +4186,6 @@ where rowNumber between @startRow and @lastRow]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[pro_VisitContentPaging]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 declare @startRow int
@@ -4197,6 +4212,7 @@ and i.EmployeeId = @EmployeeId
 and CONVERT(varchar(100), r.RevisitDateTime, 111)=CONVERT(varchar(100), getdate(), 111)
 return @TotalRecords]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />

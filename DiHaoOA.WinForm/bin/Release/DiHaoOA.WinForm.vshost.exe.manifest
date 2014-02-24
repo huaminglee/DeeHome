@@ -65,19 +65,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8CxAfurES0N0eTEu1MBmNDq8DKo=</dsig:DigestValue>
+        <dsig:DigestValue>7BOqCDFukADhSbd9lfpftc22PRQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="90112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="92160">
       <assemblyIdentity name="DiHaoOA.DataContract" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Jsan5mvhVEgPBumFhInAEClqhec=</dsig:DigestValue>
+        <dsig:DigestValue>2P3YZ6oVrJP2eCV3wS31G1pNhQc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,7 +89,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Ir/3Ng2Q78/OHBh09PnecpCPcY4=</dsig:DigestValue>
+        <dsig:DigestValue>02Yl5hZ8B7HDlGt2Oiz+agxNCt8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -101,7 +101,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VJuinBwLDf1W9bikx6N97vj9Sjw=</dsig:DigestValue>
+        <dsig:DigestValue>ZSWV9UOGiwl0QGGhDoTGVBXEXEc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
