@@ -153,3 +153,6 @@ D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.csproj.Gener
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe.manifest
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.application
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.DashboardForDesignerManager.resources
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\bin\Release\DiHaoOA.WinForm.exe.config
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.pdb
