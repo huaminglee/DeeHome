@@ -17,6 +17,7 @@ Insert into SecurityActivities values(2,'DesignerActivity')
 Insert into SecurityActivities values(3,'SalesManManagerActivity')
 Insert into SecurityActivities values(4,'DesignerManagerActivity')
 Insert into SecurityActivities values(5,'GeneralManagerActivity')
+Insert into SecurityActivities values(6,'DesignerLeaderActivity')
 -- =============================================
 -- 
 -- =============================================
@@ -26,6 +27,7 @@ Insert into SecurityRoles values(2,'Designer',2)
 Insert into SecurityRoles values(3,'SalesManManager',3)
 Insert into SecurityRoles values(4,'DesignerManager',4)
 Insert into SecurityRoles values(5,'GeneralManager',5)
+Insert into SecurityRoles values(6,'DesignerLeader',6)
 -- =============================================
 -- Script Template
 -- =============================================

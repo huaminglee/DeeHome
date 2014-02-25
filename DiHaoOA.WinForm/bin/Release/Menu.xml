@@ -81,8 +81,8 @@
 	<ChildMenu eventCode="我的下属">我的下属</ChildMenu>
 	<ChildMenu eventCode="审批栏">审批栏</ChildMenu>
   </DesignerManagerMenu>
-  <DesignerManagerMenu id="dManager" name="》分配主案部" eventCode="Manager">
-	<ChildMenu eventCode="我的下属">我的下属</ChildMenu>
+  <DesignerManagerMenu id="dAllocate" name="》分配主案部" eventCode="Allocate">
+	<ChildMenu eventCode="设计师分组">设计师分组</ChildMenu>
   </DesignerManagerMenu>
 </MenuConfiguration>
 

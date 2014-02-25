@@ -9,11 +9,16 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Xml.Linq;
 using DiHaoOA.Controls;
+using DiHaoOA.WinForm.Controls;
+using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Forms
 {
     public partial class DashboardForDesignerManager : BaseForm
     {
+        OrderList orderList;
+        const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
+
         public DashboardForDesignerManager()
         {
             InitializeComponent();
@@ -29,7 +34,10 @@ namespace DiHaoOA.WinForm.Forms
                 string menuItem = menu.Attribute("name").Value;
                 string eventCode = menu.Attribute("eventCode").Value;
                 NavBar.NavItem nv = new NavBar.NavItem(menuItem, eventCode);
-                nv.Selected = true;
+                if (eventCode == "CustomerChat")
+                {
+                    nv.Selected = true;
+                }
                 ArrayList childNavItems = new ArrayList();
                 foreach (var childMenu in menu.Elements())
                 {
@@ -59,8 +67,44 @@ namespace DiHaoOA.WinForm.Forms
         private void childbtnbtn_Click(object sender, EventArgs e)
         {
             Label btn = (Label)sender;
+            string menu = btn.Parent.Name;
+            if (menu == DiHaoMenu.Manager)
+            {
+                ShowSpecificMenu();
+                AddApprovalList(pro_ApprovalListForMarketingManager);
+                orderList.ClearSearchText();
+                orderList.ReLoadData();
+            }
            
         }
+
+        private void AddApprovalList(string pro_ApprovalListForMarketingManager)
+        {
+            if (!panelContent.Contains(orderList))
+            {
+                orderList = new OrderList();
+                orderList.Name = DiHaoUserControl.OrderList;
+                orderList.orderStatus = OrderStatus.SubmittedToDesigner;
+                orderList.ParentPanel = pMainContent; ;
+                orderList.NavigationBar = navBarForDesignerManager;
+                orderList.employee = employee;
+                orderList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(orderList);
+            }
+            else
+            {
+                orderList.Show();
+            }
+        }
+
+        private void ShowSpecificMenu()
+        {
+            foreach (Control control in pMainContent.Controls)
+            {
+                control.Visible = false;
+            }
+        }
+
 
         private void DashboardForDesignerManager_Load(object sender, EventArgs e)
         {
@@ -76,6 +120,8 @@ namespace DiHaoOA.WinForm.Forms
         {
             Application.Exit();
         }
+
+
 
         private void timer_Tick(object sender, EventArgs e)
         {

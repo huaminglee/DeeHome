@@ -17,6 +17,7 @@ namespace DiHaoOA.WinForm.Controls
         DataSet datas;
         CustomerManager customerManager;
         OrderManager orderManager;
+        OrderDetail orderDetail;
 
         public OrderList()
         {
@@ -112,15 +113,31 @@ namespace DiHaoOA.WinForm.Controls
                     {
                         foreach (Control control in ParentPanel.Controls)
                         {
-                            if (control is ApprovalList)
-                            {
-                                //control.Visible = false;
-                            }
+                            control.Visible = false;
                         }
-                        //LoadOrderDetail(orderId);
+                        LoadOrderDetail(orderId);
                     }
                 }
             }
+        }
+
+        private void LoadOrderDetail(int orderId)
+        {
+            if (!ParentPanel.Contains(orderDetail))
+            {
+                orderDetail = new OrderDetail();
+                orderDetail.Name = "OrderDetailForDesignerManager";
+                orderDetail.ParentPanel = ParentPanel;
+                orderDetail.NavigationBar = NavigationBar;
+                orderDetail.employee = employee;
+                orderDetail.Dock = DockStyle.Fill;
+                ParentPanel.Controls.Add(orderDetail);
+            }
+            orderDetail.order = orderManager.GetOrderById(orderId);
+            orderDetail.Show();
+            orderDetail.ClearContent();
+            orderDetail.employee = employee;
+            orderDetail.LoadDetailInformation(orderId);
         }
 
         private void dgOrderList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

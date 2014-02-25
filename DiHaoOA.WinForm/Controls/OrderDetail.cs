@@ -27,25 +27,19 @@ namespace DiHaoOA.WinForm.Controls
 
         public void ClearContent()
         {
-            txtCompany.Enabled = false;
-            txtDecorateAddress.Enabled = false;
-            txtEmail.Enabled = false;
-            txtRidePath.Enabled = false;
-            txtUsableArea.Enabled = false;
-            txtWorkPlace.Enabled = false;
             lblMsg.Visible = false;
         }
 
         public void LoadDetailInformation(int orderId)
         {
             Order order = orderManager.GetOrderById(orderId);
-            txtCompany.Text = order.Customers.CompanyName;
-            txtEmail.Text = order.Customers.Email;
-            txtRidePath.Text = order.Customers.RidePath;
-            txtUsableArea.Text = order.Customers.UsableArea;
-            txtDecorateAddress.Text = order.Customers.DecorationAddress;
-            txtWorkPlace.Text = order.Customers.WorkPlace;
-            cbCity.Text = order.Customers.City;
+            lblCompany.Text = order.Customers.CompanyName;
+            lblEmail.Text = order.Customers.Email;
+            lblRidePath.Text = order.Customers.RidePath;
+            lblUsableArea.Text = order.Customers.UsableArea;
+            lblDecorateAddress.Text = order.Customers.DecorationAddress;
+            lblWorkPlace.Text = order.Customers.WorkPlace;
+            lblCity.Text = order.Customers.City;
             lblOrderNumber.Text = order.OrderNumber.ToString();
             lblRecordDateTime.Text = order.RecordDate.ToLongDateString();
             lblImformationer.Text = order.Customers.InformationAssistants.InformationAssistantName;
@@ -59,9 +53,22 @@ namespace DiHaoOA.WinForm.Controls
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedToDesigner);
-            lblMsg.Text = "*订单已提交给设计部经理，状态为提交订单";
-            lblMsg.Visible = true;
+            if (this.Name == "OrderDetailForDesignerManager")
+            {
+                AllocateOrderToDesigner();
+            }
+            else 
+            {
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedToDesigner);
+                lblMsg.Text = "*订单已提交给设计部经理，状态为提交订单";
+                lblMsg.Visible = true;
+            }
+            
+        }
+
+        private void AllocateOrderToDesigner()
+        {
+
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -71,6 +78,18 @@ namespace DiHaoOA.WinForm.Controls
             lblMsg.Visible = true;
         }
 
+        private void OrderDetail_Load(object sender, EventArgs e)
+        {
+            if (this.Name == "OrderDetailForDesignerManager")
+            {
+                btnSubmit.Text = "分单";
+            }
+            else {
+                btnSubmit.Text = "提交";
+            }
+        }
+
+        
       
     }
 }
