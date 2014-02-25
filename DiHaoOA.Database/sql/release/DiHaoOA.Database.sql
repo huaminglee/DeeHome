@@ -201,13 +201,14 @@ PRINT N'Creating [dbo].[CustomerOrder]...';
 
 GO
 CREATE TABLE [dbo].[CustomerOrder] (
-    [OrderId]     INT            IDENTITY (1, 1) NOT NULL,
-    [OrderNumber] INT            NOT NULL,
-    [RecordDate]  DATETIME       NULL,
-    [DesignerId]  NVARCHAR (50)  NULL,
-    [OrderStatus] NVARCHAR (50)  NULL,
-    [CustomerId]  INT            NULL,
-    [Description] NVARCHAR (MAX) NULL,
+    [OrderId]        INT            IDENTITY (1, 1) NOT NULL,
+    [OrderNumber]    INT            NOT NULL,
+    [RecordDate]     DATETIME       NULL,
+    [DesignerId]     NVARCHAR (50)  NULL,
+    [OrderStatus]    NVARCHAR (50)  NULL,
+    [CustomerId]     INT            NULL,
+    [Description]    NVARCHAR (MAX) NULL,
+    [AllocationDate] DATETIME       NULL,
     CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([OrderId] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY],
     CONSTRAINT [Unique_Order] UNIQUE NONCLUSTERED ([OrderNumber] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
@@ -1035,6 +1036,7 @@ Insert into SecurityActivities values(2,'DesignerActivity')
 Insert into SecurityActivities values(3,'SalesManManagerActivity')
 Insert into SecurityActivities values(4,'DesignerManagerActivity')
 Insert into SecurityActivities values(5,'GeneralManagerActivity')
+Insert into SecurityActivities values(6,'DesignerLeaderActivity')
 -- =============================================
 -- 
 -- =============================================
@@ -1044,6 +1046,7 @@ Insert into SecurityRoles values(2,'Designer',2)
 Insert into SecurityRoles values(3,'SalesManManager',3)
 Insert into SecurityRoles values(4,'DesignerManager',4)
 Insert into SecurityRoles values(5,'GeneralManager',5)
+Insert into SecurityRoles values(6,'DesignerLeader',6)
 -- =============================================
 -- Script Template
 -- =============================================

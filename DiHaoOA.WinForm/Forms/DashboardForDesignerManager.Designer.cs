@@ -39,7 +39,7 @@
             this.panelfooter = new System.Windows.Forms.Panel();
             this.lblDateTime2 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.panelcontent = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.pMainContent = new System.Windows.Forms.Panel();
             this.pNavBar = new System.Windows.Forms.Panel();
             this.navBarForDesignerManager = new DiHaoOA.Controls.NavBar();
@@ -48,7 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeaderHeader.SuspendLayout();
             this.panelfooter.SuspendLayout();
-            this.panelcontent.SuspendLayout();
+            this.panelContent.SuspendLayout();
             this.pNavBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,16 +159,16 @@
             this.lblDateTime.TabIndex = 0;
             this.lblDateTime.Text = "sss";
             // 
-            // panelcontent
+            // panelContent
             // 
-            this.panelcontent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelcontent.Controls.Add(this.pMainContent);
-            this.panelcontent.Controls.Add(this.pNavBar);
-            this.panelcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelcontent.Location = new System.Drawing.Point(0, 80);
-            this.panelcontent.Name = "panelcontent";
-            this.panelcontent.Size = new System.Drawing.Size(924, 602);
-            this.panelcontent.TabIndex = 4;
+            this.panelContent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelContent.Controls.Add(this.pMainContent);
+            this.panelContent.Controls.Add(this.pNavBar);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 80);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(924, 602);
+            this.panelContent.TabIndex = 4;
             // 
             // pMainContent
             // 
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 713);
-            this.Controls.Add(this.panelcontent);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelfooter);
             this.Controls.Add(this.panelHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -227,7 +227,7 @@
             this.panelHeaderHeader.PerformLayout();
             this.panelfooter.ResumeLayout(false);
             this.panelfooter.PerformLayout();
-            this.panelcontent.ResumeLayout(false);
+            this.panelContent.ResumeLayout(false);
             this.pNavBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Panel panelfooter;
         private System.Windows.Forms.Label lblDateTime2;
         private System.Windows.Forms.Label lblDateTime;
-        private System.Windows.Forms.Panel panelcontent;
+        private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel pMainContent;
         private System.Windows.Forms.Panel pNavBar;
         private DiHaoOA.Controls.NavBar navBarForDesignerManager;
