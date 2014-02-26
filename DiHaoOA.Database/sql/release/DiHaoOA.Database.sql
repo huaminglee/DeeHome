@@ -10,13 +10,14 @@ SET NUMERIC_ROUNDABORT OFF;
 
 GO
 :setvar DatabaseName "DiHaoOA"
-:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
-:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
+
+GO
+USE [master]
 
 GO
 :on error exit
-GO
-USE [master]
 GO
 IF (DB_ID(N'$(DatabaseName)') IS NOT NULL
     AND DATABASEPROPERTYEX(N'$(DatabaseName)','Status') <> N'ONLINE')
@@ -147,6 +148,7 @@ ELSE
 
 GO
 USE [$(DatabaseName)]
+
 GO
 IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
     EXECUTE sp_fulltext_database 'enable';
@@ -241,7 +243,22 @@ CREATE TABLE [dbo].[Employee] (
     [PhoneNumber] NVARCHAR (50)  NULL,
     [RoleId]      INT            NULL,
     [IsActive]    BIT            NULL,
+    [GroupId]     INT            NULL,
     CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([EmployeeId] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
+) ON [PRIMARY];
+
+
+GO
+PRINT N'Creating [dbo].[EmployeeGroup]...';
+
+
+GO
+CREATE TABLE [dbo].[EmployeeGroup] (
+    [GroupId]    INT            IDENTITY (1, 1) NOT NULL,
+    [GroupName]  NVARCHAR (MAX) NULL,
+    [Department] NVARCHAR (50)  NULL,
+    [LeaderId]   NVARCHAR (50)  NULL,
+    CONSTRAINT [PK_EmployeeGroup] PRIMARY KEY CLUSTERED ([GroupId] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
 
 
@@ -348,12 +365,30 @@ ALTER TABLE [dbo].[CustomerRevisit] WITH NOCHECK
 
 
 GO
+PRINT N'Creating FK_Employee_EmployeeGroup...';
+
+
+GO
+ALTER TABLE [dbo].[Employee] WITH NOCHECK
+    ADD CONSTRAINT [FK_Employee_EmployeeGroup] FOREIGN KEY ([GroupId]) REFERENCES [dbo].[EmployeeGroup] ([GroupId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+GO
 PRINT N'Creating FK_Employee_SecurityRoles...';
 
 
 GO
 ALTER TABLE [dbo].[Employee] WITH NOCHECK
     ADD CONSTRAINT [FK_Employee_SecurityRoles] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[SecurityRoles] ([Id]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+GO
+PRINT N'Creating FK_EmployeeGroup_Employee...';
+
+
+GO
+ALTER TABLE [dbo].[EmployeeGroup] WITH NOCHECK
+    ADD CONSTRAINT [FK_EmployeeGroup_Employee] FOREIGN KEY ([LeaderId]) REFERENCES [dbo].[Employee] ([EmployeeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
 GO
@@ -1120,7 +1155,11 @@ ALTER TABLE [dbo].[CustomerOrder] WITH CHECK CHECK CONSTRAINT [FK_CustomerOrder_
 
 ALTER TABLE [dbo].[CustomerRevisit] WITH CHECK CHECK CONSTRAINT [FK_CustomerRevisit_Customer];
 
+ALTER TABLE [dbo].[Employee] WITH CHECK CHECK CONSTRAINT [FK_Employee_EmployeeGroup];
+
 ALTER TABLE [dbo].[Employee] WITH CHECK CHECK CONSTRAINT [FK_Employee_SecurityRoles];
+
+ALTER TABLE [dbo].[EmployeeGroup] WITH CHECK CHECK CONSTRAINT [FK_EmployeeGroup_Employee];
 
 ALTER TABLE [dbo].[InformationAssistant] WITH CHECK CHECK CONSTRAINT [FK_InformationAssistant_InformationAssistant];
 

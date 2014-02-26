@@ -299,5 +299,33 @@ namespace DiHaoOA.DataContract.DAO
                 return total;
             }
         }
+
+        public void AllocateOrderToDesigner(string designerId,int orderId)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                try
+                {
+                    conn.Open();
+                    cmd.CommandText = @"Update dbo.CustomerOrder
+                                    set DesignerId=@DesignerId,OrderStatus=N'在谈'
+                                    where OrderId=@OrderId";
+                    cmd.Parameters.AddWithValue("@DesignerId", designerId);
+                    cmd.Parameters.AddWithValue("@OrderId", orderId);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+            }
+        }   
     }
 }

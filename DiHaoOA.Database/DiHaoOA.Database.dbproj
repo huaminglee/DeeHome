@@ -209,5 +209,8 @@
     <Build Include="StoreProcedure\pro_GetOrderByOrderStatus.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Tables\EmployeeGroup.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

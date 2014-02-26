@@ -46,5 +46,10 @@ namespace DiHaoOA.Business.Manager
         {
             return orderDao.GetTotalRecords(pageIndex, pageSize, input, orderStatus);
         }
+
+        public void AllocateOrderToDesigner(string designerId, int orderId)
+        {
+            orderDao.AllocateOrderToDesigner(designerId, orderId);
+        }
     }
 }

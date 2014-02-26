@@ -120,6 +120,12 @@
     <Compile Include="Controls\AllMarketingCustomer.Designer.cs">
       <DependentUpon>AllMarketingCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AllocateDesignerGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AllocateDesignerGroup.Designer.cs">
+      <DependentUpon>AllocateDesignerGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ApprovalList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,12 @@
     <Compile Include="Controls\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AllocateOrderPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AllocateOrderPopUp.Designer.cs">
+      <DependentUpon>AllocateOrderPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +318,9 @@
     <EmbeddedResource Include="Controls\AllMarketingCustomer.resx">
       <DependentUpon>AllMarketingCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AllocateDesignerGroup.resx">
+      <DependentUpon>AllocateDesignerGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ApprovalList.resx">
       <DependentUpon>ApprovalList.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AllocateOrderPopUp.resx">
+      <DependentUpon>AllocateOrderPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

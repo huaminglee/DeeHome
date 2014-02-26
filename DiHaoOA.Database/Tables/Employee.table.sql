@@ -6,12 +6,20 @@
 	[PhoneNumber] [nvarchar](50) NULL,
 	[RoleId] [int] NULL,
 	[IsActive] [bit] NULL,
+	[GroupId] [int] NULL,
  CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
 (
 	[EmployeeId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_EmployeeGroup] FOREIGN KEY([GroupId])
+REFERENCES [dbo].[EmployeeGroup] ([GroupId])
+GO
+
+ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_EmployeeGroup]
 GO
 
 ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_SecurityRoles] FOREIGN KEY([RoleId])

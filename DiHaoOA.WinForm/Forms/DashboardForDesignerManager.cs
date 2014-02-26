@@ -17,6 +17,7 @@ namespace DiHaoOA.WinForm.Forms
     public partial class DashboardForDesignerManager : BaseForm
     {
         OrderList orderList;
+        AllocateDesignerGroup allocateDesignerGroup;
         const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
 
         public DashboardForDesignerManager()
@@ -75,7 +76,30 @@ namespace DiHaoOA.WinForm.Forms
                 orderList.ClearSearchText();
                 orderList.ReLoadData();
             }
+            if (menu == DiHaoMenu.Allocate)
+            {
+                ShowSpecificMenu();
+                AddAllocateDesignerGroup();
+            }
            
+        }
+
+        private void AddAllocateDesignerGroup()
+        {
+            if (!panelContent.Contains(allocateDesignerGroup))
+            {
+                allocateDesignerGroup = new AllocateDesignerGroup();
+                allocateDesignerGroup.Name = DiHaoUserControl.OrderList;
+                allocateDesignerGroup.ParentPanel = pMainContent; ;
+                allocateDesignerGroup.NavigationBar = navBarForDesignerManager;
+                allocateDesignerGroup.employee = employee;
+                allocateDesignerGroup.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(allocateDesignerGroup);
+            }
+            else
+            {
+                allocateDesignerGroup.Show();
+            }
         }
 
         private void AddApprovalList(string pro_ApprovalListForMarketingManager)
@@ -143,6 +167,14 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            dashboardEntry.ClearContent();
+            dashboardEntry.Show();
+            dashboardEntry.SetDefault();
+            this.Hide();
         }
     }
 }

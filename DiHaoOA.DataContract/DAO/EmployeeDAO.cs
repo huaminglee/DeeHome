@@ -183,6 +183,128 @@ namespace DiHaoOA.DataContract
             }
         }
 
-        
+        public DataSet GetEmployeeGroup()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select GroupId,GroupName
+                                    from EmployeeGroup";
+                SqlDataAdapter sda = null;
+                DataSet result = new DataSet();
+                try
+                {
+                    conn.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(result);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    sda.Dispose();
+                    cmd.Dispose();
+                }
+                return result;
+            }   
+        }
+            
+        public DataSet GetDesignerByGroupId(int groupId)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Select EmployeeId,Name
+                                    From Employee
+                                    where  GroupId=@GroupId
+                                    and (RoleId = 2 
+                                    or RoleId = 6)";
+                SqlDataAdapter sda = null;
+                DataSet result = new DataSet();
+                cmd.Parameters.AddWithValue("@GroupId",groupId);
+                try
+                {
+                    conn.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(result);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public DataSet GetDesigner()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Select EmployeeId,Name
+                                    From Employee
+                                    where RoleId = 2 
+                                    or RoleId = 6
+                                    or RoleId = 4";
+                SqlDataAdapter sda = null;
+                DataSet result = new DataSet();
+                try
+                {
+                    conn.Open();
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(result);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public void AllocateDesignerToGroup(string designerId,int groupId)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"update Employee
+                                    Set GroupId=@GroupId
+                                    where EmployeeId=@EmployeeId";
+                cmd.Parameters.AddWithValue("@EmployeeId",designerId);
+                cmd.Parameters.AddWithValue("@GroupId",groupId);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+            }
+        }
+            
     }
 }

@@ -10,6 +10,7 @@ using DiHaoOA.Controls;
 using DiHaoOA.DataContract.Entity;
 using DiHaoOA.Business.Manager;
 using DiHaoOA.DataContract;
+using DiHaoOA.WinForm.Forms;
 
 namespace DiHaoOA.WinForm.Controls
 {
@@ -17,6 +18,7 @@ namespace DiHaoOA.WinForm.Controls
     {
         OrderManager orderManager;
         public Order order;
+        AllocateOrderPopUp allocateOrderPopUp;
 
         public OrderDetail()
         {
@@ -57,18 +59,22 @@ namespace DiHaoOA.WinForm.Controls
             {
                 AllocateOrderToDesigner();
             }
-            else 
+            else
             {
                 orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedToDesigner);
                 lblMsg.Text = "*订单已提交给设计部经理，状态为提交订单";
                 lblMsg.Visible = true;
             }
-            
         }
 
         private void AllocateOrderToDesigner()
         {
-
+            if (allocateOrderPopUp == null)
+            {
+                allocateOrderPopUp = new AllocateOrderPopUp();
+                allocateOrderPopUp.order = order;
+            }
+            allocateOrderPopUp.Show();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -84,12 +90,13 @@ namespace DiHaoOA.WinForm.Controls
             {
                 btnSubmit.Text = "分单";
             }
-            else {
+            else
+            {
                 btnSubmit.Text = "提交";
             }
         }
 
-        
-      
+
+
     }
 }
