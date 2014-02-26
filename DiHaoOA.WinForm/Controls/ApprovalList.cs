@@ -15,8 +15,9 @@ namespace DiHaoOA.WinForm.Controls
     {
         CustomerManager customerManager;
         OrderManager orderManager;
-        OrderDetail orderDetail;
+        OrderDetailForManager orderDetail;
         DataSet datas;
+        public string approvaler;
 
         public string procedureName = string.Empty;
 
@@ -134,8 +135,8 @@ namespace DiHaoOA.WinForm.Controls
         {
             if (!ParentPanel.Contains(orderDetail))
             {
-                orderDetail = new OrderDetail();
-                orderDetail.Name = "ModifyCustomer";
+                orderDetail = new OrderDetailForManager();
+                orderDetail.Name = approvaler;
                 orderDetail.ParentPanel = ParentPanel;
                 orderDetail.NavigationBar = NavigationBar;
                 orderDetail.employee = employee;

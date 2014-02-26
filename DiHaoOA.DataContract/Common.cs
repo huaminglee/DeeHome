@@ -47,4 +47,10 @@ namespace DiHaoOA.DataContract
         public const string type_InformationAssistant = "InformationAssistant";
         public const string type_Customer = "Customer";
     }
-}
+
+    public struct Approvaler
+    {
+        public const string DesignerManager = "DesignerManager";
+        public const string MarketingManager = "MarketingManager";
+    }
+}   

@@ -195,6 +195,12 @@
     <Compile Include="Controls\OrderDetail.Designer.cs">
       <DependentUpon>OrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OrderDetailForManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderDetailForManager.Designer.cs">
+      <DependentUpon>OrderDetailForManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OrderList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OrderDetail.resx">
       <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderDetailForManager.resx">
+      <DependentUpon>OrderDetailForManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>

@@ -49,6 +49,11 @@ namespace DiHaoOA
                 customerTrace.ClearSearchContent();
                 
             }
+            if (menu == DiHaoMenu.CustomerChat)
+            {
+                ShowSpecificMenu();
+
+            }
         }
 
         private void ShowSpecificMenu()

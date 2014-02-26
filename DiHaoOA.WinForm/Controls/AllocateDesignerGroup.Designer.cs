@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pMain = new System.Windows.Forms.Panel();
-            this.cbDesignerGroup = new System.Windows.Forms.ComboBox();
+            this.lblSuccessMsg = new System.Windows.Forms.Label();
+            this.cbDesinger = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbDesinger = new System.Windows.Forms.ComboBox();
+            this.cbDesingerGroup = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblSuccessMsg = new System.Windows.Forms.Label();
             this.pMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +46,11 @@
             this.pMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
             this.pMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pMain.Controls.Add(this.lblSuccessMsg);
-            this.pMain.Controls.Add(this.cbDesignerGroup);
+            this.pMain.Controls.Add(this.cbDesinger);
             this.pMain.Controls.Add(this.label2);
             this.pMain.Controls.Add(this.btnConfirm);
             this.pMain.Controls.Add(this.panel1);
-            this.pMain.Controls.Add(this.cbDesinger);
+            this.pMain.Controls.Add(this.cbDesingerGroup);
             this.pMain.Controls.Add(this.label1);
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
@@ -58,17 +58,28 @@
             this.pMain.Size = new System.Drawing.Size(451, 301);
             this.pMain.TabIndex = 2;
             // 
-            // cbDesignerGroup
+            // lblSuccessMsg
             // 
-            this.cbDesignerGroup.DisplayMember = "GroupName";
-            this.cbDesignerGroup.FormattingEnabled = true;
-            this.cbDesignerGroup.Items.AddRange(new object[] {
+            this.lblSuccessMsg.AutoSize = true;
+            this.lblSuccessMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(70)))));
+            this.lblSuccessMsg.Location = new System.Drawing.Point(176, 191);
+            this.lblSuccessMsg.Name = "lblSuccessMsg";
+            this.lblSuccessMsg.Size = new System.Drawing.Size(53, 12);
+            this.lblSuccessMsg.TabIndex = 11;
+            this.lblSuccessMsg.Text = "分配成功";
+            this.lblSuccessMsg.Visible = false;
+            // 
+            // cbDesinger
+            // 
+            this.cbDesinger.DisplayMember = "Name";
+            this.cbDesinger.FormattingEnabled = true;
+            this.cbDesinger.Items.AddRange(new object[] {
             "Name"});
-            this.cbDesignerGroup.Location = new System.Drawing.Point(189, 74);
-            this.cbDesignerGroup.Name = "cbDesignerGroup";
-            this.cbDesignerGroup.Size = new System.Drawing.Size(121, 20);
-            this.cbDesignerGroup.TabIndex = 6;
-            this.cbDesignerGroup.ValueMember = "GroupId";
+            this.cbDesinger.Location = new System.Drawing.Point(189, 74);
+            this.cbDesinger.Name = "cbDesinger";
+            this.cbDesinger.Size = new System.Drawing.Size(121, 20);
+            this.cbDesinger.TabIndex = 6;
+            this.cbDesinger.ValueMember = "EmployeeId";
             // 
             // label2
             // 
@@ -78,7 +89,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 12);
             this.label2.TabIndex = 5;
-            this.label2.Text = "选择主案部:";
+            this.label2.Text = "选择设计师:";
             // 
             // btnConfirm
             // 
@@ -115,17 +126,17 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "分配设计师";
             // 
-            // cbDesinger
+            // cbDesingerGroup
             // 
-            this.cbDesinger.DisplayMember = "Name";
-            this.cbDesinger.FormattingEnabled = true;
-            this.cbDesinger.Items.AddRange(new object[] {
+            this.cbDesingerGroup.DisplayMember = "GroupName";
+            this.cbDesingerGroup.FormattingEnabled = true;
+            this.cbDesingerGroup.Items.AddRange(new object[] {
             "Name"});
-            this.cbDesinger.Location = new System.Drawing.Point(189, 126);
-            this.cbDesinger.Name = "cbDesinger";
-            this.cbDesinger.Size = new System.Drawing.Size(121, 20);
-            this.cbDesinger.TabIndex = 1;
-            this.cbDesinger.ValueMember = "EmployeeId";
+            this.cbDesingerGroup.Location = new System.Drawing.Point(189, 126);
+            this.cbDesingerGroup.Name = "cbDesingerGroup";
+            this.cbDesingerGroup.Size = new System.Drawing.Size(121, 20);
+            this.cbDesingerGroup.TabIndex = 1;
+            this.cbDesingerGroup.ValueMember = "GroupId";
             // 
             // label1
             // 
@@ -135,18 +146,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "选择设计师:";
-            // 
-            // lblSuccessMsg
-            // 
-            this.lblSuccessMsg.AutoSize = true;
-            this.lblSuccessMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(70)))));
-            this.lblSuccessMsg.Location = new System.Drawing.Point(176, 191);
-            this.lblSuccessMsg.Name = "lblSuccessMsg";
-            this.lblSuccessMsg.Size = new System.Drawing.Size(53, 12);
-            this.lblSuccessMsg.TabIndex = 11;
-            this.lblSuccessMsg.Text = "分配成功";
-            this.lblSuccessMsg.Visible = false;
+            this.label1.Text = "选择主案部:";
             // 
             // AllocateDesignerGroup
             // 
@@ -167,12 +167,12 @@
         #endregion
 
         private System.Windows.Forms.Panel pMain;
-        private System.Windows.Forms.ComboBox cbDesignerGroup;
+        private System.Windows.Forms.ComboBox cbDesinger;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbDesinger;
+        private System.Windows.Forms.ComboBox cbDesingerGroup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSuccessMsg;
     }

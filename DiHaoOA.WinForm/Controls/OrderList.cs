@@ -17,7 +17,7 @@ namespace DiHaoOA.WinForm.Controls
         DataSet datas;
         CustomerManager customerManager;
         OrderManager orderManager;
-        OrderDetail orderDetail;
+        OrderDetailForManager orderDetail;
 
         public OrderList()
         {
@@ -66,7 +66,6 @@ namespace DiHaoOA.WinForm.Controls
             if (e.RowIndex < 0)
                 return;
             DataGridViewRow dgr = dgOrderList.Rows[e.RowIndex];
-            //dgr.Cells["TaskNumber"].Value.ToString().Split(' ')[1]
             if (e.ColumnIndex == 2)
             {
                 string orderNumber = datas.Tables[0].Rows[e.RowIndex][e.ColumnIndex + 1].ToString();
@@ -125,7 +124,7 @@ namespace DiHaoOA.WinForm.Controls
         {
             if (!ParentPanel.Contains(orderDetail))
             {
-                orderDetail = new OrderDetail();
+                orderDetail = new OrderDetailForManager();
                 orderDetail.Name = "OrderDetailForDesignerManager";
                 orderDetail.ParentPanel = ParentPanel;
                 orderDetail.NavigationBar = NavigationBar;

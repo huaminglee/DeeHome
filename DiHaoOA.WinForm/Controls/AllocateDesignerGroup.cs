@@ -23,7 +23,7 @@ namespace DiHaoOA.WinForm.Controls
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            int groupId = Convert.ToInt32(cbDesignerGroup.SelectedValue);
+            int groupId = Convert.ToInt32(cbDesingerGroup.SelectedValue);
             string designerId = Convert.ToString(cbDesinger.SelectedValue);
             empManager.AllocateDesignerToGroup(designerId, groupId);
             lblSuccessMsg.Visible = true;
@@ -31,8 +31,13 @@ namespace DiHaoOA.WinForm.Controls
 
         private void AllocateDesignerGroup_Load(object sender, EventArgs e)
         {
+            cbDesingerGroup.DataSource = empManager.GetEmployeeGroup().Tables[0];
             cbDesinger.DataSource = empManager.GetDesigner().Tables[0];
-            cbDesignerGroup.DataSource = empManager.GetEmployeeGroup().Tables[0];
+        }
+
+        public void ClearContent()
+        {
+            lblSuccessMsg.Visible = false;
         }
     }
 }
