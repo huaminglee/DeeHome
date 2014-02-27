@@ -65,19 +65,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>axKRXSWYpOTAJA1HjAucl6IO56Y=</dsig:DigestValue>
+        <dsig:DigestValue>/JwgAZ9SoS2oYcEJPZLBkRSOQGs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="95232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="96768">
       <assemblyIdentity name="DiHaoOA.DataContract" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+yUxbOj4nPdOqM8YQuHVm1eUqfU=</dsig:DigestValue>
+        <dsig:DigestValue>kAZ6YUfHNMuE7Z6OdfRGDQbnDHA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,19 +89,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>CPro63UgfBVp0cLU/xqu/xTpDYQ=</dsig:DigestValue>
+        <dsig:DigestValue>/oeyGS+kLRxFqvm9FjcFHdydR4M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="465408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="466432">
       <assemblyIdentity name="DiHaoOA.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vNBVVKNqDck+X/T/kVlmahWNuzQ=</dsig:DigestValue>
+        <dsig:DigestValue>spcx7ef9FdcCpJvZhR9xL8fh1AA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

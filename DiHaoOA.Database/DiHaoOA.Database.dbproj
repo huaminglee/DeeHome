@@ -212,5 +212,8 @@
     <Build Include="Tables\EmployeeGroup.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Tables\DesignerRevisit.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

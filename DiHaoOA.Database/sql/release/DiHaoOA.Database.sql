@@ -10,14 +10,13 @@ SET NUMERIC_ROUNDABORT OFF;
 
 GO
 :setvar DatabaseName "DiHaoOA"
-:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
-:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\"
-
-GO
-USE [master]
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA\"
 
 GO
 :on error exit
+GO
+USE [master]
 GO
 IF (DB_ID(N'$(DatabaseName)') IS NOT NULL
     AND DATABASEPROPERTYEX(N'$(DatabaseName)','Status') <> N'ONLINE')
@@ -148,7 +147,6 @@ ELSE
 
 GO
 USE [$(DatabaseName)]
-
 GO
 IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
     EXECUTE sp_fulltext_database 'enable';
@@ -227,6 +225,20 @@ CREATE TABLE [dbo].[CustomerRevisit] (
     [RevisitDateTime] DATETIME       NULL,
     [CustomerOrderId] INT            NULL,
     CONSTRAINT [PK_CustomerRevisit] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
+) ON [PRIMARY];
+
+
+GO
+PRINT N'Creating [dbo].[DesigerRevisit]...';
+
+
+GO
+CREATE TABLE [dbo].[DesigerRevisit] (
+    [Id]              INT            IDENTITY (1, 1) NOT NULL,
+    [RevisitContent]  NVARCHAR (MAX) NULL,
+    [RevisitDateTime] DATETIME       NULL,
+    [OrderId]         INT            NULL,
+    CONSTRAINT [PK_DesigerRevisit] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
 
 
@@ -362,6 +374,15 @@ PRINT N'Creating FK_CustomerRevisit_Customer...';
 GO
 ALTER TABLE [dbo].[CustomerRevisit] WITH NOCHECK
     ADD CONSTRAINT [FK_CustomerRevisit_Customer] FOREIGN KEY ([CustomerOrderId]) REFERENCES [dbo].[CustomerOrder] ([OrderId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+GO
+PRINT N'Creating FK_DesigerRevisit_CustomerOrder1...';
+
+
+GO
+ALTER TABLE [dbo].[DesigerRevisit] WITH NOCHECK
+    ADD CONSTRAINT [FK_DesigerRevisit_CustomerOrder1] FOREIGN KEY ([OrderId]) REFERENCES [dbo].[CustomerOrder] ([OrderId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
 GO
@@ -1154,6 +1175,8 @@ ALTER TABLE [dbo].[Customer] WITH CHECK CHECK CONSTRAINT [FK_Customer_Informatio
 ALTER TABLE [dbo].[CustomerOrder] WITH CHECK CHECK CONSTRAINT [FK_CustomerOrder_Employee];
 
 ALTER TABLE [dbo].[CustomerRevisit] WITH CHECK CHECK CONSTRAINT [FK_CustomerRevisit_Customer];
+
+ALTER TABLE [dbo].[DesigerRevisit] WITH CHECK CHECK CONSTRAINT [FK_DesigerRevisit_CustomerOrder1];
 
 ALTER TABLE [dbo].[Employee] WITH CHECK CHECK CONSTRAINT [FK_Employee_EmployeeGroup];
 

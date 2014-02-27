@@ -16,6 +16,7 @@ namespace DiHaoOA.DataContract
         public const string OnChatting = "在谈";
         public const string SubmittedNotAllowed = "提交不准";
         public const string SubmittedNotSigned = "提交未签";
+        public const string SubmittedSigned = "提交已签";
         public const string Signed = "已签";
         public const string NotSigned = "未签";
         public const string Denied = "不准";
@@ -46,6 +47,7 @@ namespace DiHaoOA.DataContract
     {
         public const string type_InformationAssistant = "InformationAssistant";
         public const string type_Customer = "Customer";
+        public const string type_Desinger = "Designer";
     }
 
     public struct Approvaler

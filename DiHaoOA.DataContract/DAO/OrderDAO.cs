@@ -120,7 +120,8 @@ namespace DiHaoOA.DataContract.DAO
                         order.OrderNumber = reader.GetInt32(0);
                         order.RecordDate = reader.GetDateTime(1);
                         //order.InformationAssistant = editMessengerDao.GetInformationAssistantById(reader.GetInt32(2));
-                        //order.Designer = empDao.GetEmployeeById(reader.GetString(3));
+                        string designerId = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                        order.Designer = empDao.GetEmployeeById(designerId);
                         order.OrderStatus = reader.GetString(3);
                         order.Customers = GetCustomerById(reader.GetInt32(4));
                         order.Description = reader.IsDBNull(5) ? "" : reader.GetString(5);

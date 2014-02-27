@@ -22,6 +22,7 @@ namespace DiHaoOA.WinForm
         RevisitPopUpManager revisitPopUpManager;
         public int informationAssistantId;
         public int customerOrderId;
+        public string designerId;
         public string type;
 
         public ReVisitPopUp()
@@ -50,8 +51,12 @@ namespace DiHaoOA.WinForm
             {
                 revisitPopUpManager.SaveRevisit(txtContent.Text, DateTime.Now, informationAssistantId);
             }
-            else {
+            else if (type == VisitType.type_Customer)
+            {
                 revisitPopUpManager.SaveCustomerRevisit(txtContent.Text, DateTime.Now, customerOrderId);
+            }
+            else {
+                revisitPopUpManager.SaveDesignerRevisit(txtContent.Text, DateTime.Now, customerOrderId);
             }
         }
 

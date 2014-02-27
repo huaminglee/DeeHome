@@ -209,3 +209,6 @@ D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.Alloca
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.AllocateDesignerGroup.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetailForManager.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetail.resources
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.AllocateDesignerGroup.resources
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetailForManager.resources
+F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.AllocateOrderPopUp.resources
