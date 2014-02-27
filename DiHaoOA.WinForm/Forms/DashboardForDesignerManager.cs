@@ -17,6 +17,8 @@ namespace DiHaoOA.WinForm.Forms
     public partial class DashboardForDesignerManager : BaseForm
     {
         OrderList orderList;
+        ApprovalList approvalList;
+        AllocateDesignerGroup allocateDesignerGroup;
         const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
 
         public DashboardForDesignerManager()
@@ -71,14 +73,24 @@ namespace DiHaoOA.WinForm.Forms
             if (menu == DiHaoMenu.Manager)
             {
                 ShowSpecificMenu();
-                AddApprovalList(pro_ApprovalListForMarketingManager);
-                orderList.ClearSearchText();
-                orderList.ReLoadData();
+                AddApprovalList();
+                approvalList.ClearSearchText();
+                approvalList.ReLoadData();
             }
-           
+            if (menu == DiHaoMenu.Allocate)
+            {
+                ShowSpecificMenu();
+                AddAllocateDesignerGroup();
+                allocateDesignerGroup.ClearContent();
+            }
+            if (menu == DiHaoMenu.CustomerChat)
+            {
+                ShowSpecificMenu();
+                AddOrderList(btn.Name);
+            }
         }
 
-        private void AddApprovalList(string pro_ApprovalListForMarketingManager)
+        private void AddOrderList(string status)
         {
             if (!panelContent.Contains(orderList))
             {
@@ -91,10 +103,44 @@ namespace DiHaoOA.WinForm.Forms
                 orderList.Dock = DockStyle.Fill;
                 pMainContent.Controls.Add(orderList);
             }
+            orderList.orderStatus = status;
+            orderList.ReLoadData();
+            orderList.Show();
+
+        }
+
+        private void AddAllocateDesignerGroup()
+        {
+            if (!panelContent.Contains(allocateDesignerGroup))
+            {
+                allocateDesignerGroup = new AllocateDesignerGroup();
+                allocateDesignerGroup.Name = DiHaoUserControl.OrderList;
+                allocateDesignerGroup.ParentPanel = pMainContent; ;
+                allocateDesignerGroup.NavigationBar = navBarForDesignerManager;
+                allocateDesignerGroup.employee = employee;
+                allocateDesignerGroup.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(allocateDesignerGroup);
+            }
             else
             {
-                orderList.Show();
+                allocateDesignerGroup.Show();
             }
+        }
+
+        private void AddApprovalList()
+        {
+            if (!panelContent.Contains(approvalList))
+            {
+                approvalList = new ApprovalList();
+                approvalList.ParentPanel = pMainContent; ;
+                approvalList.procedureName = pro_ApprovalListForMarketingManager;
+                approvalList.approvaler = Approvaler.DesignerManager;
+                approvalList.NavigationBar = navBarForDesignerManager;
+                approvalList.employee = employee;
+                approvalList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(approvalList);
+            }
+            approvalList.Show();
         }
 
         private void ShowSpecificMenu()
@@ -143,6 +189,14 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            dashboardEntry.ClearContent();
+            dashboardEntry.Show();
+            dashboardEntry.SetDefault();
+            this.Hide();
         }
     }
 }

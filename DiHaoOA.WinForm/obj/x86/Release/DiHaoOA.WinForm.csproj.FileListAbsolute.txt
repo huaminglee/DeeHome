@@ -131,7 +131,6 @@ D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.Controls.ModifyCusto
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.Controls.ModifyCustomerback.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.MySubordinate.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.Controls.NavBar.resources
-D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetail.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderList.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.PagingControl.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.UnSubordinateCustomer.resources
@@ -206,3 +205,7 @@ F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.ReVisit
 F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.csproj.GenerateResource.Cache
 F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.exe.manifest
 F:\WorkSpace\Git\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.application
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.AllocateOrderPopUp.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.AllocateDesignerGroup.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetailForManager.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderDetail.resources

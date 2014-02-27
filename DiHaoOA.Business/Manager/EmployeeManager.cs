@@ -32,5 +32,24 @@ namespace DiHaoOA.Business
             return employeeDao.GetAll();
         }
 
-    }
+        public DataSet GetEmployeeGroup()
+        {
+            return employeeDao.GetEmployeeGroup();
+        }
+
+        public DataSet GetDesignerByGroupId(int groupId)
+        {
+            return employeeDao.GetDesignerByGroupId(groupId);
+        }
+
+        public DataSet GetDesigner()
+        {
+            return employeeDao.GetDesigner();
+        }
+
+        public void AllocateDesignerToGroup(string designerId, int groupId)
+        {
+            employeeDao.AllocateDesignerToGroup(designerId, groupId);
+        }
+    }   
 }

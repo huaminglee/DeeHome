@@ -127,7 +127,7 @@ namespace DiHaoOA.WinForm
             if (!panelContent.Contains(approvalList))
             {
                 approvalList = new ApprovalList();
-                approvalList.Name = DiHaoUserControl.ApprovalList;
+                approvalList.approvaler = Approvaler.MarketingManager;
                 approvalList.procedureName = pro_ApprovalListForMarketingManager;
                 approvalList.ParentPanel = pMainContent; ;
                 approvalList.NavigationBar = navBarForSalesManager;
@@ -135,11 +135,7 @@ namespace DiHaoOA.WinForm
                 approvalList.Dock = DockStyle.Fill;
                 pMainContent.Controls.Add(approvalList);
             }
-            else
-            {
-                approvalList.Show();
-            }
-            approvalList.procedureName = pro_ApprovalListForMarketingManager;
+            approvalList.Show();
         }
 
 

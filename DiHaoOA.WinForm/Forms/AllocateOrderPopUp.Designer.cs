@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pMain = new System.Windows.Forms.Panel();
+            this.cbDesignerGroup = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.cbDesinger = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbDesignerGroup = new System.Windows.Forms.ComboBox();
             this.pMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,21 +54,45 @@
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(414, 331);
+            this.pMain.Size = new System.Drawing.Size(414, 306);
             this.pMain.TabIndex = 1;
+            // 
+            // cbDesignerGroup
+            // 
+            this.cbDesignerGroup.DisplayMember = "GroupName";
+            this.cbDesignerGroup.FormattingEnabled = true;
+            this.cbDesignerGroup.Items.AddRange(new object[] {
+            "Name"});
+            this.cbDesignerGroup.Location = new System.Drawing.Point(189, 74);
+            this.cbDesignerGroup.Name = "cbDesignerGroup";
+            this.cbDesignerGroup.Size = new System.Drawing.Size(121, 20);
+            this.cbDesignerGroup.TabIndex = 6;
+            this.cbDesignerGroup.ValueMember = "GroupId";
+            this.cbDesignerGroup.SelectedIndexChanged += new System.EventHandler(this.cbDesignerGroup_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(102)))), ((int)(((byte)(124)))));
+            this.label2.Location = new System.Drawing.Point(113, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 12);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "选择主案部:";
             // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(159)))), ((int)(((byte)(239)))));
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirm.Location = new System.Drawing.Point(189, 192);
+            this.btnConfirm.Location = new System.Drawing.Point(189, 177);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(56, 27);
+            this.btnConfirm.Size = new System.Drawing.Size(56, 25);
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // panel1
             // 
@@ -78,7 +102,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 29);
+            this.panel1.Size = new System.Drawing.Size(412, 27);
             this.panel1.TabIndex = 2;
             // 
             // label4
@@ -103,55 +127,39 @@
             this.lblExit.Size = new System.Drawing.Size(15, 13);
             this.lblExit.TabIndex = 1;
             this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // cbDesinger
             // 
+            this.cbDesinger.DisplayMember = "Name";
             this.cbDesinger.FormattingEnabled = true;
             this.cbDesinger.Items.AddRange(new object[] {
             "Name"});
-            this.cbDesinger.Location = new System.Drawing.Point(189, 137);
+            this.cbDesinger.Location = new System.Drawing.Point(189, 126);
             this.cbDesinger.Name = "cbDesinger";
-            this.cbDesinger.Size = new System.Drawing.Size(121, 21);
+            this.cbDesinger.Size = new System.Drawing.Size(121, 20);
             this.cbDesinger.TabIndex = 1;
+            this.cbDesinger.ValueMember = "EmployeeId";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(102)))), ((int)(((byte)(124)))));
-            this.label1.Location = new System.Drawing.Point(113, 140);
+            this.label1.Location = new System.Drawing.Point(113, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "选择设计师:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(102)))), ((int)(((byte)(124)))));
-            this.label2.Location = new System.Drawing.Point(113, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "选择主案部:";
-            // 
-            // cbDesignerGroup
-            // 
-            this.cbDesignerGroup.FormattingEnabled = true;
-            this.cbDesignerGroup.Items.AddRange(new object[] {
-            "Name"});
-            this.cbDesignerGroup.Location = new System.Drawing.Point(189, 80);
-            this.cbDesignerGroup.Name = "cbDesignerGroup";
-            this.cbDesignerGroup.Size = new System.Drawing.Size(121, 21);
-            this.cbDesignerGroup.TabIndex = 6;
-            // 
             // AllocateOrderPopUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 331);
+            this.ClientSize = new System.Drawing.Size(414, 306);
             this.Controls.Add(this.pMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AllocateOrderPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AllocateOrderPopUp";
             this.Load += new System.EventHandler(this.AllocateOrderPopUp_Load);
             this.pMain.ResumeLayout(false);
