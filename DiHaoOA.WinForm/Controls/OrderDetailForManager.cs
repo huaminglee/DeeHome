@@ -51,11 +51,12 @@ namespace DiHaoOA.WinForm.Controls
             lblCustomerType.Text = order.Customers.CustomerType;
             lblProviderType.Text = order.Customers.ProviderType;
             lblDecorateDate.Text = order.Customers.AppointDateTime;
+            lblDesinger.Text = order.Designer.Name;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (this.Name == "OrderDetailForDesignerManager")
+            if (this.Name == Approvaler.DesignerManager)
             {
                 AllocateOrderToDesigner();
             }

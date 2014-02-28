@@ -49,8 +49,9 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCity = new System.Windows.Forms.Label();
             this.lblImformationer = new System.Windows.Forms.Label();
-            this.labelDesinger = new System.Windows.Forms.Label();
+            this.lblDesinger = new System.Windows.Forms.Label();
             this.lblRecordDateTime = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblProviderType = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lblRidePath = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblCustomerType = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -78,11 +80,9 @@
             this.lblEmployee = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblDecorateAddress = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
             this.lblWorkPlace = new System.Windows.Forms.Label();
             this.lblUsableArea = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblRidePath = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -211,7 +211,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDescription, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label34, 4, 5);
@@ -224,7 +224,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label15, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblImformationer, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelDesinger, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblDesinger, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblRecordDateTime, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label16, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label10, 2, 2);
@@ -402,6 +402,16 @@
             this.panel2.Size = new System.Drawing.Size(181, 27);
             this.panel2.TabIndex = 6;
             // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.lblCity.Location = new System.Drawing.Point(-1, 6);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(40, 14);
+            this.lblCity.TabIndex = 12;
+            this.lblCity.Text = "label11";
+            // 
             // lblImformationer
             // 
             this.lblImformationer.AutoSize = true;
@@ -415,18 +425,18 @@
             this.lblImformationer.Text = "暂无";
             this.lblImformationer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelDesinger
+            // lblDesinger
             // 
-            this.labelDesinger.AutoSize = true;
-            this.labelDesinger.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDesinger.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.labelDesinger.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.labelDesinger.Location = new System.Drawing.Point(119, 30);
-            this.labelDesinger.Name = "labelDesinger";
-            this.labelDesinger.Size = new System.Drawing.Size(255, 27);
-            this.labelDesinger.TabIndex = 45;
-            this.labelDesinger.Text = "暂无";
-            this.labelDesinger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDesinger.AutoSize = true;
+            this.lblDesinger.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesinger.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.lblDesinger.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            this.lblDesinger.Location = new System.Drawing.Point(119, 30);
+            this.lblDesinger.Name = "lblDesinger";
+            this.lblDesinger.Size = new System.Drawing.Size(255, 27);
+            this.lblDesinger.TabIndex = 45;
+            this.lblDesinger.Text = "暂无";
+            this.lblDesinger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRecordDateTime
             // 
@@ -632,6 +642,17 @@
             this.panel10.Size = new System.Drawing.Size(223, 26);
             this.panel10.TabIndex = 68;
             // 
+            // lblRidePath
+            // 
+            this.lblRidePath.AutoSize = true;
+            this.lblRidePath.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.lblRidePath.Location = new System.Drawing.Point(0, 6);
+            this.lblRidePath.Name = "lblRidePath";
+            this.lblRidePath.Size = new System.Drawing.Size(40, 14);
+            this.lblRidePath.TabIndex = 80;
+            this.lblRidePath.Text = "label11";
+            this.lblRidePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -729,16 +750,6 @@
             this.lblDecorateAddress.Text = "label11";
             this.lblDecorateAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.lblCity.Location = new System.Drawing.Point(-1, 6);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(40, 14);
-            this.lblCity.TabIndex = 12;
-            this.lblCity.Text = "label11";
-            // 
             // lblWorkPlace
             // 
             this.lblWorkPlace.AutoSize = true;
@@ -775,25 +786,14 @@
             this.lblEmail.Text = "label11";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblRidePath
-            // 
-            this.lblRidePath.AutoSize = true;
-            this.lblRidePath.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.lblRidePath.Location = new System.Drawing.Point(0, 6);
-            this.lblRidePath.Name = "lblRidePath";
-            this.lblRidePath.Size = new System.Drawing.Size(40, 14);
-            this.lblRidePath.TabIndex = 80;
-            this.lblRidePath.Text = "label11";
-            this.lblRidePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OrderDetail
+            // OrderDetailForManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
-            this.Name = "OrderDetail";
+            this.Name = "OrderDetailForManager";
             this.Size = new System.Drawing.Size(1005, 503);
             this.Load += new System.EventHandler(this.OrderDetail_Load);
             this.panel6.ResumeLayout(false);
@@ -839,7 +839,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblImformationer;
-        private System.Windows.Forms.Label labelDesinger;
+        private System.Windows.Forms.Label lblDesinger;
         public System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label lblRecordDateTime;
         private System.Windows.Forms.Label label16;

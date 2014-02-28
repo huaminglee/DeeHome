@@ -81,6 +81,35 @@ namespace DiHaoOA.DataContract.DAO
             }
         }
 
+        public void SaveDesignerRevisit(string content, DateTime dateTime, int orderId)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                string commandText = string.Empty;
+                cmd.Connection = conn;
+
+                commandText = @"Insert into 
+                                    dbo.DesigerRevisit values(@content,@dateTime,@orderId)";
+                cmd.CommandText = commandText;
+                try
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@content", content);
+                    cmd.Parameters.AddWithValue("@dateTime", dateTime.ToString());
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         public DataSet GetAll(int informationAssistantId)
         {
@@ -128,6 +157,40 @@ namespace DiHaoOA.DataContract.DAO
                 {
                     conn.Open();
                     cmd.Parameters.AddWithValue("@customerOrderId", customerOrderId);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(result);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public DataSet GetDesignerVisitAll(string designgerId, int orderId)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Select [RevisitContent] as RevisitContent,[RevisitDateTime] as RevisitTime
+                                  from dbo.DesigerRevisit r,dbo.CustomerOrder o
+                                  where o.designerId=@designerId
+                                  and o.OrderId = @orderId
+                                  and r.OrderId=o.OrderId
+                                  order by RevisitDateTime desc";
+                try
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@DesignerId",designgerId);
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(result);
                 }

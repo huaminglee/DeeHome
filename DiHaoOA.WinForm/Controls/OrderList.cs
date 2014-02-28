@@ -18,6 +18,7 @@ namespace DiHaoOA.WinForm.Controls
         CustomerManager customerManager;
         OrderManager orderManager;
         OrderDetailForManager orderDetail;
+        OrderDetail orderDetails;
 
         public OrderList()
         {
@@ -122,21 +123,21 @@ namespace DiHaoOA.WinForm.Controls
 
         private void LoadOrderDetail(int orderId)
         {
-            if (!ParentPanel.Contains(orderDetail))
+            if (!ParentPanel.Contains(orderDetails))
             {
-                orderDetail = new OrderDetailForManager();
-                orderDetail.Name = "OrderDetailForDesignerManager";
-                orderDetail.ParentPanel = ParentPanel;
-                orderDetail.NavigationBar = NavigationBar;
-                orderDetail.employee = employee;
-                orderDetail.Dock = DockStyle.Fill;
-                ParentPanel.Controls.Add(orderDetail);
+                orderDetails = new OrderDetail();
+                orderDetails.Name = "OrderDetailForDesigner";
+                orderDetails.ParentPanel = ParentPanel;
+                orderDetails.NavigationBar = NavigationBar;
+                orderDetails.employee = employee;
+                orderDetails.Dock = DockStyle.Fill;
+                ParentPanel.Controls.Add(orderDetails);
             }
-            orderDetail.order = orderManager.GetOrderById(orderId);
-            orderDetail.Show();
-            orderDetail.ClearContent();
-            orderDetail.employee = employee;
-            orderDetail.LoadDetailInformation(orderId);
+            orderDetails.order = orderManager.GetOrderById(orderId);
+            orderDetails.Show();
+            orderDetails.ClearContent();
+            orderDetails.employee = employee;
+            orderDetails.LoadDetailInformation();
         }
 
         private void dgOrderList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
