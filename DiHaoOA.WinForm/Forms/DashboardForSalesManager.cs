@@ -27,6 +27,7 @@ namespace DiHaoOA.WinForm
         InformationAssistantList informationAssistantList;
         MySubordinate mySubordinate;
         ApprovalList approvalList;
+        OrderList orderList;
 
         const string pro_AllCustomersPaging = "pro_AllCustomersPaging";
         const string pro_DeletedCustomersPaging = "pro_DeletedCustomersPaging";
@@ -63,6 +64,31 @@ namespace DiHaoOA.WinForm
             {
                 HandManagerMenu(btn.Name);
             }
+            if (menu == DiHaoMenu.CustomerChat)
+            {
+                ShowSpecificMenu();
+                AddOrderList(btn.Name);
+            }
+
+        }
+
+        private void AddOrderList(string status)
+        {
+            if (!panelContent.Contains(orderList))
+            {
+                orderList = new OrderList();
+                orderList.Name = DiHaoUserControl.OrderList;
+                orderList.orderStatus = OrderStatus.SubmittedToDesigner;
+                orderList.ParentPanel = pMainContent; ;
+                orderList.NavigationBar = navBarForSalesManager;
+                orderList.employee = employee;
+                orderList.Dock = DockStyle.Fill;
+                orderList.role = Roles.Designer;
+                pMainContent.Controls.Add(orderList);
+            }
+            orderList.orderStatus = status;
+            orderList.ReLoadData();
+            orderList.Show();
 
         }
 

@@ -22,6 +22,7 @@ namespace DiHaoOA
     {
         AllList allList;
         CustomerTrace customerTrace;
+        OrderList orderList;
 
         public DashboardForSalesMan()
         {
@@ -52,7 +53,7 @@ namespace DiHaoOA
             if (menu == DiHaoMenu.CustomerChat)
             {
                 ShowSpecificMenu();
-
+                AddOrderList(btn.Name);
             }
         }
 
@@ -123,6 +124,25 @@ namespace DiHaoOA
             customerTrace.employee = employee;
             customerTrace.Dock = DockStyle.Fill;
             customerTrace.Show();
+        }
+
+        private void AddOrderList(string status)
+        {
+            if (!panelContent.Contains(orderList))
+            {
+                orderList = new OrderList();
+                orderList.Name = DiHaoUserControl.OrderList;
+                orderList.ParentPanel = pMainContent; ;
+                orderList.NavigationBar = navBarForSalesMan;
+                orderList.employee = employee;
+                orderList.Dock = DockStyle.Fill;
+                orderList.role = Roles.InformationAssistant;
+                pMainContent.Controls.Add(orderList);
+            }
+            orderList.orderStatus = status;
+            orderList.ReLoadData();
+            orderList.Show();
+
         }
 
         public void SetUserInfor(string userName)

@@ -227,18 +227,49 @@ namespace DiHaoOA.DataContract.DAO
             }
         }
 
-        public DataSet GetOrderByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        public void UpdateOrderStatus(int orderId, string orderStatus,string submittedBy)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Update CustomerOrder
+                                    Set OrderStatus = @OrderStatus,
+                                    SubmittedBy = @SubmittedBy
+                                    Where OrderId = @OrderId";
+                cmd.Parameters.AddWithValue("@OrderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@OrderId", orderId);
+                cmd.Parameters.AddWithValue("@SubmittedBy",submittedBy);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+            }
+        }
+
+        public DataSet GetOrderByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus,string employeeId,string procedureName)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
             {
                 DataSet result = new DataSet();
-                SqlCommand cmd = new SqlCommand("pro_GetOrderByOrderStatus", conn);
+                SqlCommand cmd = new SqlCommand(procedureName, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
                 cmd.Parameters.AddWithValue("@pageSize", pageSize);
                 cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
                 cmd.Parameters.AddWithValue("@input", input);
                 cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
                 cmd.Parameters.AddWithValue("@TotalRecords", 0);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 try
@@ -261,7 +292,7 @@ namespace DiHaoOA.DataContract.DAO
         }
 
 
-        public int GetTotalRecords(int pageIndex, int pageSize, string input, string orderStatus)
+        public int GetTotalRecords(int pageIndex, int pageSize, string input, string orderStatus, string employeeId, string procedureName)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
             {
@@ -274,10 +305,12 @@ namespace DiHaoOA.DataContract.DAO
                 SqlParameter blackEmployeeIdP = cmd.Parameters.Add("@BlackEmployeeId", SqlDbType.NVarChar, 50);
                 SqlParameter totalRecordsP = cmd.Parameters.Add("@TotalRecords", SqlDbType.Int);
                 SqlParameter orderStatusP = cmd.Parameters.Add("@orderStatus",SqlDbType.NVarChar,50);
+                SqlParameter employeeIdP = cmd.Parameters.Add("@EmployeeId", SqlDbType.NVarChar,50);
                 pageIndexP.Value = pageIndex;
                 pageSizeP.Value = pageSize;
                 inputP.Value = input;
                 orderStatusP.Value = orderStatus;
+                employeeIdP.Value = employeeId;
                 blackEmployeeIdP.Value = DBHelper.GetBlackListEmployee();
                 totalRecordsP.Direction = ParameterDirection.Output;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -311,7 +344,9 @@ namespace DiHaoOA.DataContract.DAO
                 {
                     conn.Open();
                     cmd.CommandText = @"Update dbo.CustomerOrder
-                                    set DesignerId=@DesignerId,OrderStatus=N'在谈'
+                                    set DesignerId=@DesignerId,
+                                        OrderStatus=N'在谈',
+                                        AllocationDate=getdate() 
                                     where OrderId=@OrderId";
                     cmd.Parameters.AddWithValue("@DesignerId", designerId);
                     cmd.Parameters.AddWithValue("@OrderId", orderId);

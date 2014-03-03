@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DiHaoOA.Business.Manager;
 using DiHaoOA.Controls;
+using DiHaoOA.DataContract.Entity;
+using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Controls
 {
@@ -17,8 +19,9 @@ namespace DiHaoOA.WinForm.Controls
         DataSet datas;
         CustomerManager customerManager;
         OrderManager orderManager;
-        OrderDetailForManager orderDetail;
         OrderDetail orderDetails;
+        OrderDetailForIA orderDetailsForIA;
+        public string role = string.Empty;
 
         public OrderList()
         {
@@ -29,9 +32,19 @@ namespace DiHaoOA.WinForm.Controls
 
         private void GetDataSource(int _index, int _pageSize)
         {
-            DataSet ds = orderManager.GetOrderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus);
+            DataSet ds = null;
+            int totalRecords = 0;
+            if (role == Roles.Designer)
+            {
+                ds = orderManager.GetOrderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatus");
+                totalRecords = orderManager.GetTotalRecords(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatus");
+            }
+            else
+            {
+                ds = orderManager.GetOrderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatusForIA");
+                totalRecords = orderManager.GetTotalRecords(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatusForIA");
+            }
             datas = ds;
-            int totalRecords = orderManager.GetTotalRecords(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus);
             pagingForCustomer.TotalRecords = totalRecords;
             pagingForCustomer.pageIndex = _index;
             pagingForCustomer.SetDefaultData();
@@ -115,14 +128,44 @@ namespace DiHaoOA.WinForm.Controls
                         {
                             control.Visible = false;
                         }
-                        LoadOrderDetail(orderId);
+                        if (role == Roles.Designer)
+                        {
+                            LoadOrderDetail(orderId);
+                        }
+                        else
+                        {
+                            LoadOrderDetailForIA(orderId);
+                        }
+                        
                     }
                 }
             }
         }
 
+        private void LoadOrderDetailForIA(int orderId)
+        {
+            Order order = orderManager.GetOrderById(orderId);
+            if (!ParentPanel.Contains(orderDetailsForIA))
+            {
+                orderDetailsForIA = new OrderDetailForIA();
+                orderDetailsForIA.Name = "OrderDetailForIA";
+                orderDetailsForIA.ParentPanel = ParentPanel;
+                orderDetailsForIA.NavigationBar = NavigationBar;
+                orderDetailsForIA.employee = employee;
+                orderDetailsForIA.Dock = DockStyle.Fill;
+                orderDetailsForIA.order = order;
+                ParentPanel.Controls.Add(orderDetailsForIA);
+            }
+            orderDetailsForIA.order = order;
+            orderDetailsForIA.Show();
+            orderDetailsForIA.employee = employee;
+            orderDetailsForIA.LoadDetailInformation();
+            orderDetailsForIA.LoadReVisit();
+        }
+
         private void LoadOrderDetail(int orderId)
         {
+            Order order = orderManager.GetOrderById(orderId);
             if (!ParentPanel.Contains(orderDetails))
             {
                 orderDetails = new OrderDetail();
@@ -131,9 +174,10 @@ namespace DiHaoOA.WinForm.Controls
                 orderDetails.NavigationBar = NavigationBar;
                 orderDetails.employee = employee;
                 orderDetails.Dock = DockStyle.Fill;
+                orderDetails.order = order;
                 ParentPanel.Controls.Add(orderDetails);
             }
-            orderDetails.order = orderManager.GetOrderById(orderId);
+            orderDetails.order = order;
             orderDetails.Show();
             orderDetails.ClearContent();
             orderDetails.employee = employee;

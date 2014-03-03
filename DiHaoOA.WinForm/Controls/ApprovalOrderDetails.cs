@@ -6,26 +6,24 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DiHaoOA.Controls;
-using DiHaoOA.DataContract.Entity;
 using DiHaoOA.Business.Manager;
+using DiHaoOA.DataContract.Entity;
 using DiHaoOA.DataContract;
-using DiHaoOA.WinForm.Forms;
+using DiHaoOA.Controls;
 
 namespace DiHaoOA.WinForm.Controls
 {
-    public partial class OrderDetailForManager : BaseUserControl
+    public partial class ApprovalOrderDetails : BaseUserControl
     {
         OrderManager orderManager;
         public Order order;
-        AllocateOrderPopUp allocateOrderPopUp;
 
-        public OrderDetailForManager()
+
+        public ApprovalOrderDetails()
         {
             InitializeComponent();
             orderManager = new OrderManager();
         }
-
 
         public void ClearContent()
         {
@@ -55,26 +53,34 @@ namespace DiHaoOA.WinForm.Controls
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (this.Name == Approvaler.DesignerManager)
+            if (order.OrderStatus == OrderStatus.SubmittedNotAllowed)
             {
-                AllocateOrderToDesigner();
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedNotAllowedForMarketing);
             }
-            else
+            if (order.OrderStatus == OrderStatus.SubmittedNotSignedForDesign)
             {
-                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedToDesigner,Approvaler.MarketingManager);
-                lblMsg.Text = "*订单已提交给设计部经理，状态为提交订单";
-                lblMsg.Visible = true;
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedNotSignedForMarketing);
             }
-        }
-
-        private void AllocateOrderToDesigner()
-        {
-            if (allocateOrderPopUp == null)
+            if (order.OrderStatus == OrderStatus.SubmittedSignedForDesign)
             {
-                allocateOrderPopUp = new AllocateOrderPopUp();
-                allocateOrderPopUp.order = order;
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedSignedForMarketing);
             }
-            allocateOrderPopUp.Show();
+            if (order.OrderStatus == OrderStatus.SubmittedNotAllowedForMarketing)
+            {
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Denied);
+            }
+            if (order.OrderStatus == OrderStatus.SubmittedNotSignedForMarketing)
+            {
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.NotSigned);
+            }
+            if (order.OrderStatus == OrderStatus.SubmittedSignedForMarketing)
+            {
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Signed);
+            }
+            orderManager.UpdateOrderStatus(order.OrderId,order.OrderStatus,Approvaler.MarketingManager);
+            order = orderManager.GetOrderById(order.OrderId);
+            lblMsg.Text = "*订单已打回给业务员，状态为"+order.OrderStatus;
+            lblMsg.Visible = true;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -83,19 +89,6 @@ namespace DiHaoOA.WinForm.Controls
             lblMsg.Text = "*订单已打回给业务员，状态为被打回";
             lblMsg.Visible = true;
         }
-
-        private void OrderDetail_Load(object sender, EventArgs e)
-        {
-            if (this.Name == Approvaler.DesignerManager)
-            {
-                btnSubmit.Text = "分单";
-            }
-            else
-            {
-                btnSubmit.Text = "提交";
-            }
-        }
-
 
 
     }

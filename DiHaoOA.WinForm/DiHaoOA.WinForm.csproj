@@ -132,6 +132,12 @@
     <Compile Include="Controls\ApprovalList.Designer.cs">
       <DependentUpon>ApprovalList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ApprovalOrderDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ApprovalOrderDetails.Designer.cs">
+      <DependentUpon>ApprovalOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,11 +201,23 @@
     <Compile Include="Controls\OrderDetail.Designer.cs">
       <DependentUpon>OrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OrderDetailForIA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderDetailForIA.Designer.cs">
+      <DependentUpon>OrderDetailForIA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OrderDetailForManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\OrderDetailForManager.Designer.cs">
       <DependentUpon>OrderDetailForManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderInfor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderInfor.Designer.cs">
+      <DependentUpon>OrderInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\OrderList.cs">
       <SubType>UserControl</SubType>
@@ -330,6 +348,9 @@
     <EmbeddedResource Include="Controls\ApprovalList.resx">
       <DependentUpon>ApprovalList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ApprovalOrderDetails.resx">
+      <DependentUpon>ApprovalOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomerTrace.resx">
       <DependentUpon>CustomerTrace.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,8 +381,14 @@
     <EmbeddedResource Include="Controls\OrderDetail.resx">
       <DependentUpon>OrderDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderDetailForIA.resx">
+      <DependentUpon>OrderDetailForIA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OrderDetailForManager.resx">
       <DependentUpon>OrderDetailForManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderInfor.resx">
+      <DependentUpon>OrderInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>

@@ -37,19 +37,24 @@ namespace DiHaoOA.Business.Manager
             orderDao.UpdateOrderStatus(orderId, orderStatus);
         }
 
-        public DataSet GetOrderByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        public DataSet GetOrderByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus, string employeeId, string procedureName)
         {
-            return orderDao.GetOrderByOrderStatus(pageIndex, pageSize, input, orderStatus);
+            return orderDao.GetOrderByOrderStatus(pageIndex, pageSize, input, orderStatus,employeeId,procedureName);
         }
 
-        public int GetTotalRecords(int pageIndex, int pageSize, string input, string orderStatus)
+        public int GetTotalRecords(int pageIndex, int pageSize, string input, string orderStatus, string employeeId, string procedureName)
         {
-            return orderDao.GetTotalRecords(pageIndex, pageSize, input, orderStatus);
+            return orderDao.GetTotalRecords(pageIndex, pageSize, input, orderStatus, employeeId, procedureName);
         }
 
         public void AllocateOrderToDesigner(string designerId, int orderId)
         {
             orderDao.AllocateOrderToDesigner(designerId, orderId);
+        }
+
+        public void UpdateOrderStatus(int orderId, string orderStatus, string submittedBy)
+        {
+            orderDao.UpdateOrderStatus(orderId, orderStatus, submittedBy);
         }
     }
 }

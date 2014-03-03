@@ -6,31 +6,24 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DiHaoOA.Controls;
 using DiHaoOA.DataContract.Entity;
-using DiHaoOA.DataContract;
 using DiHaoOA.Business.Manager;
+using DiHaoOA.Controls;
 
 namespace DiHaoOA.WinForm.Controls
 {
-    public partial class OrderDetail : BaseUserControl
+    public partial class OrderDetailForIA : BaseUserControl
     {
         public Order order;
         OrderManager orderManager;
         public ReVisitPopUp popUp;
         RevisitPopUpManager revisitManager;
 
-        public OrderDetail()
+        public OrderDetailForIA()
         {
             InitializeComponent();
             orderManager = new OrderManager();
             revisitManager = new RevisitPopUpManager();
-        }
-
-
-        public void ClearContent()
-        {
-            lblMsg.Visible = false;
         }
 
         public void LoadDetailInformation()
@@ -59,60 +52,6 @@ namespace DiHaoOA.WinForm.Controls
             lblContactPersonNumber.Text = order.Customers.ContactPersonNumber;
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            string orderStatus = string.Empty;
-            if (rbSubmittedNotAllowed.Checked)
-            {
-                orderStatus = OrderStatus.SubmittedNotAllowed;
-            }
-            if (rbSubmittedNotSign.Checked)
-            {
-                orderStatus = OrderStatus.SubmittedNotSigned;
-            }
-            if (rbSubmittedSigned.Checked)
-            {
-                orderStatus = OrderStatus.SubmittedSigned;
-            }
-            orderManager.UpdateOrderStatus(order.OrderId, orderStatus,Approvaler.DesignerManager);
-            lblMsg.Text = "*订单状态修改成功，当前订单状态为"+orderStatus;
-            lblMsg.Visible = true;
-        }
-
-        private void btnAddVisit_Click(object sender, EventArgs e)
-        {
-            if (popUp == null)
-            {
-                popUp = new ReVisitPopUp();
-                popUp.parentForm = this.ParentForm;
-                popUp.employee = employee;
-                popUp.type = VisitType.type_Desinger;
-                popUp.ReLoad += new DiHaoOA.WinForm.ReVisitPopUp.GetRevisit(LoadReVisit);
-                this.ParentForm.Enabled = false;
-                popUp.Show();
-            }
-            else
-            {
-                this.ParentForm.Enabled = false;
-                popUp.Show();
-            }
-            popUp.customerOrderId = order.OrderId;
-            
-            popUp.ClearContent();
-        }
-
-        public void LoadReVisit()
-        {
-            DataSet ds = revisitManager.GetDesignerVisitAll(order.Designer.EmployeeId,order.OrderId);
-            dataGridReVisit.AutoGenerateColumns = false;
-            dataGridReVisit.DataSource = ds.Tables[0];
-        }
-
-        private void OrderDetail_Load(object sender, EventArgs e)
-        {
-            LoadReVisit();
-        }
-
         private void dataGridReVisit_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -121,6 +60,16 @@ namespace DiHaoOA.WinForm.Controls
             }
         }
 
-        
+        public void LoadReVisit()
+        {
+            DataSet ds = revisitManager.GetDesignerVisitAll(order.Designer.EmployeeId, order.OrderId);
+            dataGridReVisit.AutoGenerateColumns = false;
+            dataGridReVisit.DataSource = ds.Tables[0];
+        }
+
+        private void OrderDetailForIA_Load(object sender, EventArgs e)
+        {
+            LoadReVisit();
+        }
     }
 }

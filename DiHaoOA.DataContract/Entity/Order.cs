@@ -14,5 +14,7 @@ namespace DiHaoOA.DataContract.Entity
         public string OrderStatus { get; set; }
         public Customer Customers { get; set; }
         public string Description { get; set; }
+        public DateTime AllocationDate { get; set; }
+        public string SubmittedBy { get; set; }
     }
 }

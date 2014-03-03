@@ -19,7 +19,7 @@ namespace DiHaoOA.WinForm.Forms
         OrderList orderList;
         ApprovalList approvalList;
         AllocateDesignerGroup allocateDesignerGroup;
-        const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
+        const string pro_ApprovalListForDesignManager = "pro_ApprovalListForDesignManager";
 
         public DashboardForDesignerManager()
         {
@@ -101,6 +101,7 @@ namespace DiHaoOA.WinForm.Forms
                 orderList.NavigationBar = navBarForDesignerManager;
                 orderList.employee = employee;
                 orderList.Dock = DockStyle.Fill;
+                orderList.role = Roles.Designer;
                 pMainContent.Controls.Add(orderList);
             }
             orderList.orderStatus = status;
@@ -133,7 +134,7 @@ namespace DiHaoOA.WinForm.Forms
             {
                 approvalList = new ApprovalList();
                 approvalList.ParentPanel = pMainContent; ;
-                approvalList.procedureName = pro_ApprovalListForMarketingManager;
+                approvalList.procedureName = pro_ApprovalListForDesignManager;
                 approvalList.approvaler = Approvaler.DesignerManager;
                 approvalList.NavigationBar = navBarForDesignerManager;
                 approvalList.employee = employee;

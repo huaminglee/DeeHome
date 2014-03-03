@@ -223,7 +223,8 @@ namespace DiHaoOA.DataContract
                                     From Employee
                                     where  GroupId=@GroupId
                                     and (RoleId = 2 
-                                    or RoleId = 6)";
+                                    or RoleId = 6
+                                    or RoleId = 4)";
                 SqlDataAdapter sda = null;
                 DataSet result = new DataSet();
                 cmd.Parameters.AddWithValue("@GroupId",groupId);

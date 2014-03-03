@@ -15,8 +15,14 @@ namespace DiHaoOA.DataContract
         public const string SubmittedToDesigner = "提交单子";
         public const string OnChatting = "在谈";
         public const string SubmittedNotAllowed = "提交不准";
+        public const string SubmittedNotAllowedForMarketing = "市场部经理审批提交不准";
+        public const string SubmittedNotAllowedForDesign = "设计部经理审批提交不准";
         public const string SubmittedNotSigned = "提交未签";
+        public const string SubmittedNotSignedForMarketing = "市场部经理审批提交未签";
+        public const string SubmittedNotSignedForDesign = "设计部经理审批提交未签";
         public const string SubmittedSigned = "提交已签";
+        public const string SubmittedSignedForMarketing = "市场部经理审批提交已签";
+        public const string SubmittedSignedForDesign = "设计部经理审批提交已签";
         public const string Signed = "已签";
         public const string NotSigned = "未签";
         public const string Denied = "不准";
@@ -48,6 +54,12 @@ namespace DiHaoOA.DataContract
         public const string type_InformationAssistant = "InformationAssistant";
         public const string type_Customer = "Customer";
         public const string type_Desinger = "Designer";
+    }
+
+    public struct Roles
+    {
+        public const string InformationAssistant = "InformationAssistant";
+        public const string Designer = "Designer";
     }
 
     public struct Approvaler

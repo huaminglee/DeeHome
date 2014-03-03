@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DiHaoOA.Controls;
 using DiHaoOA.Business.Manager;
+using DiHaoOA.DataContract.Entity;
+using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Controls
 {
@@ -16,6 +18,8 @@ namespace DiHaoOA.WinForm.Controls
         CustomerManager customerManager;
         OrderManager orderManager;
         OrderDetailForManager orderDetail;
+        ApprovalList approvalList;
+        ApprovalOrderDetails approvalOrderDetail;
         DataSet datas;
         public string approvaler;
 
@@ -116,6 +120,7 @@ namespace DiHaoOA.WinForm.Controls
                 if (e.ColumnIndex == 2)
                 {
                     int orderId = Convert.ToInt32(dgApprovalCustomer.Rows[e.RowIndex].Cells[0].Value);
+                    Order order = orderManager.GetOrderById(orderId);
                     if (ParentPanel != null)
                     {
                         foreach (Control control in ParentPanel.Controls)
@@ -125,13 +130,39 @@ namespace DiHaoOA.WinForm.Controls
                                 control.Visible = false;
                             }
                         }
-                        LoadOrderDetail(orderId);
+                        if (order.OrderStatus == OrderStatus.Submitted || order.OrderStatus == OrderStatus.SubmittedToDesigner)
+                        {
+                            LoadOrderDetail(order);
+                        }
+                        else {
+                            LoadApprovalOrderDetails(order);
+                        }
+                        
                     }
                 }
             }
         }
 
-        private void LoadOrderDetail(int orderId)
+        private void LoadApprovalOrderDetails(Order order)
+        {
+            if (!ParentPanel.Contains(orderDetail))
+            {
+                approvalOrderDetail = new ApprovalOrderDetails();
+                approvalOrderDetail.Name = approvaler;
+                approvalOrderDetail.ParentPanel = ParentPanel;
+                approvalOrderDetail.NavigationBar = NavigationBar;
+                approvalOrderDetail.employee = employee;
+                approvalOrderDetail.Dock = DockStyle.Fill;
+                ParentPanel.Controls.Add(approvalOrderDetail);
+            }
+            approvalOrderDetail.order = order;
+            approvalOrderDetail.Show();
+            approvalOrderDetail.ClearContent();
+            approvalOrderDetail.employee = employee;
+            approvalOrderDetail.LoadDetailInformation();
+        }
+
+        private void LoadOrderDetail(Order order)
         {
             if (!ParentPanel.Contains(orderDetail))
             {
@@ -143,11 +174,11 @@ namespace DiHaoOA.WinForm.Controls
                 orderDetail.Dock = DockStyle.Fill;
                 ParentPanel.Controls.Add(orderDetail);
             }
-            orderDetail.order = orderManager.GetOrderById(orderId);
+            orderDetail.order = order;
             orderDetail.Show();
             orderDetail.ClearContent();
             orderDetail.employee = employee;
-            orderDetail.LoadDetailInformation(orderId);
+            orderDetail.LoadDetailInformation();
         }
 
         private void dgApprovalCustomer_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

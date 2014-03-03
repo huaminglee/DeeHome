@@ -173,7 +173,7 @@ namespace DiHaoOA.DataContract.DAO
             }
         }
 
-        public DataSet GetDesignerVisitAll(string designgerId, int orderId)
+        public DataSet GetDesignerVisitAll(string designerId, int orderId)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
             {
@@ -189,7 +189,7 @@ namespace DiHaoOA.DataContract.DAO
                 try
                 {
                     conn.Open();
-                    cmd.Parameters.AddWithValue("@DesignerId",designgerId);
+                    cmd.Parameters.AddWithValue("@DesignerId", designerId);
                     cmd.Parameters.AddWithValue("@orderId", orderId);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(result);
