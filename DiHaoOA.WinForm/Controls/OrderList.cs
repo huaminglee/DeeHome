@@ -182,6 +182,7 @@ namespace DiHaoOA.WinForm.Controls
             orderDetails.ClearContent();
             orderDetails.employee = employee;
             orderDetails.LoadDetailInformation();
+            orderDetails.LoadReVisit();
         }
 
         private void dgOrderList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

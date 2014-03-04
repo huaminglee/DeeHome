@@ -66,10 +66,29 @@ namespace DiHaoOA.WinForm.Forms
             this.Height = 768;
             this.Width = 1250;
             lblDateTime.Text = GetDateInfor();
-            AddOrderList();
+            //AddOrderList();
             //navBarForDesigner.ChangeNavItem("CustomerChat", "已谈");
-            orderList.orderStatus = OrderStatus.OnChatting;
+            //orderList.orderStatus = OrderStatus.OnChatting;
+            //orderList.ReLoadData();
+        }
+
+        private void AddOrderList(string status)
+        {
+            if (!panelcontent.Contains(orderList))
+            {
+                orderList = new OrderList();
+                orderList.Name = DiHaoUserControl.OrderList;
+                orderList.ParentPanel = pMainContent; ;
+                orderList.NavigationBar = navBarForDesigner;
+                orderList.employee = employee;
+                orderList.Dock = DockStyle.Fill;
+                orderList.role = Roles.Designer;
+                pMainContent.Controls.Add(orderList);
+            }
+            orderList.orderStatus = status;
             orderList.ReLoadData();
+            orderList.Show();
+
         }
 
         private void AddOrderList()
@@ -90,8 +109,7 @@ namespace DiHaoOA.WinForm.Forms
         private void childbtnbtn_Click(object sender, EventArgs e)
         {
             Label btn = (Label)sender;
-            orderList.orderStatus = btn.Name;
-            orderList.ReLoadData();
+            AddOrderList(btn.Name);
         }
 
         private void DashboardForDesigner_Load(object sender, EventArgs e)

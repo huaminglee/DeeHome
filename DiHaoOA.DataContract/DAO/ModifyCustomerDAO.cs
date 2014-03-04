@@ -53,7 +53,8 @@ namespace DiHaoOA.DataContract.DAO
                     cmd.Parameters.AddWithValue("@AppointDateTime", customer.AppointDateTime);
                     cmd.Parameters.AddWithValue("@WorkPlace",customer.WorkPlace);
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = @"update dbo.CustomerOrder set OrderStatus = @OrderStatus
+                    cmd.CommandText = @"update dbo.CustomerOrder set OrderStatus = @OrderStatus,
+                                        SubmittedBy = 'SalesMan'
                                         where OrderId = @OrderId";
                     cmd.Parameters.AddWithValue("@OrderId",order.OrderId);
                     cmd.Parameters.AddWithValue("@OrderStatus", order.OrderStatus);

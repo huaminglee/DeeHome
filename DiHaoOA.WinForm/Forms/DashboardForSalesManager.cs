@@ -78,12 +78,11 @@ namespace DiHaoOA.WinForm
             {
                 orderList = new OrderList();
                 orderList.Name = DiHaoUserControl.OrderList;
-                orderList.orderStatus = OrderStatus.SubmittedToDesigner;
                 orderList.ParentPanel = pMainContent; ;
                 orderList.NavigationBar = navBarForSalesManager;
                 orderList.employee = employee;
                 orderList.Dock = DockStyle.Fill;
-                orderList.role = Roles.Designer;
+                orderList.role = Roles.InformationAssistant;
                 pMainContent.Controls.Add(orderList);
             }
             orderList.orderStatus = status;

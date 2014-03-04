@@ -66,5 +66,14 @@ namespace DiHaoOA.DataContract
     {
         public const string DesignerManager = "DesignerManager";
         public const string MarketingManager = "MarketingManager";
+        public const string SalesMan = "SalesMan";
+    }
+
+    public struct SubmittedBy
+    {
+        public const string DesignerManager = "DesignerManager";
+        public const string MarketingManager = "MarketingManager";
+        public const string SalesMan = "SalesMan";
+        public const string Designer = "Designer";
     }
 }   

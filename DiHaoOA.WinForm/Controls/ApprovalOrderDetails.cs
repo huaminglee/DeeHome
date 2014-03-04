@@ -77,9 +77,30 @@ namespace DiHaoOA.WinForm.Controls
             {
                 orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Signed);
             }
-            orderManager.UpdateOrderStatus(order.OrderId,order.OrderStatus,Approvaler.MarketingManager);
+            if (order.SubmittedBy == SubmittedBy.Designer)
+            {
+                orderManager.UpdateOrderStatus(order.OrderId, order.OrderStatus, SubmittedBy.DesignerManager);
+                lblMsg.Text = "*设计部经理审批" + order.OrderStatus;
+            }
+            else if (order.SubmittedBy == SubmittedBy.DesignerManager)
+            {
+                if (order.OrderStatus == OrderStatus.SubmittedNotAllowed)
+                {
+                    orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Denied, SubmittedBy.MarketingManager);
+                }
+                if (order.OrderStatus == OrderStatus.SubmittedNotSigned)
+                {
+                    orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.NotSigned, SubmittedBy.MarketingManager);
+                }
+                if (order.OrderStatus == OrderStatus.SubmittedSigned)
+                {
+                    orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Signed, SubmittedBy.MarketingManager);
+                }
+                //orderManager.UpdateOrderStatus(order.OrderId, OrderStatus, SubmittedBy.MarketingManager);
+                order = orderManager.GetOrderById(order.OrderId);
+                lblMsg.Text = "*市场部经理审批" + order.OrderStatus;
+            }
             order = orderManager.GetOrderById(order.OrderId);
-            lblMsg.Text = "*订单已打回给业务员，状态为"+order.OrderStatus;
             lblMsg.Visible = true;
         }
 

@@ -74,7 +74,7 @@ namespace DiHaoOA.WinForm.Controls
             {
                 orderStatus = OrderStatus.SubmittedSigned;
             }
-            orderManager.UpdateOrderStatus(order.OrderId, orderStatus,Approvaler.DesignerManager);
+            orderManager.UpdateOrderStatus(order.OrderId, orderStatus,SubmittedBy.Designer);
             lblMsg.Text = "*订单状态修改成功，当前订单状态为"+orderStatus;
             lblMsg.Visible = true;
         }

@@ -125,19 +125,17 @@ namespace DiHaoOA.WinForm.Controls
                     {
                         foreach (Control control in ParentPanel.Controls)
                         {
-                            if (control is ApprovalList)
-                            {
-                                control.Visible = false;
-                            }
+                            control.Visible = false;
                         }
                         if (order.OrderStatus == OrderStatus.Submitted || order.OrderStatus == OrderStatus.SubmittedToDesigner)
                         {
                             LoadOrderDetail(order);
                         }
-                        else {
+                        else
+                        {
                             LoadApprovalOrderDetails(order);
                         }
-                        
+
                     }
                 }
             }
@@ -194,6 +192,6 @@ namespace DiHaoOA.WinForm.Controls
         }
 
 
-       
+
     }
 }

@@ -106,7 +106,7 @@ namespace DiHaoOA.DataContract.DAO
                 Order order = new Order();
                 cmd.Connection = conn;
                 cmd.CommandText = @"Select OrderNumber,RecordDate,
-                                    DesignerId,OrderStatus,CustomerId,[Description]
+                                    DesignerId,OrderStatus,CustomerId,[Description],AllocationDate,SubmittedBy
                                     from dbo.CustomerOrder
                                     where OrderId = @OrderId";
                 try
@@ -125,6 +125,8 @@ namespace DiHaoOA.DataContract.DAO
                         order.OrderStatus = reader.GetString(3);
                         order.Customers = GetCustomerById(reader.GetInt32(4));
                         order.Description = reader.IsDBNull(5) ? "" : reader.GetString(5);
+                        order.AllocationDate = reader.IsDBNull(6)? DateTime.Now : reader.GetDateTime(6);
+                        order.SubmittedBy = reader.IsDBNull(7)?"":reader.GetString(7);
                     }
                 }
                 catch (Exception ex)
