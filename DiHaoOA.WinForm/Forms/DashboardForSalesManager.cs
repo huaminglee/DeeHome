@@ -13,6 +13,7 @@ using DiHaoOA.Controls;
 using DiHaoOA.WinForm.Forms;
 using DiHaoOA.WinForm.Controls;
 using DiHaoOA.DataContract;
+using DiHaoOA.WinForm.Common;
 
 namespace DiHaoOA.WinForm
 {
@@ -35,6 +36,7 @@ namespace DiHaoOA.WinForm
         const string pro_AllListPagingForManager = "pro_AllListPagingForManager";
         const string pro_UnSubordinateCustomersPaging = "pro_UnSubordinateCustomersPaging";
         const string pro_ApprovalListForMarketingManager = "pro_ApprovalListForMarketingManager";
+
 
         public DashboardForSalesManager()
         {
@@ -163,19 +165,18 @@ namespace DiHaoOA.WinForm
             approvalList.Show();
         }
 
-
-
-
         /// <summary>
         /// display related user control by user control name
         /// </summary>
         /// <param name="ucName"></param>
+
         private void ShowSpecificMenu()
         {
             foreach (Control control in pMainContent.Controls)
             {
                 control.Visible = false;
             }
+            pApproval.Visible = true;
         }
 
         private void AddMySubordinate()
@@ -203,7 +204,7 @@ namespace DiHaoOA.WinForm
             {
                 allList = new AllList();
                 allList.Name = DiHaoUserControl.AllList;
-                allList.ParentPanel = pMainContent; ;
+                allList.ParentPanel = pMainContent;
                 allList.NavigationBar = navBarForSalesManager;
                 allList.employee = employee;
                 allList.Dock = DockStyle.Fill;
@@ -430,6 +431,10 @@ namespace DiHaoOA.WinForm
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelFooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
+            if (GlobalFormValue.SalesManager.Count() > 0)
+            {
+                lblApproval.Text = "审批     "+GlobalFormValue.SalesManager.Count();
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -438,6 +443,11 @@ namespace DiHaoOA.WinForm
             dashboardEntry.ClearContent();
             dashboardEntry.Show();
             dashboardEntry.SetDefault();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

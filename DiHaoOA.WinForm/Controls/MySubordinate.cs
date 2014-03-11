@@ -83,25 +83,27 @@ namespace DiHaoOA.WinForm.Controls
 
         private void dgMySuordinate_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            if (e.RowIndex > 0)
             {
-                if (Convert.ToInt32(dgMySuordinate.Rows[e.RowIndex].Cells[3].Value) > 0)
+                if (e.ColumnIndex == 3)
                 {
-                    if (ParentPanel != null)
+                    if (Convert.ToInt32(dgMySuordinate.Rows[e.RowIndex].Cells[3].Value) > 0)
                     {
-                        foreach (Control control in ParentPanel.Controls)
+                        if (ParentPanel != null)
                         {
-                            control.Visible = false;
+                            foreach (Control control in ParentPanel.Controls)
+                            {
+                                control.Visible = false;
+                            }
                         }
+                        string employeeId = Convert.ToString(dgMySuordinate.Rows[e.RowIndex].Cells[0].Value);
+                        LoadDisplayVisitContent(employeeId);
                     }
-                    string employeeId = Convert.ToString(dgMySuordinate.Rows[e.RowIndex].Cells[0].Value);
-                    LoadDisplayVisitContent(employeeId);
+                    else
+                    {
+                        MessageBox.Show("该员工今天没有回访记录~.~");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("该员工今天没有回访记录~.~");
-                }
-
             }
         }
 

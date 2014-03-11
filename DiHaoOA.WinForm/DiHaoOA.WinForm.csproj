@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AutoReSizeForm.cs" />
+    <Compile Include="Common\GlobalFormValue.cs" />
     <Compile Include="Common\ICommonInformation.cs" />
     <Compile Include="Common\ValidateHelper.cs" />
     <Compile Include="Controls\AddCustomer.cs">

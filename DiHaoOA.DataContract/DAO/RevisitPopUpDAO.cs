@@ -182,15 +182,15 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = conn;
                 cmd.CommandText = @"Select [RevisitContent] as RevisitContent,[RevisitDateTime] as RevisitTime
                                   from dbo.DesigerRevisit r,dbo.CustomerOrder o
-                                  where o.designerId=@designerId
-                                  and o.OrderId = @orderId
+                                  where o.designerId=@DesignerId
+                                  and o.OrderId = @OrderId
                                   and r.OrderId=o.OrderId
                                   order by RevisitDateTime desc";
                 try
                 {
                     conn.Open();
                     cmd.Parameters.AddWithValue("@DesignerId", designerId);
-                    cmd.Parameters.AddWithValue("@orderId", orderId);
+                    cmd.Parameters.AddWithValue("@OrderId", orderId);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(result);
                 }

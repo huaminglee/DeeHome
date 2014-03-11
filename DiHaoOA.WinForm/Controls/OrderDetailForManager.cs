@@ -61,8 +61,8 @@ namespace DiHaoOA.WinForm.Controls
             }
             else
             {
-                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.SubmittedToDesigner,Approvaler.MarketingManager);
-                lblMsg.Text = "*订单已提交给设计部经理，状态为提交订单";
+                orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Submitted,Approvaler.MarketingManager);
+                lblMsg.Text = "*订单已提交给设计部经理";
                 lblMsg.Visible = true;
             }
         }

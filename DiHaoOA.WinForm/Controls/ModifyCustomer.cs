@@ -103,6 +103,10 @@ namespace DiHaoOA.Controls
             LoadDetailInformation(order.OrderId);
             lblMsg.Text = "修改客户信息成功,当前订单状态为" + order.OrderStatus;
             lblMsg.Show();
+            if (radioButtonSubmit.Checked)
+            {
+                GlobalFormValue.SalesManager.Add(order);
+            }
         }
 
         private bool ValidateInput()

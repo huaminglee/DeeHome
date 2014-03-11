@@ -106,8 +106,8 @@ namespace DiHaoOA.WinForm.Controls
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Rejected);
-            lblMsg.Text = "*订单已打回给业务员，状态为被打回";
+            orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.OnChatting);
+            lblMsg.Text = "*订单已打回给设计师，状态为在谈";
             lblMsg.Visible = true;
         }
 

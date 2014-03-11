@@ -33,6 +33,8 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelContent = new System.Windows.Forms.Panel();
             this.pMainContent = new System.Windows.Forms.Panel();
+            this.pApproval = new System.Windows.Forms.Panel();
+            this.lblApproval = new System.Windows.Forms.Label();
             this.panelNav = new System.Windows.Forms.Panel();
             this.navBarForSalesManager = new DiHaoOA.Controls.NavBar();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -45,6 +47,8 @@
             this.userInfo = new DiHaoOA.WinForm.Controls.UserInfo();
             this.picLog = new System.Windows.Forms.PictureBox();
             this.panelContent.SuspendLayout();
+            this.pMainContent.SuspendLayout();
+            this.pApproval.SuspendLayout();
             this.panelNav.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -65,20 +69,44 @@
             this.panelContent.Controls.Add(this.pMainContent);
             this.panelContent.Controls.Add(this.panelNav);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 81);
+            this.panelContent.Location = new System.Drawing.Point(0, 75);
             this.panelContent.Margin = new System.Windows.Forms.Padding(2);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1008, 601);
+            this.panelContent.Size = new System.Drawing.Size(1008, 554);
             this.panelContent.TabIndex = 4;
             // 
             // pMainContent
             // 
+            this.pMainContent.Controls.Add(this.pApproval);
             this.pMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMainContent.Location = new System.Drawing.Point(129, 0);
             this.pMainContent.Margin = new System.Windows.Forms.Padding(2);
             this.pMainContent.Name = "pMainContent";
-            this.pMainContent.Size = new System.Drawing.Size(875, 597);
+            this.pMainContent.Size = new System.Drawing.Size(875, 550);
             this.pMainContent.TabIndex = 4;
+            // 
+            // pApproval
+            // 
+            this.pApproval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pApproval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(68)))), ((int)(((byte)(0)))));
+            this.pApproval.Controls.Add(this.lblApproval);
+            this.pApproval.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pApproval.Location = new System.Drawing.Point(675, 530);
+            this.pApproval.Name = "pApproval";
+            this.pApproval.Size = new System.Drawing.Size(200, 24);
+            this.pApproval.TabIndex = 0;
+            // 
+            // lblApproval
+            // 
+            this.lblApproval.AutoSize = true;
+            this.lblApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblApproval.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(12)))), ((int)(((byte)(1)))));
+            this.lblApproval.Location = new System.Drawing.Point(89, 5);
+            this.lblApproval.Name = "lblApproval";
+            this.lblApproval.Size = new System.Drawing.Size(60, 13);
+            this.lblApproval.TabIndex = 0;
+            this.lblApproval.Text = "审批     0";
+            this.lblApproval.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelNav
             // 
@@ -88,7 +116,7 @@
             this.panelNav.Location = new System.Drawing.Point(0, 0);
             this.panelNav.Margin = new System.Windows.Forms.Padding(2);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(129, 597);
+            this.panelNav.Size = new System.Drawing.Size(129, 550);
             this.panelNav.TabIndex = 3;
             // 
             // navBarForSalesManager
@@ -99,7 +127,7 @@
             this.navBarForSalesManager.Margin = new System.Windows.Forms.Padding(2);
             this.navBarForSalesManager.MenuItems = ((System.Collections.ArrayList)(resources.GetObject("navBarForSalesManager.MenuItems")));
             this.navBarForSalesManager.Name = "navBarForSalesManager";
-            this.navBarForSalesManager.Size = new System.Drawing.Size(129, 597);
+            this.navBarForSalesManager.Size = new System.Drawing.Size(129, 550);
             this.navBarForSalesManager.TabIndex = 0;
             // 
             // panelFooter
@@ -109,10 +137,10 @@
             this.panelFooter.Controls.Add(this.lblDateTime2);
             this.panelFooter.Controls.Add(this.lblDateTime);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 682);
+            this.panelFooter.Location = new System.Drawing.Point(0, 629);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1008, 31);
+            this.panelFooter.Size = new System.Drawing.Size(1008, 29);
             this.panelFooter.TabIndex = 2;
             // 
             // lblDateTime2
@@ -120,7 +148,7 @@
             this.lblDateTime2.AutoSize = true;
             this.lblDateTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDateTime2.ForeColor = System.Drawing.Color.White;
-            this.lblDateTime2.Location = new System.Drawing.Point(0, 7);
+            this.lblDateTime2.Location = new System.Drawing.Point(0, 6);
             this.lblDateTime2.Name = "lblDateTime2";
             this.lblDateTime2.Size = new System.Drawing.Size(25, 13);
             this.lblDateTime2.TabIndex = 2;
@@ -131,7 +159,7 @@
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDateTime.ForeColor = System.Drawing.Color.White;
-            this.lblDateTime.Location = new System.Drawing.Point(0, 7);
+            this.lblDateTime.Location = new System.Drawing.Point(0, 6);
             this.lblDateTime.Name = "lblDateTime";
             this.lblDateTime.Size = new System.Drawing.Size(0, 13);
             this.lblDateTime.TabIndex = 1;
@@ -147,7 +175,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1008, 81);
+            this.panelHeader.Size = new System.Drawing.Size(1008, 75);
             this.panelHeader.TabIndex = 1;
             // 
             // panel1
@@ -159,7 +187,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 31);
+            this.panel1.Size = new System.Drawing.Size(1004, 29);
             this.panel1.TabIndex = 4;
             // 
             // btnReturn
@@ -172,7 +200,7 @@
             this.btnReturn.Location = new System.Drawing.Point(903, 2);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(95, 24);
+            this.btnReturn.Size = new System.Drawing.Size(95, 22);
             this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "返回登录界面";
             this.btnReturn.UseVisualStyleBackColor = false;
@@ -187,7 +215,7 @@
             this.lblReturn.Location = new System.Drawing.Point(920, 5);
             this.lblReturn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturn.Name = "lblReturn";
-            this.lblReturn.Size = new System.Drawing.Size(79, 13);
+            this.lblReturn.Size = new System.Drawing.Size(77, 12);
             this.lblReturn.TabIndex = 1;
             this.lblReturn.Text = "返回登录界面";
             this.lblReturn.Click += new System.EventHandler(this.lblReturn_Click);
@@ -196,10 +224,10 @@
             // 
             this.userInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.userInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.userInfo.Location = new System.Drawing.Point(790, 33);
+            this.userInfo.Location = new System.Drawing.Point(790, 30);
             this.userInfo.Margin = new System.Windows.Forms.Padding(2);
             this.userInfo.Name = "userInfo";
-            this.userInfo.Size = new System.Drawing.Size(211, 42);
+            this.userInfo.Size = new System.Drawing.Size(211, 39);
             this.userInfo.TabIndex = 1;
             this.userInfo.Load += new System.EventHandler(this.userInfo_Load);
             // 
@@ -207,7 +235,7 @@
             // 
             this.picLog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLog.Image = ((System.Drawing.Image)(resources.GetObject("picLog.Image")));
-            this.picLog.Location = new System.Drawing.Point(129, 27);
+            this.picLog.Location = new System.Drawing.Point(129, 25);
             this.picLog.Margin = new System.Windows.Forms.Padding(2);
             this.picLog.Name = "picLog";
             this.picLog.Size = new System.Drawing.Size(190, 52);
@@ -217,9 +245,9 @@
             // 
             // DashboardForSalesManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 713);
+            this.ClientSize = new System.Drawing.Size(1008, 658);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
@@ -232,6 +260,9 @@
             this.Load += new System.EventHandler(this.DashboardForSalesManager_Load);
             this.Resize += new System.EventHandler(this.DashboardForSalesManager_Resize);
             this.panelContent.ResumeLayout(false);
+            this.pMainContent.ResumeLayout(false);
+            this.pApproval.ResumeLayout(false);
+            this.pApproval.PerformLayout();
             this.panelNav.ResumeLayout(false);
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
@@ -260,5 +291,7 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblDateTime2;
+        private System.Windows.Forms.Panel pApproval;
+        private System.Windows.Forms.Label lblApproval;
     }
 }

@@ -143,7 +143,7 @@ namespace DiHaoOA.WinForm.Controls
 
         private void LoadApprovalOrderDetails(Order order)
         {
-            if (!ParentPanel.Contains(orderDetail))
+            if (!ParentPanel.Contains(approvalOrderDetail))
             {
                 approvalOrderDetail = new ApprovalOrderDetails();
                 approvalOrderDetail.Name = approvaler;

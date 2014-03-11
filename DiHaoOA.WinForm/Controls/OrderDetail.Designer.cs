@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAddVisit = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -104,6 +104,7 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.rbSubmittedSigned = new System.Windows.Forms.RadioButton();
             this.rbSubmittedNotAllowed = new System.Windows.Forms.RadioButton();
+            this.rbRejected = new System.Windows.Forms.RadioButton();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -189,39 +190,39 @@
             this.dataGridReVisit.AllowUserToAddRows = false;
             this.dataGridReVisit.AllowUserToDeleteRows = false;
             this.dataGridReVisit.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridReVisit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridReVisit.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReVisit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridReVisit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReVisit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
             this.回访内容,
             this.回访时间});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridReVisit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReVisit.Location = new System.Drawing.Point(2, 2);
             this.dataGridReVisit.Name = "dataGridReVisit";
             this.dataGridReVisit.RowHeadersVisible = false;
             this.dataGridReVisit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridReVisit.Size = new System.Drawing.Size(991, 180);
             this.dataGridReVisit.TabIndex = 1;
             this.dataGridReVisit.VirtualMode = true;
@@ -240,9 +241,9 @@
             // 回访内容
             // 
             this.回访内容.DataPropertyName = "RevisitContent";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.回访内容.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.回访内容.DefaultCellStyle = dataGridViewCellStyle8;
             this.回访内容.FillWeight = 237.7222F;
             this.回访内容.HeaderText = "回访内容";
             this.回访内容.Name = "回访内容";
@@ -312,7 +313,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
             this.tableLayoutPanel1.Controls.Add(this.lblCustomerType, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblContactPerson2Number, 5, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblContactPerson, 5, 2);
@@ -386,7 +387,7 @@
             this.lblCustomerType.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblCustomerType.Location = new System.Drawing.Point(765, 114);
             this.lblCustomerType.Name = "lblCustomerType";
-            this.lblCustomerType.Size = new System.Drawing.Size(241, 25);
+            this.lblCustomerType.Size = new System.Drawing.Size(242, 25);
             this.lblCustomerType.TabIndex = 9;
             this.lblCustomerType.Text = "label7";
             this.lblCustomerType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,7 +399,7 @@
             this.lblContactPerson2Number.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblContactPerson2Number.Location = new System.Drawing.Point(765, 85);
             this.lblContactPerson2Number.Name = "lblContactPerson2Number";
-            this.lblContactPerson2Number.Size = new System.Drawing.Size(241, 28);
+            this.lblContactPerson2Number.Size = new System.Drawing.Size(242, 28);
             this.lblContactPerson2Number.TabIndex = 76;
             this.lblContactPerson2Number.Text = "label7";
             this.lblContactPerson2Number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,7 +411,7 @@
             this.lblContactPerson.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblContactPerson.Location = new System.Drawing.Point(765, 58);
             this.lblContactPerson.Name = "lblContactPerson";
-            this.lblContactPerson.Size = new System.Drawing.Size(241, 26);
+            this.lblContactPerson.Size = new System.Drawing.Size(242, 26);
             this.lblContactPerson.TabIndex = 75;
             this.lblContactPerson.Text = "label7";
             this.lblContactPerson.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -580,7 +581,7 @@
             this.labelJaJu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.labelJaJu.Location = new System.Drawing.Point(765, 31);
             this.labelJaJu.Name = "labelJaJu";
-            this.labelJaJu.Size = new System.Drawing.Size(241, 26);
+            this.labelJaJu.Size = new System.Drawing.Size(242, 26);
             this.labelJaJu.TabIndex = 49;
             this.labelJaJu.Text = "家具未提交";
             this.labelJaJu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -631,7 +632,7 @@
             this.lblEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblEmployee.Location = new System.Drawing.Point(765, 1);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(241, 29);
+            this.lblEmployee.Size = new System.Drawing.Size(242, 29);
             this.lblEmployee.TabIndex = 44;
             this.lblEmployee.Text = "试用员工";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -897,7 +898,7 @@
             this.lblUsableArea.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblUsableArea.Location = new System.Drawing.Point(765, 140);
             this.lblUsableArea.Name = "lblUsableArea";
-            this.lblUsableArea.Size = new System.Drawing.Size(241, 28);
+            this.lblUsableArea.Size = new System.Drawing.Size(242, 28);
             this.lblUsableArea.TabIndex = 78;
             this.lblUsableArea.Text = "label7";
             this.lblUsableArea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -909,7 +910,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblEmail.Location = new System.Drawing.Point(765, 169);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(241, 29);
+            this.lblEmail.Size = new System.Drawing.Size(242, 29);
             this.lblEmail.TabIndex = 79;
             this.lblEmail.Text = "label7";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -973,7 +974,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(765, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(241, 33);
+            this.panel3.Size = new System.Drawing.Size(242, 33);
             this.panel3.TabIndex = 84;
             // 
             // lblRidePath
@@ -990,6 +991,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.rbRejected);
             this.panel4.Controls.Add(this.lblMsg);
             this.panel4.Controls.Add(this.rbSubmittedNotSign);
             this.panel4.Controls.Add(this.btnConfirm);
@@ -1006,7 +1008,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(75)))), ((int)(((byte)(57)))));
-            this.lblMsg.Location = new System.Drawing.Point(498, 32);
+            this.lblMsg.Location = new System.Drawing.Point(524, 30);
             this.lblMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(119, 13);
@@ -1034,7 +1036,7 @@
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.btnConfirm.Location = new System.Drawing.Point(443, 25);
+            this.btnConfirm.Location = new System.Drawing.Point(469, 25);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(50, 23);
             this.btnConfirm.TabIndex = 7;
@@ -1071,6 +1073,20 @@
             this.rbSubmittedNotAllowed.TabStop = true;
             this.rbSubmittedNotAllowed.Text = "提交不准";
             this.rbSubmittedNotAllowed.UseVisualStyleBackColor = true;
+            // 
+            // rbRejected
+            // 
+            this.rbRejected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbRejected.AutoSize = true;
+            this.rbRejected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.rbRejected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            this.rbRejected.Location = new System.Drawing.Point(594, 9);
+            this.rbRejected.Name = "rbRejected";
+            this.rbRejected.Size = new System.Drawing.Size(49, 17);
+            this.rbRejected.TabIndex = 9;
+            this.rbRejected.Text = "打回";
+            this.rbRejected.UseVisualStyleBackColor = true;
             // 
             // OrderDetail
             // 
@@ -1177,5 +1193,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rbRejected;
     }
 }

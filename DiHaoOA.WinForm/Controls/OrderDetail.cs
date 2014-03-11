@@ -63,17 +63,13 @@ namespace DiHaoOA.WinForm.Controls
         {
             string orderStatus = string.Empty;
             if (rbSubmittedNotAllowed.Checked)
-            {
                 orderStatus = OrderStatus.SubmittedNotAllowed;
-            }
             if (rbSubmittedNotSign.Checked)
-            {
                 orderStatus = OrderStatus.SubmittedNotSigned;
-            }
             if (rbSubmittedSigned.Checked)
-            {
                 orderStatus = OrderStatus.SubmittedSigned;
-            }
+            if (rbRejected.Checked)
+                orderStatus = OrderStatus.Rejected;
             orderManager.UpdateOrderStatus(order.OrderId, orderStatus,SubmittedBy.Designer);
             lblMsg.Text = "*订单状态修改成功，当前订单状态为"+orderStatus;
             lblMsg.Visible = true;
