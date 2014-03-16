@@ -15,55 +15,31 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_29C71AABC46448C59A6FCC44225A15B1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2A97E38B3F22ADECF003B2C3FF1E6C96"
+        "MsmKey" = "8:_20FEA84724202C1C8A6892D9DADAC2BF"
         "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_488D912C6AD41F9F8A4DD153B9D6B505"
-        "OwnerKey" = "8:_2A97E38B3F22ADECF003B2C3FF1E6C96"
+        "MsmKey" = "8:_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
+        "OwnerKey" = "8:_EAD58149E972BBF5FBC34E4AF5D203A2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_488D912C6AD41F9F8A4DD153B9D6B505"
-        "OwnerKey" = "8:_C53F747634849AFE7EDC0E09666156D4"
+        "MsmKey" = "8:_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
+        "OwnerKey" = "8:_20FEA84724202C1C8A6892D9DADAC2BF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_488D912C6AD41F9F8A4DD153B9D6B505"
+        "MsmKey" = "8:_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
         "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9BE382D7BBF24055B7C3100F76E988C7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_ACDB92DF45D14B3A94982C8668D7758F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C4100E1D3DE4180C9DA603A612FABD05"
-        "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C53F747634849AFE7EDC0E09666156D4"
+        "MsmKey" = "8:_D4E4A09258366B31E56CFF3A322C7510"
         "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -81,6 +57,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EAD58149E972BBF5FBC34E4AF5D203A2"
+        "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F2F3045165C843BAB0CD0A2B82216FAD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F8E4560EB8A64CFFAA01565F7FE659A2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E86F8617BB544F1A800CC2378B5D7B34"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,25 +82,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C4100E1D3DE4180C9DA603A612FABD05"
+        "OwnerKey" = "8:_D4E4A09258366B31E56CFF3A322C7510"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C53F747634849AFE7EDC0E09666156D4"
+        "OwnerKey" = "8:_20FEA84724202C1C8A6892D9DADAC2BF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2A97E38B3F22ADECF003B2C3FF1E6C96"
+        "OwnerKey" = "8:_EAD58149E972BBF5FBC34E4AF5D203A2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_488D912C6AD41F9F8A4DD153B9D6B505"
+        "OwnerKey" = "8:_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -214,167 +208,14 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_29C71AABC46448C59A6FCC44225A15B1"
-            {
-            "SourcePath" = "8:C:\\Users\\xiezo\\Desktop\\AppConfig.xml"
-            "TargetName" = "8:AppConfig.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2A97E38B3F22ADECF003B2C3FF1E6C96"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DiHaoOA.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2A97E38B3F22ADECF003B2C3FF1E6C96"
-                    {
-                    "Name" = "8:DiHaoOA.Business.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:DiHaoOA.Business.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_488D912C6AD41F9F8A4DD153B9D6B505"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DiHaoOA.DataContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_488D912C6AD41F9F8A4DD153B9D6B505"
-                    {
-                    "Name" = "8:DiHaoOA.DataContract.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:DiHaoOA.DataContract.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9BE382D7BBF24055B7C3100F76E988C7"
-            {
-            "SourcePath" = "8:C:\\Users\\xiezo\\Desktop\\InitialEmployeeScript.sql"
-            "TargetName" = "8:InitialEmployeeScript.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ACDB92DF45D14B3A94982C8668D7758F"
-            {
-            "SourcePath" = "8:C:\\Users\\xiezo\\Desktop\\Menu.xml"
-            "TargetName" = "8:Menu.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4100E1D3DE4180C9DA603A612FABD05"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_C4100E1D3DE4180C9DA603A612FABD05"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:log4net.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C53F747634849AFE7EDC0E09666156D4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_20FEA84724202C1C8A6892D9DADAC2BF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:DiHaoOA.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C53F747634849AFE7EDC0E09666156D4"
+                    "_20FEA84724202C1C8A6892D9DADAC2BF"
                     {
                     "Name" = "8:DiHaoOA.Security.dll"
                     "Attributes" = "3:512"
@@ -398,10 +239,143 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DiHaoOA.DataContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8CE6BC184FE2B29CDE3A43A56E8CD2A4"
+                    {
+                    "Name" = "8:DiHaoOA.DataContract.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DiHaoOA.DataContract.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D4E4A09258366B31E56CFF3A322C7510"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D4E4A09258366B31E56CFF3A322C7510"
+                    {
+                    "Name" = "8:log4net.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:log4net.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD228468EF724246B23FFCC1A4F6E211"
             {
             "SourcePath" = "8:..\\DiHaoOA.Database\\sql\\release\\DiHaoOA.Database.sql"
             "TargetName" = "8:DiHaoOA.Database.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EAD58149E972BBF5FBC34E4AF5D203A2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DiHaoOA.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_EAD58149E972BBF5FBC34E4AF5D203A2"
+                    {
+                    "Name" = "8:DiHaoOA.Business.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DiHaoOA.Business.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F2F3045165C843BAB0CD0A2B82216FAD"
+            {
+            "SourcePath" = "8:..\\DiHaoOA.WinForm\\bin\\Release\\Menu.xml"
+            "TargetName" = "8:Menu.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F8E4560EB8A64CFFAA01565F7FE659A2"
+            {
+            "SourcePath" = "8:..\\DiHaoOA.WinForm\\bin\\Release\\AppConfig.xml"
+            "TargetName" = "8:AppConfig.xml"
             "Tag" = "8:"
             "Folder" = "8:_120FD296E8674B20994472F4E85E2995"
             "Condition" = "8:"

@@ -215,5 +215,14 @@
     <Build Include="Tables\DesignerRevisit.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="StoreProcedure\pro_GetOrderByOrderStatusForDesignerLeader.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="StoreProcedure\pro_GetOrderByOrderStatusForIA.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="StoreProcedure\pro_ApprovalListForDesignManager.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>
