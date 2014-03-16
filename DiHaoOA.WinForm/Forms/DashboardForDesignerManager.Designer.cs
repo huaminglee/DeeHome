@@ -30,27 +30,137 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForDesignerManager));
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.pMainContent = new System.Windows.Forms.Panel();
+            this.pApproval = new System.Windows.Forms.Panel();
+            this.lblApproval = new System.Windows.Forms.Label();
+            this.pNavBar = new System.Windows.Forms.Panel();
+            this.navBarForDesignerManager = new DiHaoOA.Controls.NavBar();
+            this.panelfooter = new System.Windows.Forms.Panel();
+            this.lblDateTime2 = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeaderHeader = new System.Windows.Forms.Panel();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblReturn = new System.Windows.Forms.Label();
             this.userInfo = new DiHaoOA.WinForm.Controls.UserInfo();
-            this.panelfooter = new System.Windows.Forms.Panel();
-            this.lblDateTime2 = new System.Windows.Forms.Label();
-            this.lblDateTime = new System.Windows.Forms.Label();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.pMainContent = new System.Windows.Forms.Panel();
-            this.pNavBar = new System.Windows.Forms.Panel();
-            this.navBarForDesignerManager = new DiHaoOA.Controls.NavBar();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.panelContent.SuspendLayout();
+            this.pMainContent.SuspendLayout();
+            this.pApproval.SuspendLayout();
+            this.pNavBar.SuspendLayout();
+            this.panelfooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeaderHeader.SuspendLayout();
-            this.panelfooter.SuspendLayout();
-            this.panelContent.SuspendLayout();
-            this.pNavBar.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // panelContent
+            // 
+            this.panelContent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelContent.Controls.Add(this.pMainContent);
+            this.panelContent.Controls.Add(this.pNavBar);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 74);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(924, 555);
+            this.panelContent.TabIndex = 4;
+            // 
+            // pMainContent
+            // 
+            this.pMainContent.BackColor = System.Drawing.Color.White;
+            this.pMainContent.Controls.Add(this.pApproval);
+            this.pMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pMainContent.Location = new System.Drawing.Point(129, 0);
+            this.pMainContent.Name = "pMainContent";
+            this.pMainContent.Size = new System.Drawing.Size(791, 551);
+            this.pMainContent.TabIndex = 2;
+            // 
+            // pApproval
+            // 
+            this.pApproval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pApproval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(68)))), ((int)(((byte)(0)))));
+            this.pApproval.Controls.Add(this.lblApproval);
+            this.pApproval.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pApproval.Location = new System.Drawing.Point(593, 527);
+            this.pApproval.Name = "pApproval";
+            this.pApproval.Size = new System.Drawing.Size(200, 24);
+            this.pApproval.TabIndex = 1;
+            this.pApproval.Visible = false;
+            // 
+            // lblApproval
+            // 
+            this.lblApproval.AutoSize = true;
+            this.lblApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblApproval.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(12)))), ((int)(((byte)(1)))));
+            this.lblApproval.Location = new System.Drawing.Point(54, 5);
+            this.lblApproval.Name = "lblApproval";
+            this.lblApproval.Size = new System.Drawing.Size(105, 13);
+            this.lblApproval.TabIndex = 0;
+            this.lblApproval.Text = "你有0条审批信息";
+            this.lblApproval.Click += new System.EventHandler(this.lblApproval_Click);
+            // 
+            // pNavBar
+            // 
+            this.pNavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.pNavBar.Controls.Add(this.navBarForDesignerManager);
+            this.pNavBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pNavBar.Location = new System.Drawing.Point(0, 0);
+            this.pNavBar.Name = "pNavBar";
+            this.pNavBar.Size = new System.Drawing.Size(129, 551);
+            this.pNavBar.TabIndex = 1;
+            // 
+            // navBarForDesignerManager
+            // 
+            this.navBarForDesignerManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.navBarForDesignerManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navBarForDesignerManager.Location = new System.Drawing.Point(0, 0);
+            this.navBarForDesignerManager.Margin = new System.Windows.Forms.Padding(2);
+            this.navBarForDesignerManager.MenuItems = ((System.Collections.ArrayList)(resources.GetObject("navBarForDesignerManager.MenuItems")));
+            this.navBarForDesignerManager.Name = "navBarForDesignerManager";
+            this.navBarForDesignerManager.Size = new System.Drawing.Size(129, 551);
+            this.navBarForDesignerManager.TabIndex = 1;
+            // 
+            // panelfooter
+            // 
+            this.panelfooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(144)))), ((int)(((byte)(206)))));
+            this.panelfooter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelfooter.Controls.Add(this.lblDateTime2);
+            this.panelfooter.Controls.Add(this.lblDateTime);
+            this.panelfooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelfooter.Location = new System.Drawing.Point(0, 629);
+            this.panelfooter.Name = "panelfooter";
+            this.panelfooter.Size = new System.Drawing.Size(924, 29);
+            this.panelfooter.TabIndex = 3;
+            // 
+            // lblDateTime2
+            // 
+            this.lblDateTime2.AutoSize = true;
+            this.lblDateTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDateTime2.ForeColor = System.Drawing.Color.White;
+            this.lblDateTime2.Location = new System.Drawing.Point(0, 6);
+            this.lblDateTime2.Name = "lblDateTime2";
+            this.lblDateTime2.Size = new System.Drawing.Size(25, 13);
+            this.lblDateTime2.TabIndex = 1;
+            this.lblDateTime2.Text = "sss";
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDateTime.ForeColor = System.Drawing.Color.White;
+            this.lblDateTime.Location = new System.Drawing.Point(0, 6);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(25, 13);
+            this.lblDateTime.TabIndex = 0;
+            this.lblDateTime.Text = "sss";
             // 
             // panelHeader
             // 
@@ -126,87 +236,6 @@
             this.userInfo.Size = new System.Drawing.Size(213, 44);
             this.userInfo.TabIndex = 2;
             // 
-            // panelfooter
-            // 
-            this.panelfooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(144)))), ((int)(((byte)(206)))));
-            this.panelfooter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelfooter.Controls.Add(this.lblDateTime2);
-            this.panelfooter.Controls.Add(this.lblDateTime);
-            this.panelfooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelfooter.Location = new System.Drawing.Point(0, 629);
-            this.panelfooter.Name = "panelfooter";
-            this.panelfooter.Size = new System.Drawing.Size(924, 29);
-            this.panelfooter.TabIndex = 3;
-            // 
-            // lblDateTime2
-            // 
-            this.lblDateTime2.AutoSize = true;
-            this.lblDateTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblDateTime2.ForeColor = System.Drawing.Color.White;
-            this.lblDateTime2.Location = new System.Drawing.Point(0, 6);
-            this.lblDateTime2.Name = "lblDateTime2";
-            this.lblDateTime2.Size = new System.Drawing.Size(25, 13);
-            this.lblDateTime2.TabIndex = 1;
-            this.lblDateTime2.Text = "sss";
-            // 
-            // lblDateTime
-            // 
-            this.lblDateTime.AutoSize = true;
-            this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblDateTime.ForeColor = System.Drawing.Color.White;
-            this.lblDateTime.Location = new System.Drawing.Point(0, 6);
-            this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(25, 13);
-            this.lblDateTime.TabIndex = 0;
-            this.lblDateTime.Text = "sss";
-            // 
-            // panelContent
-            // 
-            this.panelContent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelContent.Controls.Add(this.pMainContent);
-            this.panelContent.Controls.Add(this.pNavBar);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 74);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(924, 555);
-            this.panelContent.TabIndex = 4;
-            // 
-            // pMainContent
-            // 
-            this.pMainContent.BackColor = System.Drawing.Color.White;
-            this.pMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pMainContent.Location = new System.Drawing.Point(129, 0);
-            this.pMainContent.Name = "pMainContent";
-            this.pMainContent.Size = new System.Drawing.Size(791, 551);
-            this.pMainContent.TabIndex = 2;
-            // 
-            // pNavBar
-            // 
-            this.pNavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.pNavBar.Controls.Add(this.navBarForDesignerManager);
-            this.pNavBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pNavBar.Location = new System.Drawing.Point(0, 0);
-            this.pNavBar.Name = "pNavBar";
-            this.pNavBar.Size = new System.Drawing.Size(129, 551);
-            this.pNavBar.TabIndex = 1;
-            // 
-            // navBarForDesignerManager
-            // 
-            this.navBarForDesignerManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.navBarForDesignerManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarForDesignerManager.Location = new System.Drawing.Point(0, 0);
-            this.navBarForDesignerManager.Margin = new System.Windows.Forms.Padding(2);
-            this.navBarForDesignerManager.MenuItems = ((System.Collections.ArrayList)(resources.GetObject("navBarForDesignerManager.MenuItems")));
-            this.navBarForDesignerManager.Name = "navBarForDesignerManager";
-            this.navBarForDesignerManager.Size = new System.Drawing.Size(129, 551);
-            this.navBarForDesignerManager.TabIndex = 1;
-            // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // DashboardForDesignerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -221,15 +250,18 @@
             this.Text = "OA企业办公系统";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForDesignerManager_FormClosed);
             this.Load += new System.EventHandler(this.DashboardForDesignerManager_Load);
+            this.panelContent.ResumeLayout(false);
+            this.pMainContent.ResumeLayout(false);
+            this.pApproval.ResumeLayout(false);
+            this.pApproval.PerformLayout();
+            this.pNavBar.ResumeLayout(false);
+            this.panelfooter.ResumeLayout(false);
+            this.panelfooter.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelHeaderHeader.ResumeLayout(false);
             this.panelHeaderHeader.PerformLayout();
-            this.panelfooter.ResumeLayout(false);
-            this.panelfooter.PerformLayout();
-            this.panelContent.ResumeLayout(false);
-            this.pNavBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -250,5 +282,7 @@
         private System.Windows.Forms.Panel pNavBar;
         private DiHaoOA.Controls.NavBar navBarForDesignerManager;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Panel pApproval;
+        private System.Windows.Forms.Label lblApproval;
     }
 }

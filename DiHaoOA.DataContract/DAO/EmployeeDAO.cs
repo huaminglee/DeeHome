@@ -183,6 +183,68 @@ namespace DiHaoOA.DataContract
             }
         }
 
+        public DataSet GetSalesMan()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = new DataSet();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select EmployeeId,Name
+                                    from Employee
+                                    where EmployeeId != 'swb800024'
+                                    and RoleId=1";
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(ds);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                }
+                return ds;
+            }
+        }
+
+        public DataSet GetDesigner()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                DataSet ds = new DataSet();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select EmployeeId,Name
+                                    from Employee
+                                    where EmployeeId != 'swb800024'
+                                    and RoleId=2";
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(ds);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                }
+                return ds;
+            }
+        }
+
         public DataSet GetEmployeeGroup()
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
@@ -247,24 +309,22 @@ namespace DiHaoOA.DataContract
             }
         }
 
-        public DataSet GetDesigner()
+        public string GetGroupNameByEmployeeId(string employeeId)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = @"Select EmployeeId,Name
-                                    From Employee
-                                    where RoleId = 2 
-                                    or RoleId = 6
-                                    or RoleId = 4";
-                SqlDataAdapter sda = null;
-                DataSet result = new DataSet();
+                cmd.CommandText = @"select GroupName
+                                    from dbo.EmployeeGroup eg,dbo.Employee e
+                                    where eg.GroupId = e.GroupId
+                                    and  e.EmployeeId = @EmployeeId";
+                string result = string.Empty;
                 try
                 {
                     conn.Open();
-                    sda = new SqlDataAdapter(cmd);
-                    sda.Fill(result);
+                    cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
+                    result = cmd.ExecuteScalar().ToString();
                 }
                 catch (Exception ex)
                 {

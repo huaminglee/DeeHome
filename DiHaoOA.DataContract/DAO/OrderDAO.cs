@@ -293,7 +293,6 @@ namespace DiHaoOA.DataContract.DAO
             }
         }
 
-
         public int GetTotalRecords(int pageIndex, int pageSize, string input, string orderStatus, string employeeId, string procedureName)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
@@ -364,6 +363,150 @@ namespace DiHaoOA.DataContract.DAO
                     cmd.Dispose();
                 }
             }
-        }   
+        }
+
+        public int GetCurrentMonthCountByOrderStatus(string employeeId,string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                int result = 0;
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) as CurrentMonthOnChattingCount,
+                                    e.Name as EmployeeName
+	                                from Employee e ,dbo.CustomerOrder o
+	                                where e.EmployeeId = o.DesignerId
+                                    and e.EmployeeId = @EmployeeId
+                                    and o.OrderStatus = @OrderStatus
+                                    and o.RecordDate > convert(datetime,convert(varchar(8),getdate(),120)+'01',120)
+                                    and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+1,0))
+                                    group by e.Name";
+                cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
+                cmd.Parameters.AddWithValue("@OrderStatus", orderStatus);
+                try
+                {
+                    conn.Open();
+                    result = DBNull.Value == cmd.ExecuteScalar() ? 0 : Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetCurrentMonthCountByOrderStatusForSalesManager(string employeeId, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                int result = 0;
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) as Count,
+                                    e.Name as EmployeeName
+	                                from Employee e 
+                                    ,dbo.CustomerOrder o
+                                    ,Customer c
+                                    ,InformationAssistant i
+	                                where e.EmployeeId = i.EmployeeId
+                                    and i.InformationAssistantId = c.InformationAssistantId
+                                    and o.CustomerId = c.CustomerId
+                                    and e.EmployeeId = @EmployeeId
+                                    and o.OrderStatus = @OrderStatus
+                                    and o.RecordDate > convert(datetime,convert(varchar(8),getdate(),120)+'01',120)
+                                    and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+1,0))
+                                    group by e.Name";
+                cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
+                cmd.Parameters.AddWithValue("@OrderStatus", orderStatus);
+                try
+                {
+                    conn.Open();
+                    result = DBNull.Value == cmd.ExecuteScalar() ? 0 : Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetSalesManagerApprovalCount()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                int result = 0;
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) 
+                                    from  CustomerOrder o
+                                    where (o.OrderStatus = N'已提交'
+                                           and  o.SubmittedBy = 'SalesMan')
+                                           or ((o.OrderStatus = N'提交不准'
+                                           or o.OrderStatus = N'提交未签'
+                                           or o.OrderStatus = N'提交已签')
+                                           and (o.SubmittedBy = 'DesignerManager'))";
+                try
+                {
+                    conn.Open();
+                    result = DBNull.Value == cmd.ExecuteScalar() ? 0 : Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetDesignerManagerApprovalCount()
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                int result = 0;
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) 
+                                    from  CustomerOrder o
+                                    where (o.OrderStatus = N'已提交'
+		                            and o.SubmittedBy = 'MarketingManager')
+                                   or ((o.OrderStatus = N'提交不准'
+                                   or o.OrderStatus = N'提交未签'
+                                   or o.OrderStatus = N'提交已签')
+                                   and (o.SubmittedBy = 'SalesMan'
+                                   or o.SubmittedBy = 'Designer'))";
+                try
+                {
+                    conn.Open();
+                    result = DBNull.Value == cmd.ExecuteScalar() ? 0 : Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
     }
 }

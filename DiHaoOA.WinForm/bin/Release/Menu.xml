@@ -69,6 +69,21 @@
 	<ChildMenu eventCode="不准">不准</ChildMenu>
   </DesignerMenu>
   
+  <DesignerLeaderMenu id="dCustomerConversation" name = "》客户洽谈" eventCode="CustomerChat">
+	<ChildMenu eventCode="在谈">在谈</ChildMenu>
+	<ChildMenu eventCode="已签">已签</ChildMenu>
+	<ChildMenu eventCode="提交未签">提交未签</ChildMenu>
+	<ChildMenu eventCode="提交不准">提交不准</ChildMenu>
+	<ChildMenu eventCode="未签">未签</ChildMenu>
+	<ChildMenu eventCode="不准">不准</ChildMenu>
+  </DesignerLeaderMenu>
+  <DesignerLeaderMenu id="dLeader" name="》主案部" eventCode="Allocate">
+	<ChildMenu eventCode="》所有在谈">所有在谈</ChildMenu>
+	<ChildMenu eventCode="》所有未签">所有未签</ChildMenu>
+	<ChildMenu eventCode="》所有已签">所有已签</ChildMenu>
+	<ChildMenu eventCode="》所有不准">所有不准</ChildMenu>
+  </DesignerLeaderMenu>
+  
   <DesignerManagerMenu id="dCustomerConversation" name = "︾客户洽谈" eventCode="CustomerChat">
 	<ChildMenu eventCode="在谈">在谈</ChildMenu>
 	<ChildMenu eventCode="已签">已签</ChildMenu>
@@ -81,7 +96,7 @@
 	<ChildMenu eventCode="我的下属">我的下属</ChildMenu>
 	<ChildMenu eventCode="审批栏">审批栏</ChildMenu>
   </DesignerManagerMenu>
-  <DesignerManagerMenu id="dAllocate" name="》分配主案部" eventCode="Allocate">
+  <DesignerManagerMenu id="dAllocate" name="》主案部" eventCode="Allocate">
 	<ChildMenu eventCode="设计师分组">设计师分组</ChildMenu>
   </DesignerManagerMenu>
 </MenuConfiguration>

@@ -56,5 +56,25 @@ namespace DiHaoOA.Business.Manager
         {
             orderDao.UpdateOrderStatus(orderId, orderStatus, submittedBy);
         }
+
+        public int GetCurrentMonthCountByOrderStatus(string employeeId, string orderStatus)
+        {
+           return orderDao.GetCurrentMonthCountByOrderStatus(employeeId, orderStatus);
+        }
+
+        public int GetCurrentMonthCountByOrderStatusForSalesManager(string employeeId, string orderStatus)
+        {
+            return orderDao.GetCurrentMonthCountByOrderStatusForSalesManager(employeeId, orderStatus);
+        }
+
+        public int GetSalesManagerApprovalCount()
+        {
+            return orderDao.GetSalesManagerApprovalCount();
+        }
+
+        public int GetDesignerManagerApprovalCount()
+        {
+            return orderDao.GetDesignerManagerApprovalCount();
+        }
     }
 }

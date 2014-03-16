@@ -1,4 +1,4 @@
-﻿Create procedure [dbo].[pro_ApprovalListForMarketingManager]
+﻿Create procedure [dbo].[pro_ApprovalListForDesignManager]
 @pageIndex int,
 @pageSize int,
 @input nvarchar(500),
@@ -28,12 +28,13 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
-   and  (o.OrderStatus = N'已提交'
-   and  o.SubmittedBy = 'SalesMan')
-   or ((o.OrderStatus = N'提交不准'
+   and (o.OrderStatus = N'已提交'
+		and o.SubmittedBy = 'MarketingManager')
+   or (o.OrderStatus = N'提交不准'
    or o.OrderStatus = N'提交未签'
    or o.OrderStatus = N'提交已签')
-   and (o.SubmittedBy = 'DesignerManager'))
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'
@@ -57,11 +58,14 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
    and (o.OrderStatus = N'已提交'
-   and  o.SubmittedBy = 'SalesMan')
-   or ((o.OrderStatus = N'提交不准'
+		and o.SubmittedBy = 'MarketingManager')
+   or (o.OrderStatus = N'提交不准'
    or o.OrderStatus = N'提交未签'
    or o.OrderStatus = N'提交已签')
-   and (o.SubmittedBy = 'DesignerManager'))
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'

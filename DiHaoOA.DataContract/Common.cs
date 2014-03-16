@@ -59,6 +59,7 @@ namespace DiHaoOA.DataContract
     public struct Roles
     {
         public const string InformationAssistant = "InformationAssistant";
+        public const string DesignerLeader = "DesignerLeader";
         public const string Designer = "Designer";
     }
 

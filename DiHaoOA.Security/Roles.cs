@@ -12,5 +12,6 @@ namespace DiHaoOA.Security
         public const string SalesManManager = "SalesManManager";
         public const string DesignerManager = "DesignerManager";
         public const string GeneralManager = "GeneralManager";
+        public const string DesignerLeader = "DesignerLeader";
     }
 }

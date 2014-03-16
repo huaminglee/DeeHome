@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DiHaoOA.Business;
 using DiHaoOA.Controls;
 using DiHaoOA.Business.Manager;
+using DiHaoOA.DataContract;
 
 namespace DiHaoOA.WinForm.Controls
 {
@@ -17,6 +18,7 @@ namespace DiHaoOA.WinForm.Controls
         EmployeeManager empManager;
         MySubordinateManager mySubordinateManager;
         DisplayVisitContent displayVisitContent;
+        OrderManager orderManager;
         int totalRecords = 0;
 
         public MySubordinate()
@@ -24,6 +26,7 @@ namespace DiHaoOA.WinForm.Controls
             InitializeComponent();
             empManager = new EmployeeManager();
             mySubordinateManager = new MySubordinateManager();
+            orderManager = new OrderManager();
         }
 
         private void dgIAList_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
@@ -51,19 +54,19 @@ namespace DiHaoOA.WinForm.Controls
                     }
                     if (e.ColumnIndex == 6)
                     {
-                        e.Value = 0;
+                        e.Value = orderManager.GetCurrentMonthCountByOrderStatusForSalesManager(employeeId, OrderStatus.OnChatting);
                     }
                     if (e.ColumnIndex == 7)
                     {
-                        e.Value = 0;
+                        e.Value = orderManager.GetCurrentMonthCountByOrderStatusForSalesManager(employeeId, OrderStatus.Signed);
                     }
                     if (e.ColumnIndex == 8)
                     {
-                        e.Value = 0;
+                        e.Value = orderManager.GetCurrentMonthCountByOrderStatusForSalesManager(employeeId, OrderStatus.NotSigned);
                     }
                     if (e.ColumnIndex == 9)
                     {
-                        e.Value = 0;
+                        e.Value = orderManager.GetCurrentMonthCountByOrderStatusForSalesManager(employeeId, OrderStatus.Denied);
                     }
                 }
             }
@@ -77,7 +80,7 @@ namespace DiHaoOA.WinForm.Controls
         public void LoadData()
         {
             dgMySuordinate.AutoGenerateColumns = false;
-            dgMySuordinate.DataSource = empManager.GetAll().Tables[0];
+            dgMySuordinate.DataSource = empManager.GetSalesMan().Tables[0];
             totalRecords = empManager.GetAll().Tables[0].Rows.Count;
         }
 

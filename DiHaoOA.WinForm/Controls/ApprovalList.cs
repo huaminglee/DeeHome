@@ -125,8 +125,10 @@ namespace DiHaoOA.WinForm.Controls
                     {
                         foreach (Control control in ParentPanel.Controls)
                         {
-                            control.Visible = false;
+                            if (control.Name != "pApproval")
+                                control.Visible = false;
                         }
+                        
                         if (order.OrderStatus == OrderStatus.Submitted || order.OrderStatus == OrderStatus.SubmittedToDesigner)
                         {
                             LoadOrderDetail(order);

@@ -1,6 +1,8 @@
-﻿Create procedure [dbo].[pro_ApprovalListForMarketingManager]
+﻿Create procedure [dbo].[pro_GetOrderByOrderStatusForDesignerLeader]
 @pageIndex int,
 @pageSize int,
+@orderStatus nvarchar(50),
+@EmployeeId nvarchar(50),
 @input nvarchar(500),
 @BlackEmployeeId nvarchar(50),
 @TotalRecords int output
@@ -25,15 +27,13 @@ select Row_Number() over(order by o.OrderId desc) rowNumber,
 	  c.City as city
 from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join EmployeeGroup g on d.GroupId = g.GroupId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
-   and  (o.OrderStatus = N'已提交'
-   and  o.SubmittedBy = 'SalesMan')
-   or ((o.OrderStatus = N'提交不准'
-   or o.OrderStatus = N'提交未签'
-   or o.OrderStatus = N'提交已签')
-   and (o.SubmittedBy = 'DesignerManager'))
+   and o.DesignerId = @EmployeeId
+   and o.DesignerId = g.LeaderId
+   and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'
@@ -53,15 +53,13 @@ where rowNumber between @startRow and @lastRow
 select @TotalRecords = count(*) 
 from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join EmployeeGroup g on d.GroupId = g.GroupId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
-   and (o.OrderStatus = N'已提交'
-   and  o.SubmittedBy = 'SalesMan')
-   or ((o.OrderStatus = N'提交不准'
-   or o.OrderStatus = N'提交未签'
-   or o.OrderStatus = N'提交已签')
-   and (o.SubmittedBy = 'DesignerManager'))
+   and o.DesignerId = @EmployeeId
+   and o.DesignerId = g.LeaderId
+   and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'
@@ -77,4 +75,5 @@ where e.EmployeeId != @BlackEmployeeId
    or @input='')
 end
 return @TotalRecords
+
 GO

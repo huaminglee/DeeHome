@@ -14,6 +14,7 @@ using DiHaoOA.WinForm.Forms;
 using DiHaoOA.WinForm.Controls;
 using DiHaoOA.DataContract;
 using DiHaoOA.WinForm.Common;
+using DiHaoOA.Business.Manager;
 
 namespace DiHaoOA.WinForm
 {
@@ -29,6 +30,7 @@ namespace DiHaoOA.WinForm
         MySubordinate mySubordinate;
         ApprovalList approvalList;
         OrderList orderList;
+        OrderManager orderManager;
 
         const string pro_AllCustomersPaging = "pro_AllCustomersPaging";
         const string pro_DeletedCustomersPaging = "pro_DeletedCustomersPaging";
@@ -42,6 +44,7 @@ namespace DiHaoOA.WinForm
         {
             InitializeComponent();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            orderManager = new OrderManager();
         }
 
         private void childbtnbtn_Click(object sender, EventArgs e)
@@ -176,7 +179,6 @@ namespace DiHaoOA.WinForm
             {
                 control.Visible = false;
             }
-            pApproval.Visible = true;
         }
 
         private void AddMySubordinate()
@@ -242,6 +244,7 @@ namespace DiHaoOA.WinForm
             lblDateTime2.Text = GetDateInfor();
             lblDateTime.Text = GetDateInfor();
             lblDateTime2.Location = new Point(panelFooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
+            lblApproval.Text = "你有" + orderManager.GetSalesManagerApprovalCount() + "条审批信息";
         }
 
         public void LoadDashboardForSalesManager()
@@ -431,9 +434,15 @@ namespace DiHaoOA.WinForm
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelFooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
-            if (GlobalFormValue.SalesManager.Count() > 0)
+            int count = orderManager.GetSalesManagerApprovalCount();
+            lblApproval.Text = "你有" + count + "条审批信息";
+            if (count > 0)
             {
-                lblApproval.Text = "审批     "+GlobalFormValue.SalesManager.Count();
+                pApproval.Visible = true;
+            }
+            else
+            {
+                pApproval.Visible = false;
             }
         }
 
@@ -445,9 +454,16 @@ namespace DiHaoOA.WinForm
             dashboardEntry.SetDefault();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblApproval_Click(object sender, EventArgs e)
         {
-
+            if (orderManager.GetSalesManagerApprovalCount() > 0)
+            {
+                ShowSpecificMenu();
+                AddApprovalList(pro_ApprovalListForMarketingManager);
+                approvalList.ClearSearchText();
+                approvalList.ReLoadData();
+                navBarForSalesManager.ChangeNavItem("Manager", "审批栏");
+            }
         }
     }
 }

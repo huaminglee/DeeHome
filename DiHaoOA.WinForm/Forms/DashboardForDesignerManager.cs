@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using DiHaoOA.Controls;
 using DiHaoOA.WinForm.Controls;
 using DiHaoOA.DataContract;
+using DiHaoOA.Business.Manager;
 
 namespace DiHaoOA.WinForm.Forms
 {
@@ -19,11 +20,14 @@ namespace DiHaoOA.WinForm.Forms
         OrderList orderList;
         ApprovalList approvalList;
         AllocateDesignerGroup allocateDesignerGroup;
+        MyDesigner myDesigner;
+        OrderManager orderManager;
         const string pro_ApprovalListForDesignManager = "pro_ApprovalListForDesignManager";
 
         public DashboardForDesignerManager()
         {
             InitializeComponent();
+            orderManager = new OrderManager();
         }
 
         private void LoadMenu()
@@ -73,9 +77,7 @@ namespace DiHaoOA.WinForm.Forms
             if (menu == DiHaoMenu.Manager)
             {
                 ShowSpecificMenu();
-                AddApprovalList();
-                approvalList.ClearSearchText();
-                approvalList.ReLoadData();
+                HandManagerMenu(btn.Name);
             }
             if (menu == DiHaoMenu.Allocate)
             {
@@ -88,6 +90,37 @@ namespace DiHaoOA.WinForm.Forms
                 ShowSpecificMenu();
                 AddOrderList(btn.Name);
             }
+        }
+
+        private void HandManagerMenu(string childMenu)
+        {
+            if (childMenu == ManagerChildMenu.Approval)
+            {
+                AddApprovalList();
+                approvalList.ClearSearchText();
+                approvalList.ReLoadData();
+            }
+            if (childMenu == ManagerChildMenu.MySubordinate)
+            {
+                AddMyDesigner();
+                myDesigner.LoadData();
+            }
+        }
+
+        private void AddMyDesigner()
+        {
+            if (!panelContent.Contains(myDesigner))
+            {
+                myDesigner = new MyDesigner();
+                myDesigner.ParentPanel = pMainContent; ;
+                //myDesigner.procedureName = pro_ApprovalListForDesignManager;
+                //myDesigner.approvaler = Approvaler.DesignerManager;
+                myDesigner.NavigationBar = navBarForDesignerManager;
+                myDesigner.employee = employee;
+                myDesigner.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(myDesigner);
+            }
+            myDesigner.Show();
         }
 
         private void AddOrderList(string status)
@@ -161,6 +194,8 @@ namespace DiHaoOA.WinForm.Forms
             lblDateTime2.Text = GetDateInfor();
             lblDateTime.Text = GetDateInfor();
             lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
+            AddOrderList(OrderStatus.OnChatting);
+            navBarForDesignerManager.ChangeNavItem("CustomerChat", "在谈");
         }
 
         private void DashboardForDesignerManager_FormClosed(object sender, FormClosedEventArgs e)
@@ -190,6 +225,16 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
+            int count = orderManager.GetDesignerManagerApprovalCount();
+            lblApproval.Text = "你有" + count + "条审批信息";
+            if (count > 0)
+            {
+                pApproval.Visible = true;
+            }
+            else
+            {
+                pApproval.Visible = false;
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -198,6 +243,18 @@ namespace DiHaoOA.WinForm.Forms
             dashboardEntry.Show();
             dashboardEntry.SetDefault();
             this.Hide();
+        }
+
+        private void lblApproval_Click(object sender, EventArgs e)
+        {
+            if (orderManager.GetDesignerManagerApprovalCount() > 0)
+            {
+                ShowSpecificMenu();
+                AddApprovalList();
+                approvalList.ClearSearchText();
+                approvalList.ReLoadData();
+                navBarForDesignerManager.ChangeNavItem("Manager", "审批栏");
+            }
         }
     }
 }

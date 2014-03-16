@@ -18,7 +18,7 @@
 	[Comments] [nvarchar](max) NULL,
 	[InformationAssistantId] [int] NULL,
 	[EmployeeId] [nvarchar](50) NULL,
-	[WorkPlace][nvarchar](max) NULL
+	[WorkPlace] [nvarchar](max) NULL,
  CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
 (
 	[CustomerId] ASC

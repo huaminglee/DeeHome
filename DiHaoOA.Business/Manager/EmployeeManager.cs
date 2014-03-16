@@ -51,5 +51,16 @@ namespace DiHaoOA.Business
         {
             employeeDao.AllocateDesignerToGroup(designerId, groupId);
         }
+
+        public DataSet GetSalesMan()
+        {
+            return employeeDao.GetSalesMan();
+        }
+
+        public string GetGroupNameByEmployeeId(string employeeId)
+        {
+            return employeeDao.GetGroupNameByEmployeeId(employeeId);
+        }
+
     }   
 }

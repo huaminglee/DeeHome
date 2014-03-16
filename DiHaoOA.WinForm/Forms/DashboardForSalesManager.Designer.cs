@@ -95,18 +95,19 @@
             this.pApproval.Name = "pApproval";
             this.pApproval.Size = new System.Drawing.Size(200, 24);
             this.pApproval.TabIndex = 0;
+            this.pApproval.Visible = false;
             // 
             // lblApproval
             // 
             this.lblApproval.AutoSize = true;
             this.lblApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblApproval.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(12)))), ((int)(((byte)(1)))));
-            this.lblApproval.Location = new System.Drawing.Point(89, 5);
+            this.lblApproval.Location = new System.Drawing.Point(57, 5);
             this.lblApproval.Name = "lblApproval";
-            this.lblApproval.Size = new System.Drawing.Size(60, 13);
+            this.lblApproval.Size = new System.Drawing.Size(105, 13);
             this.lblApproval.TabIndex = 0;
-            this.lblApproval.Text = "审批     0";
-            this.lblApproval.Click += new System.EventHandler(this.label1_Click);
+            this.lblApproval.Text = "你有1条审批信息";
+            this.lblApproval.Click += new System.EventHandler(this.lblApproval_Click);
             // 
             // panelNav
             // 

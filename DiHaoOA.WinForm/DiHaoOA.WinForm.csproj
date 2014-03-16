@@ -184,6 +184,12 @@
     <Compile Include="Controls\ModifyCustomerback.designer.cs">
       <DependentUpon>ModifyCustomerback.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MyDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MyDesigner.Designer.cs">
+      <DependentUpon>MyDesigner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MySubordinate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,6 +232,12 @@
     <Compile Include="Controls\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OrderListForDesignerLeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderListForDesignerLeader.Designer.cs">
+      <DependentUpon>OrderListForDesignerLeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PagingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </Compile>
     <Compile Include="Forms\DashboardForDesigner.Designer.cs">
       <DependentUpon>DashboardForDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForDesignerLeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForDesignerLeader.Designer.cs">
+      <DependentUpon>DashboardForDesignerLeader.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DashboardForDesignerManager.cs">
       <SubType>Form</SubType>
@@ -373,6 +391,9 @@
     <EmbeddedResource Include="Controls\ModifyCustomerback.resx">
       <DependentUpon>ModifyCustomerback.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MyDesigner.resx">
+      <DependentUpon>MyDesigner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MySubordinate.resx">
       <DependentUpon>MySubordinate.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,6 +415,9 @@
     <EmbeddedResource Include="Controls\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderListForDesignerLeader.resx">
+      <DependentUpon>OrderListForDesignerLeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PagingControl.resx">
       <DependentUpon>PagingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForDesigner.resx">
       <DependentUpon>DashboardForDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForDesignerLeader.resx">
+      <DependentUpon>DashboardForDesignerLeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForDesignerManager.resx">
       <DependentUpon>DashboardForDesignerManager.cs</DependentUpon>
