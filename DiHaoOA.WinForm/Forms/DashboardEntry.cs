@@ -37,8 +37,9 @@ namespace DiHaoOA
             InitializeComponent();
             empManager = new EmployeeManager();
             roleManager = new RolesManager();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AcceptButton = btnLogin;
+            
         }
 
         
@@ -83,7 +84,6 @@ namespace DiHaoOA
                 designerDashboard.SetUserInfor(_userName);
                 designerDashboard.Show();
                 designerDashboard.LoadDashboardForDesigner();
-
             }
             if (role == Roles.SalesManManager)
             {
@@ -222,6 +222,11 @@ namespace DiHaoOA
 
         private void lblExit_Click(object sender, EventArgs e)
         {
+        }
+
+        private void DashboardEntry_Activated(object sender, EventArgs e)
+        {
+            txtUserName.Focus();
         }
 
     }

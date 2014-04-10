@@ -218,6 +218,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DashboardForDesigner";
             this.Text = "OA企业办公系统";
+            this.Activated += new System.EventHandler(this.DashboardForDesigner_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForDesigner_FormClosed);
             this.Load += new System.EventHandler(this.DashboardForDesigner_Load);
             this.panelHeader.ResumeLayout(false);

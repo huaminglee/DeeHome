@@ -136,7 +136,7 @@
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1005, 448);
+            this.panel8.Size = new System.Drawing.Size(1005, 414);
             this.panel8.TabIndex = 2;
             // 
             // tabControl1
@@ -147,7 +147,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1005, 448);
+            this.tabControl1.Size = new System.Drawing.Size(1005, 414);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -158,7 +158,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(997, 422);
+            this.tabPage1.Size = new System.Drawing.Size(997, 388);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "客户修改";
             // 
@@ -168,7 +168,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(991, 355);
+            this.panel9.Size = new System.Drawing.Size(991, 328);
             this.panel9.TabIndex = 7;
             // 
             // tableLayoutPanel1
@@ -180,7 +180,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
             this.tableLayoutPanel1.Controls.Add(this.label34, 4, 7);
             this.tableLayoutPanel1.Controls.Add(this.lblOrderStatus, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.label32, 2, 7);
@@ -236,16 +236,16 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(991, 355);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(991, 328);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // label34
@@ -253,9 +253,9 @@
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label34.Location = new System.Drawing.Point(675, 268);
+            this.label34.Location = new System.Drawing.Point(675, 249);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(83, 48);
+            this.label34.Size = new System.Drawing.Size(83, 44);
             this.label34.TabIndex = 66;
             this.label34.Text = "乘车路线";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,9 +266,9 @@
             this.lblOrderStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOrderStatus.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.lblOrderStatus.Location = new System.Drawing.Point(487, 268);
+            this.lblOrderStatus.Location = new System.Drawing.Point(487, 249);
             this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(181, 48);
+            this.lblOrderStatus.Size = new System.Drawing.Size(181, 44);
             this.lblOrderStatus.TabIndex = 65;
             this.lblOrderStatus.Text = "正跟踪";
             this.lblOrderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,9 +278,9 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label32.Location = new System.Drawing.Point(381, 268);
+            this.label32.Location = new System.Drawing.Point(381, 249);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(99, 48);
+            this.label32.Size = new System.Drawing.Size(99, 44);
             this.label32.TabIndex = 64;
             this.label32.Text = "状    态";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,10 +290,10 @@
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtEmail.Location = new System.Drawing.Point(765, 236);
+            this.txtEmail.Location = new System.Drawing.Point(765, 220);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 22);
+            this.txtEmail.Size = new System.Drawing.Size(150, 21);
             this.txtEmail.TabIndex = 63;
             // 
             // label31
@@ -301,9 +301,9 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label31.Location = new System.Drawing.Point(675, 233);
+            this.label31.Location = new System.Drawing.Point(675, 217);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(83, 34);
+            this.label31.Size = new System.Drawing.Size(83, 31);
             this.label31.TabIndex = 62;
             this.label31.Text = "Email";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,9 +314,9 @@
             this.ReVisistPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReVisistPeriod.Font = new System.Drawing.Font("Arial", 8.25F);
             this.ReVisistPeriod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.ReVisistPeriod.Location = new System.Drawing.Point(487, 233);
+            this.ReVisistPeriod.Location = new System.Drawing.Point(487, 217);
             this.ReVisistPeriod.Name = "ReVisistPeriod";
-            this.ReVisistPeriod.Size = new System.Drawing.Size(181, 34);
+            this.ReVisistPeriod.Size = new System.Drawing.Size(181, 31);
             this.ReVisistPeriod.TabIndex = 61;
             this.ReVisistPeriod.Text = "0天";
             this.ReVisistPeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,9 +326,9 @@
             this.label28.AutoSize = true;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.label28.Location = new System.Drawing.Point(675, 155);
+            this.label28.Location = new System.Drawing.Point(675, 144);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(83, 44);
+            this.label28.Size = new System.Drawing.Size(83, 41);
             this.label28.TabIndex = 58;
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -337,9 +337,9 @@
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label27.Location = new System.Drawing.Point(675, 200);
+            this.label27.Location = new System.Drawing.Point(675, 186);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(83, 32);
+            this.label27.Size = new System.Drawing.Size(83, 30);
             this.label27.TabIndex = 56;
             this.label27.Text = "使用面积";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -349,10 +349,10 @@
             this.txtContactPerson3Number.Enabled = false;
             this.txtContactPerson3Number.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPerson3Number.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPerson3Number.Location = new System.Drawing.Point(487, 158);
+            this.txtContactPerson3Number.Location = new System.Drawing.Point(487, 147);
             this.txtContactPerson3Number.Multiline = true;
             this.txtContactPerson3Number.Name = "txtContactPerson3Number";
-            this.txtContactPerson3Number.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPerson3Number.Size = new System.Drawing.Size(150, 21);
             this.txtContactPerson3Number.TabIndex = 55;
             this.txtContactPerson3Number.Leave += new System.EventHandler(this.txtContactperson3Number_Leave);
             // 
@@ -361,9 +361,9 @@
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label26.Location = new System.Drawing.Point(381, 155);
+            this.label26.Location = new System.Drawing.Point(381, 144);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(99, 44);
+            this.label26.Size = new System.Drawing.Size(99, 41);
             this.label26.TabIndex = 54;
             this.label26.Text = "联系电话(3)";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,9 +373,9 @@
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label25.Location = new System.Drawing.Point(675, 110);
+            this.label25.Location = new System.Drawing.Point(675, 102);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 44);
+            this.label25.Size = new System.Drawing.Size(83, 41);
             this.label25.TabIndex = 52;
             this.label25.Text = "联系电话(2)";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,10 +385,10 @@
             this.txtContactPerson.Enabled = false;
             this.txtContactPerson.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPerson.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPerson.Location = new System.Drawing.Point(765, 73);
+            this.txtContactPerson.Location = new System.Drawing.Point(765, 68);
             this.txtContactPerson.Multiline = true;
             this.txtContactPerson.Name = "txtContactPerson";
-            this.txtContactPerson.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPerson.Size = new System.Drawing.Size(150, 21);
             this.txtContactPerson.TabIndex = 51;
             // 
             // label24
@@ -396,9 +396,9 @@
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label24.Location = new System.Drawing.Point(675, 70);
+            this.label24.Location = new System.Drawing.Point(675, 65);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(83, 39);
+            this.label24.Size = new System.Drawing.Size(83, 36);
             this.label24.TabIndex = 50;
             this.label24.Text = "联系人";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,9 +409,9 @@
             this.labelJaJu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelJaJu.Font = new System.Drawing.Font("Arial", 8.25F);
             this.labelJaJu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.labelJaJu.Location = new System.Drawing.Point(765, 42);
+            this.labelJaJu.Location = new System.Drawing.Point(765, 39);
             this.labelJaJu.Name = "labelJaJu";
-            this.labelJaJu.Size = new System.Drawing.Size(234, 27);
+            this.labelJaJu.Size = new System.Drawing.Size(235, 25);
             this.labelJaJu.TabIndex = 49;
             this.labelJaJu.Text = "家具未提交";
             this.labelJaJu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,9 +421,9 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label15.Location = new System.Drawing.Point(675, 42);
+            this.label15.Location = new System.Drawing.Point(675, 39);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(83, 27);
+            this.label15.Size = new System.Drawing.Size(83, 25);
             this.label15.TabIndex = 48;
             this.label15.Text = "家具状态";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -432,9 +432,9 @@
             // 
             this.panel2.Controls.Add(this.cbCity);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(487, 73);
+            this.panel2.Location = new System.Drawing.Point(487, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 33);
+            this.panel2.Size = new System.Drawing.Size(181, 30);
             this.panel2.TabIndex = 6;
             // 
             // cbCity
@@ -455,9 +455,9 @@
             this.lblImformationer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblImformationer.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblImformationer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.lblImformationer.Location = new System.Drawing.Point(487, 42);
+            this.lblImformationer.Location = new System.Drawing.Point(487, 39);
             this.lblImformationer.Name = "lblImformationer";
-            this.lblImformationer.Size = new System.Drawing.Size(181, 27);
+            this.lblImformationer.Size = new System.Drawing.Size(181, 25);
             this.lblImformationer.TabIndex = 47;
             this.lblImformationer.Text = "暂无";
             this.lblImformationer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,9 +468,9 @@
             this.labelDesinger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelDesinger.Font = new System.Drawing.Font("Arial", 8.25F);
             this.labelDesinger.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.labelDesinger.Location = new System.Drawing.Point(119, 42);
+            this.labelDesinger.Location = new System.Drawing.Point(119, 39);
             this.labelDesinger.Name = "labelDesinger";
-            this.labelDesinger.Size = new System.Drawing.Size(255, 27);
+            this.labelDesinger.Size = new System.Drawing.Size(255, 25);
             this.labelDesinger.TabIndex = 45;
             this.labelDesinger.Text = "暂无";
             this.labelDesinger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,7 +483,7 @@
             this.lblEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblEmployee.Location = new System.Drawing.Point(765, 1);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(234, 40);
+            this.lblEmployee.Size = new System.Drawing.Size(235, 37);
             this.lblEmployee.TabIndex = 44;
             this.lblEmployee.Text = "试用员工";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,7 +496,7 @@
             this.lblRecordDateTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblRecordDateTime.Location = new System.Drawing.Point(487, 1);
             this.lblRecordDateTime.Name = "lblRecordDateTime";
-            this.lblRecordDateTime.Size = new System.Drawing.Size(181, 40);
+            this.lblRecordDateTime.Size = new System.Drawing.Size(181, 37);
             this.lblRecordDateTime.TabIndex = 43;
             this.lblRecordDateTime.Text = "2013-08-14";
             this.lblRecordDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -508,7 +508,7 @@
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.label20.Location = new System.Drawing.Point(675, 1);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 40);
+            this.label20.Size = new System.Drawing.Size(83, 37);
             this.label20.TabIndex = 42;
             this.label20.Text = "业务员";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,9 +518,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Top;
             this.label17.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label17.Location = new System.Drawing.Point(4, 317);
+            this.label17.Location = new System.Drawing.Point(4, 294);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 35);
+            this.label17.Size = new System.Drawing.Size(108, 32);
             this.label17.TabIndex = 38;
             this.label17.Text = "客户类型";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -530,9 +530,9 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label16.Location = new System.Drawing.Point(4, 268);
+            this.label16.Location = new System.Drawing.Point(4, 249);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 48);
+            this.label16.Size = new System.Drawing.Size(108, 44);
             this.label16.TabIndex = 37;
             this.label16.Text = "提供信息者性质";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,10 +542,10 @@
             this.txtContactPerson2.Enabled = false;
             this.txtContactPerson2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPerson2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPerson2.Location = new System.Drawing.Point(487, 113);
+            this.txtContactPerson2.Location = new System.Drawing.Point(487, 105);
             this.txtContactPerson2.Multiline = true;
             this.txtContactPerson2.Name = "txtContactPerson2";
-            this.txtContactPerson2.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPerson2.Size = new System.Drawing.Size(150, 21);
             this.txtContactPerson2.TabIndex = 36;
             // 
             // label11
@@ -553,9 +553,9 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label11.Location = new System.Drawing.Point(381, 110);
+            this.label11.Location = new System.Drawing.Point(381, 102);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 44);
+            this.label11.Size = new System.Drawing.Size(99, 41);
             this.label11.TabIndex = 35;
             this.label11.Text = "联系人(2)";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -565,9 +565,9 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label10.Location = new System.Drawing.Point(381, 70);
+            this.label10.Location = new System.Drawing.Point(381, 65);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 39);
+            this.label10.Size = new System.Drawing.Size(99, 36);
             this.label10.TabIndex = 34;
             this.label10.Text = "所在区域";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -577,9 +577,9 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label14.Location = new System.Drawing.Point(381, 233);
+            this.label14.Location = new System.Drawing.Point(381, 217);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 34);
+            this.label14.Size = new System.Drawing.Size(99, 31);
             this.label14.TabIndex = 30;
             this.label14.Text = "回访剩余时间";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -589,10 +589,10 @@
             this.txtDecorateAddress.Enabled = false;
             this.txtDecorateAddress.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtDecorateAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtDecorateAddress.Location = new System.Drawing.Point(119, 236);
+            this.txtDecorateAddress.Location = new System.Drawing.Point(119, 220);
             this.txtDecorateAddress.Multiline = true;
             this.txtDecorateAddress.Name = "txtDecorateAddress";
-            this.txtDecorateAddress.Size = new System.Drawing.Size(150, 22);
+            this.txtDecorateAddress.Size = new System.Drawing.Size(150, 21);
             this.txtDecorateAddress.TabIndex = 29;
             // 
             // label13
@@ -600,9 +600,9 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label13.Location = new System.Drawing.Point(4, 233);
+            this.label13.Location = new System.Drawing.Point(4, 217);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 34);
+            this.label13.Size = new System.Drawing.Size(108, 31);
             this.label13.TabIndex = 28;
             this.label13.Text = "装修地址";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -612,10 +612,10 @@
             this.txtWorkPlace.Enabled = false;
             this.txtWorkPlace.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtWorkPlace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtWorkPlace.Location = new System.Drawing.Point(487, 203);
+            this.txtWorkPlace.Location = new System.Drawing.Point(487, 189);
             this.txtWorkPlace.Multiline = true;
             this.txtWorkPlace.Name = "txtWorkPlace";
-            this.txtWorkPlace.Size = new System.Drawing.Size(150, 22);
+            this.txtWorkPlace.Size = new System.Drawing.Size(150, 21);
             this.txtWorkPlace.TabIndex = 27;
             // 
             // label12
@@ -623,9 +623,9 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label12.Location = new System.Drawing.Point(381, 200);
+            this.label12.Location = new System.Drawing.Point(381, 186);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 32);
+            this.label12.Size = new System.Drawing.Size(99, 30);
             this.label12.TabIndex = 26;
             this.label12.Text = "办公地址";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -635,9 +635,9 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label6.Location = new System.Drawing.Point(4, 200);
+            this.label6.Location = new System.Drawing.Point(4, 186);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 32);
+            this.label6.Size = new System.Drawing.Size(108, 30);
             this.label6.TabIndex = 23;
             this.label6.Text = "装修时间";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -647,10 +647,10 @@
             this.txtContactPerson3.Enabled = false;
             this.txtContactPerson3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPerson3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPerson3.Location = new System.Drawing.Point(119, 158);
+            this.txtContactPerson3.Location = new System.Drawing.Point(119, 147);
             this.txtContactPerson3.Multiline = true;
             this.txtContactPerson3.Name = "txtContactPerson3";
-            this.txtContactPerson3.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPerson3.Size = new System.Drawing.Size(150, 21);
             this.txtContactPerson3.TabIndex = 22;
             // 
             // txtContactPersonNumber
@@ -658,10 +658,10 @@
             this.txtContactPersonNumber.Enabled = false;
             this.txtContactPersonNumber.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPersonNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPersonNumber.Location = new System.Drawing.Point(119, 113);
+            this.txtContactPersonNumber.Location = new System.Drawing.Point(119, 105);
             this.txtContactPersonNumber.Multiline = true;
             this.txtContactPersonNumber.Name = "txtContactPersonNumber";
-            this.txtContactPersonNumber.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPersonNumber.Size = new System.Drawing.Size(150, 21);
             this.txtContactPersonNumber.TabIndex = 21;
             // 
             // label1
@@ -671,7 +671,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 40);
+            this.label1.Size = new System.Drawing.Size(108, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "任务单号";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -681,9 +681,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label2.Location = new System.Drawing.Point(4, 42);
+            this.label2.Location = new System.Drawing.Point(4, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 27);
+            this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "设 计 师";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -693,9 +693,9 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label5.Location = new System.Drawing.Point(4, 110);
+            this.label5.Location = new System.Drawing.Point(4, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 44);
+            this.label5.Size = new System.Drawing.Size(108, 41);
             this.label5.TabIndex = 4;
             this.label5.Text = "联系电话";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -705,9 +705,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label3.Location = new System.Drawing.Point(4, 70);
+            this.label3.Location = new System.Drawing.Point(4, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 39);
+            this.label3.Size = new System.Drawing.Size(108, 36);
             this.label3.TabIndex = 2;
             this.label3.Text = "公司名称";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -717,10 +717,10 @@
             this.txtCompany.Enabled = false;
             this.txtCompany.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtCompany.Location = new System.Drawing.Point(119, 73);
+            this.txtCompany.Location = new System.Drawing.Point(119, 68);
             this.txtCompany.Multiline = true;
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(150, 22);
+            this.txtCompany.Size = new System.Drawing.Size(150, 21);
             this.txtCompany.TabIndex = 8;
             // 
             // label4
@@ -728,9 +728,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label4.Location = new System.Drawing.Point(4, 155);
+            this.label4.Location = new System.Drawing.Point(4, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 44);
+            this.label4.Size = new System.Drawing.Size(108, 41);
             this.label4.TabIndex = 3;
             this.label4.Text = "联系人(3)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -742,7 +742,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.label8.Location = new System.Drawing.Point(381, 1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 40);
+            this.label8.Size = new System.Drawing.Size(99, 37);
             this.label8.TabIndex = 13;
             this.label8.Text = "录入时间";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -752,9 +752,9 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.label9.Location = new System.Drawing.Point(381, 42);
+            this.label9.Location = new System.Drawing.Point(381, 39);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 27);
+            this.label9.Size = new System.Drawing.Size(99, 25);
             this.label9.TabIndex = 14;
             this.label9.Text = "信息员";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -767,7 +767,7 @@
             this.lblOrderNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblOrderNumber.Location = new System.Drawing.Point(119, 1);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(255, 40);
+            this.lblOrderNumber.Size = new System.Drawing.Size(255, 37);
             this.lblOrderNumber.TabIndex = 41;
             this.lblOrderNumber.Text = "82132";
             this.lblOrderNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -776,9 +776,9 @@
             // 
             this.panel5.Controls.Add(this.DecorateDateTime);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(119, 203);
+            this.panel5.Location = new System.Drawing.Point(119, 189);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(255, 26);
+            this.panel5.Size = new System.Drawing.Size(255, 24);
             this.panel5.TabIndex = 5;
             // 
             // DecorateDateTime
@@ -796,9 +796,9 @@
             this.panel1.Controls.Add(this.rbSingle);
             this.panel1.Controls.Add(this.rbCooparate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(119, 271);
+            this.panel1.Location = new System.Drawing.Point(119, 252);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 42);
+            this.panel1.Size = new System.Drawing.Size(255, 38);
             this.panel1.TabIndex = 13;
             // 
             // rbSingle
@@ -809,7 +809,7 @@
             this.rbSingle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.rbSingle.Location = new System.Drawing.Point(8, 4);
             this.rbSingle.Name = "rbSingle";
-            this.rbSingle.Size = new System.Drawing.Size(57, 22);
+            this.rbSingle.Size = new System.Drawing.Size(57, 20);
             this.rbSingle.TabIndex = 11;
             this.rbSingle.TabStop = true;
             this.rbSingle.Text = "个人";
@@ -822,7 +822,7 @@
             this.rbCooparate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.rbCooparate.Location = new System.Drawing.Point(67, 4);
             this.rbCooparate.Name = "rbCooparate";
-            this.rbCooparate.Size = new System.Drawing.Size(61, 23);
+            this.rbCooparate.Size = new System.Drawing.Size(61, 21);
             this.rbCooparate.TabIndex = 12;
             this.rbCooparate.Text = "合作者";
             this.rbCooparate.UseVisualStyleBackColor = true;
@@ -833,9 +833,9 @@
             this.panel3.Controls.Add(this.radioButtonBanGong);
             this.panel3.Controls.Add(this.radioButtonShop);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(119, 320);
+            this.panel3.Location = new System.Drawing.Point(119, 297);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(255, 32);
+            this.panel3.Size = new System.Drawing.Size(255, 30);
             this.panel3.TabIndex = 46;
             // 
             // radioButtonBanGong
@@ -846,7 +846,7 @@
             this.radioButtonBanGong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.radioButtonBanGong.Location = new System.Drawing.Point(8, 3);
             this.radioButtonBanGong.Name = "radioButtonBanGong";
-            this.radioButtonBanGong.Size = new System.Drawing.Size(52, 20);
+            this.radioButtonBanGong.Size = new System.Drawing.Size(52, 18);
             this.radioButtonBanGong.TabIndex = 11;
             this.radioButtonBanGong.TabStop = true;
             this.radioButtonBanGong.Text = "办公";
@@ -859,7 +859,7 @@
             this.radioButtonShop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.radioButtonShop.Location = new System.Drawing.Point(66, 3);
             this.radioButtonShop.Name = "radioButtonShop";
-            this.radioButtonShop.Size = new System.Drawing.Size(62, 20);
+            this.radioButtonShop.Size = new System.Drawing.Size(62, 18);
             this.radioButtonShop.TabIndex = 12;
             this.radioButtonShop.Text = "商铺";
             this.radioButtonShop.UseVisualStyleBackColor = true;
@@ -869,10 +869,10 @@
             this.txtUsableArea.Enabled = false;
             this.txtUsableArea.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtUsableArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtUsableArea.Location = new System.Drawing.Point(765, 203);
+            this.txtUsableArea.Location = new System.Drawing.Point(765, 189);
             this.txtUsableArea.Multiline = true;
             this.txtUsableArea.Name = "txtUsableArea";
-            this.txtUsableArea.Size = new System.Drawing.Size(150, 22);
+            this.txtUsableArea.Size = new System.Drawing.Size(150, 21);
             this.txtUsableArea.TabIndex = 57;
             // 
             // txtContactPerson2Number
@@ -880,10 +880,10 @@
             this.txtContactPerson2Number.Enabled = false;
             this.txtContactPerson2Number.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtContactPerson2Number.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtContactPerson2Number.Location = new System.Drawing.Point(765, 113);
+            this.txtContactPerson2Number.Location = new System.Drawing.Point(765, 105);
             this.txtContactPerson2Number.Multiline = true;
             this.txtContactPerson2Number.Name = "txtContactPerson2Number";
-            this.txtContactPerson2Number.Size = new System.Drawing.Size(150, 22);
+            this.txtContactPerson2Number.Size = new System.Drawing.Size(150, 21);
             this.txtContactPerson2Number.TabIndex = 53;
             this.txtContactPerson2Number.Leave += new System.EventHandler(this.txtContactPerson2Number_Leave);
             // 
@@ -891,9 +891,9 @@
             // 
             this.panel10.Controls.Add(this.txtRidePath);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(765, 271);
+            this.panel10.Location = new System.Drawing.Point(765, 252);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(234, 42);
+            this.panel10.Size = new System.Drawing.Size(235, 38);
             this.panel10.TabIndex = 68;
             // 
             // txtRidePath
@@ -904,7 +904,7 @@
             this.txtRidePath.Location = new System.Drawing.Point(0, 3);
             this.txtRidePath.Multiline = true;
             this.txtRidePath.Name = "txtRidePath";
-            this.txtRidePath.Size = new System.Drawing.Size(150, 22);
+            this.txtRidePath.Size = new System.Drawing.Size(150, 21);
             this.txtRidePath.TabIndex = 67;
             // 
             // panel4
@@ -917,9 +917,9 @@
             this.panel4.Controls.Add(this.radioButtonGiveUp);
             this.panel4.Controls.Add(this.radioButtonFollowing);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(3, 317);
+            this.panel4.Location = new System.Drawing.Point(3, 291);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(991, 102);
+            this.panel4.Size = new System.Drawing.Size(991, 94);
             this.panel4.TabIndex = 6;
             // 
             // lblMsg
@@ -927,7 +927,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(75)))), ((int)(((byte)(57)))));
-            this.lblMsg.Location = new System.Drawing.Point(471, 75);
+            this.lblMsg.Location = new System.Drawing.Point(471, 69);
             this.lblMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(119, 13);
@@ -937,12 +937,12 @@
             // 
             // radioButtonSubmit
             // 
-            this.radioButtonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonSubmit.AutoSize = true;
             this.radioButtonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.radioButtonSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.radioButtonSubmit.Location = new System.Drawing.Point(395, 51);
+            this.radioButtonSubmit.Location = new System.Drawing.Point(395, 47);
             this.radioButtonSubmit.Name = "radioButtonSubmit";
             this.radioButtonSubmit.Size = new System.Drawing.Size(73, 17);
             this.radioButtonSubmit.TabIndex = 3;
@@ -955,9 +955,9 @@
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.btnConfirm.Location = new System.Drawing.Point(420, 70);
+            this.btnConfirm.Location = new System.Drawing.Point(420, 65);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(50, 25);
+            this.btnConfirm.Size = new System.Drawing.Size(50, 23);
             this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -965,12 +965,12 @@
             // 
             // radioButtonModify
             // 
-            this.radioButtonModify.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonModify.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonModify.AutoSize = true;
             this.radioButtonModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.radioButtonModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.radioButtonModify.Location = new System.Drawing.Point(553, 51);
+            this.radioButtonModify.Location = new System.Drawing.Point(553, 47);
             this.radioButtonModify.Name = "radioButtonModify";
             this.radioButtonModify.Size = new System.Drawing.Size(73, 17);
             this.radioButtonModify.TabIndex = 2;
@@ -980,12 +980,12 @@
             // 
             // radioButtonGiveUp
             // 
-            this.radioButtonGiveUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonGiveUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonGiveUp.AutoSize = true;
             this.radioButtonGiveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.radioButtonGiveUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.radioButtonGiveUp.Location = new System.Drawing.Point(474, 51);
+            this.radioButtonGiveUp.Location = new System.Drawing.Point(474, 47);
             this.radioButtonGiveUp.Name = "radioButtonGiveUp";
             this.radioButtonGiveUp.Size = new System.Drawing.Size(73, 17);
             this.radioButtonGiveUp.TabIndex = 1;
@@ -994,13 +994,13 @@
             // 
             // radioButtonFollowing
             // 
-            this.radioButtonFollowing.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonFollowing.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonFollowing.AutoSize = true;
             this.radioButtonFollowing.Checked = true;
             this.radioButtonFollowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.radioButtonFollowing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.radioButtonFollowing.Location = new System.Drawing.Point(316, 51);
+            this.radioButtonFollowing.Location = new System.Drawing.Point(316, 47);
             this.radioButtonFollowing.Name = "radioButtonFollowing";
             this.radioButtonFollowing.Size = new System.Drawing.Size(73, 17);
             this.radioButtonFollowing.TabIndex = 0;
@@ -1010,16 +1010,16 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.Controls.Add(this.btnAddVisit);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(0, 449);
+            this.panel6.Location = new System.Drawing.Point(0, 414);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1005, 152);
+            this.panel6.Size = new System.Drawing.Size(1005, 140);
             this.panel6.TabIndex = 1;
             // 
             // btnAddVisit
@@ -1031,7 +1031,7 @@
             this.btnAddVisit.Location = new System.Drawing.Point(911, -3);
             this.btnAddVisit.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddVisit.Name = "btnAddVisit";
-            this.btnAddVisit.Size = new System.Drawing.Size(70, 23);
+            this.btnAddVisit.Size = new System.Drawing.Size(70, 21);
             this.btnAddVisit.TabIndex = 0;
             this.btnAddVisit.Text = "添加回访";
             this.btnAddVisit.UseVisualStyleBackColor = false;
@@ -1046,7 +1046,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1005, 152);
+            this.panel7.Size = new System.Drawing.Size(1005, 140);
             this.panel7.TabIndex = 0;
             // 
             // tabControl2
@@ -1057,7 +1057,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1005, 152);
+            this.tabControl2.Size = new System.Drawing.Size(1005, 140);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage2
@@ -1067,7 +1067,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(997, 126);
+            this.tabPage2.Size = new System.Drawing.Size(997, 114);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "市场回访";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1110,9 +1110,10 @@
             this.dataGridReVisit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridReVisit.Size = new System.Drawing.Size(993, 122);
+            this.dataGridReVisit.Size = new System.Drawing.Size(993, 110);
             this.dataGridReVisit.TabIndex = 1;
             this.dataGridReVisit.VirtualMode = true;
+            this.dataGridReVisit.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridReVisit_CellValueNeeded);
             // 
             // 序号
             // 
@@ -1149,12 +1150,12 @@
             // 
             // ModifyCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Name = "ModifyCustomer";
-            this.Size = new System.Drawing.Size(1005, 601);
+            this.Size = new System.Drawing.Size(1005, 555);
             this.panel8.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

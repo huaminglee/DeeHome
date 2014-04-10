@@ -211,6 +211,7 @@ CREATE TABLE [dbo].[CustomerOrder] (
     [CustomerId]     INT            NULL,
     [Description]    NVARCHAR (MAX) NULL,
     [AllocationDate] DATETIME       NULL,
+    [SubmittedBy]    NVARCHAR (50)  NULL,
     CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([OrderId] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY],
     CONSTRAINT [Unique_Order] UNIQUE NONCLUSTERED ([OrderNumber] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
 ) ON [PRIMARY];
@@ -358,6 +359,15 @@ PRINT N'Creating FK_Customer_InformationAssistant...';
 GO
 ALTER TABLE [dbo].[Customer] WITH NOCHECK
     ADD CONSTRAINT [FK_Customer_InformationAssistant] FOREIGN KEY ([InformationAssistantId]) REFERENCES [dbo].[InformationAssistant] ([InformationAssistantId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+GO
+PRINT N'Creating FK_CustomerOrder_Customer...';
+
+
+GO
+ALTER TABLE [dbo].[CustomerOrder] WITH NOCHECK
+    ADD CONSTRAINT [FK_CustomerOrder_Customer] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customer] ([CustomerId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
 GO
@@ -616,6 +626,94 @@ select @TotalRecords = count(*)
       or @input = '')
 return @TotalRecords
 GO
+PRINT N'Creating [dbo].[pro_ApprovalListForDesignManager]...';
+
+
+GO
+Create procedure [dbo].[pro_ApprovalListForDesignManager]
+@pageIndex int,
+@pageSize int,
+@input nvarchar(500),
+@BlackEmployeeId nvarchar(50),
+@TotalRecords int output
+as
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and (o.OrderStatus = N'已提交'
+		and o.SubmittedBy = 'MarketingManager')
+   or (o.OrderStatus = N'提交不准'
+   or o.OrderStatus = N'提交未签'
+   or o.OrderStatus = N'提交已签')
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and (o.OrderStatus = N'已提交'
+		and o.SubmittedBy = 'MarketingManager')
+   or (o.OrderStatus = N'提交不准'
+   or o.OrderStatus = N'提交未签'
+   or o.OrderStatus = N'提交已签')
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
+   and (o.SubmittedBy = 'SalesMan'
+   or o.SubmittedBy = 'Designer')
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords
+GO
 PRINT N'Creating [dbo].[pro_ApprovalListForMarketingManager]...';
 
 
@@ -650,7 +748,12 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
-   and o.OrderStatus = N'已提交'
+   and  (o.OrderStatus = N'已提交'
+   and  o.SubmittedBy = 'SalesMan')
+   or ((o.OrderStatus = N'提交不准'
+   or o.OrderStatus = N'提交未签'
+   or o.OrderStatus = N'提交已签')
+   and (o.SubmittedBy = 'DesignerManager'))
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'
@@ -673,7 +776,12 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
-   and o.OrderStatus = N'已提交'
+   and (o.OrderStatus = N'已提交'
+   and  o.SubmittedBy = 'SalesMan')
+   or ((o.OrderStatus = N'提交不准'
+   or o.OrderStatus = N'提交未签'
+   or o.OrderStatus = N'提交已签')
+   and (o.SubmittedBy = 'DesignerManager'))
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
    or o.RecordDate like '%'+@input+'%'
@@ -822,6 +930,7 @@ Create procedure [dbo].[pro_GetOrderByOrderStatus]
 @pageIndex int,
 @pageSize int,
 @orderStatus nvarchar(50),
+@EmployeeId nvarchar(50),
 @input nvarchar(500),
 @BlackEmployeeId nvarchar(50),
 @TotalRecords int output
@@ -849,6 +958,7 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
+	and o.DesignerId = @EmployeeId
    and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
@@ -872,6 +982,167 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
+   and o.DesignerId = @EmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords
+GO
+PRINT N'Creating [dbo].[pro_GetOrderByOrderStatusForDesignerLeader]...';
+
+
+GO
+Create procedure [dbo].[pro_GetOrderByOrderStatusForDesignerLeader]
+@pageIndex int,
+@pageSize int,
+@orderStatus nvarchar(50),
+@EmployeeId nvarchar(50),
+@input nvarchar(500),
+@BlackEmployeeId nvarchar(50),
+@TotalRecords int output
+as
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join EmployeeGroup g on d.GroupId = g.GroupId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.DesignerId = @EmployeeId
+   and o.DesignerId = g.LeaderId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join EmployeeGroup g on d.GroupId = g.GroupId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and o.DesignerId = @EmployeeId
+   and o.DesignerId = g.LeaderId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderNumber like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+end
+return @TotalRecords
+GO
+PRINT N'Creating [dbo].[pro_GetOrderByOrderStatusForIA]...';
+
+
+GO
+Create procedure [dbo].[pro_GetOrderByOrderStatusForIA]
+@pageIndex int,
+@pageSize int,
+@orderStatus nvarchar(50),
+@EmployeeId nvarchar(50),
+@input nvarchar(500),
+@BlackEmployeeId nvarchar(50),
+@TotalRecords int output
+as
+begin
+declare @startRow int
+declare @lastRow int
+set @startRow = (@pageIndex -1)*@pageSize + 1
+set @lastRow = @pageIndex * @pageSize
+select * from(
+select Row_Number() over(order by o.OrderId desc) rowNumber,
+	  o.OrderId,
+	  c.CustomerId,
+	  o.OrderNumber as orderNumber,
+	  o.OrderStatus as OrderStatus,
+	  c.CompanyName,
+	  o.RecordDate as RecordDate,
+	  c.DecorationAddress as decorateAddress,
+      i.InformationAssistantName as InformationAssistantName,
+	  e.Name as BAName,
+	  d.Name as DesignerName,
+	  c.City as city
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and e.EmployeeId = @EmployeeId
+   and o.OrderStatus = @orderStatus
+   and (o.OrderNumber like '%'+@input+'%'
+   or c.CompanyName like '%'+@input+'%'
+   or o.RecordDate like '%'+@input+'%'
+   or o.OrderStatus like '%'+@input+'%'
+   or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+   or c.DecorationAddress like '%'+@input+'%'
+   or i.InformationAssistantName like '%'+@input+'%'
+   or e.Name like '%'+@input+'%'
+   or c.City like '%'+@input+'%'
+   or c.ContactPersonNumber like '%'+@input+'%' 
+   or c.ContactPerson2Number like '%'+@input+'%' 
+   or c.ContactPerson3Number like '%'+@input+'%' 
+   or @input='')
+  )as tempTable
+where rowNumber between @startRow and @lastRow
+
+select @TotalRecords = count(*) 
+from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	left outer join Employee d on d.EmployeeId = o.DesignerId
+	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	left outer join Employee e on e.EmployeeId = c.EmployeeId
+where e.EmployeeId != @BlackEmployeeId
+   and e.EmployeeId = @EmployeeId
    and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
@@ -1110,37 +1381,37 @@ Insert into SecurityRoles values(6,'DesignerLeader',6)
 -- =============================================
 USE [DiHaoOA]
 GO
-INSERT [dbo].[Employee]  VALUES ('swbjl800001', 'swbjl800001', 'jl800001', 'Marketing', '15502106467',3,1)
-INSERT [dbo].[Employee]  VALUES ('swb800002', 'swb800002', '800002','Marketing', '15502106461',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800003', 'swb800003', '800003','Marketing', '15502106462',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800004', 'swb800004', '800004','Marketing', '15502106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800005', 'swb800005', '800005','Marketing', '15502106464',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800006', 'swb800006', '800006','Marketing', '15502106465',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800007', 'swb800007', '800007','Marketing', '15502106466',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800008', 'swb800008', '800008','Marketing', '15502106467',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800009', 'swb800009', '800009','Marketing', '15502106468',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800010', 'swb800010', '800010','Marketing', '15502106413',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800011', 'swb800011', '800011','Marketing', '15502106423',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800012', 'swb800012', '800012','Marketing', '15502106443',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800013', 'swb800013', '800013','Marketing', '15502106453',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800014', 'swb800014', '800014','Marketing', '15502106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800015', 'swb800015', '800015','Marketing', '15502106743',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800016', 'swb800016', '800016','Marketing', '13502106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800017', 'swb800017', '800017','Marketing', '15302106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800018', 'swb800018', '800018','Marketing', '15802106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800019', 'swb800019', '800019','Marketing', '15500106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800020', 'swb800020', '800020','Marketing', '15572106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800021', 'swb800021', '800021','Marketing', '15502106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800022', 'swb800022', '800022','Marketing', '15002106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800023', 'swb800023', '800023','Marketing', '13102106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800024', 'swb800024', '800024','Marketing', '15507106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800025', 'swb800025', '800025','Marketing', '15542106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800026', 'swb800026', '800026','Marketing', '15502108563',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800027', 'swb800027', '800027','Marketing', '15502103463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800028', 'swb800028', '800028','Marketing', '15502206463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800029', 'swb800029', '800029','Marketing', '15503106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800030', 'swb800030', '800030','Marketing', '15509106463',1,1)
-INSERT [dbo].[Employee]  VALUES ('swb800031', 'swb800031', '800031','Marketing', '15502108863',1,1)
+INSERT [dbo].[Employee]  VALUES ('swbjl800001', 'swbjl800001', 'jl800001', 'Marketing', '15502106467',3,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800002', 'swb800002', '800002','Marketing', '15502106461',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800003', 'swb800003', '800003','Marketing', '15502106462',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800004', 'swb800004', '800004','Marketing', '15502106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800005', 'swb800005', '800005','Marketing', '15502106464',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800006', 'swb800006', '800006','Marketing', '15502106465',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800007', 'swb800007', '800007','Marketing', '15502106466',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800008', 'swb800008', '800008','Marketing', '15502106467',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800009', 'swb800009', '800009','Marketing', '15502106468',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800010', 'swb800010', '800010','Marketing', '15502106413',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800011', 'swb800011', '800011','Marketing', '15502106423',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800012', 'swb800012', '800012','Marketing', '15502106443',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800013', 'swb800013', '800013','Marketing', '15502106453',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800014', 'swb800014', '800014','Marketing', '15502106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800015', 'swb800015', '800015','Marketing', '15502106743',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800016', 'swb800016', '800016','Marketing', '13502106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800017', 'swb800017', '800017','Marketing', '15302106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800018', 'swb800018', '800018','Marketing', '15802106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800019', 'swb800019', '800019','Marketing', '15500106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800020', 'swb800020', '800020','Marketing', '15572106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800021', 'swb800021', '800021','Marketing', '15502106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800022', 'swb800022', '800022','Marketing', '15002106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800023', 'swb800023', '800023','Marketing', '13102106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800024', 'swb800024', '800024','Marketing', '15507106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800025', 'swb800025', '800025','Marketing', '15542106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800026', 'swb800026', '800026','Marketing', '15502108563',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800027', 'swb800027', '800027','Marketing', '15502103463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800028', 'swb800028', '800028','Marketing', '15502206463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800029', 'swb800029', '800029','Marketing', '15503106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800030', 'swb800030', '800030','Marketing', '15509106463',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('swb800031', 'swb800031', '800031','Marketing', '15502108863',1,1,null)
 
 -- =============================================
 -- Initial InformationAssistant
@@ -1173,6 +1444,8 @@ GO
 ALTER TABLE [dbo].[Customer] WITH CHECK CHECK CONSTRAINT [FK_Customer_Employee];
 
 ALTER TABLE [dbo].[Customer] WITH CHECK CHECK CONSTRAINT [FK_Customer_InformationAssistant];
+
+ALTER TABLE [dbo].[CustomerOrder] WITH CHECK CHECK CONSTRAINT [FK_CustomerOrder_Customer];
 
 ALTER TABLE [dbo].[CustomerOrder] WITH CHECK CHECK CONSTRAINT [FK_CustomerOrder_Employee];
 

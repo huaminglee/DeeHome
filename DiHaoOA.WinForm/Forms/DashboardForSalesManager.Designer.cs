@@ -83,7 +83,7 @@
             this.pMainContent.Margin = new System.Windows.Forms.Padding(2);
             this.pMainContent.Name = "pMainContent";
             this.pMainContent.Size = new System.Drawing.Size(875, 550);
-            this.pMainContent.TabIndex = 4;
+            this.pMainContent.TabIndex = 0;
             // 
             // pApproval
             // 
@@ -202,7 +202,7 @@
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(95, 22);
-            this.btnReturn.TabIndex = 5;
+            this.btnReturn.TabIndex = 0;
             this.btnReturn.Text = "返回登录界面";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -257,6 +257,7 @@
             this.Name = "DashboardForSalesManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OA办公系统";
+            this.Activated += new System.EventHandler(this.DashboardForSalesManager_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForSalesManager_FormClosed);
             this.Load += new System.EventHandler(this.DashboardForSalesManager_Load);
             this.Resize += new System.EventHandler(this.DashboardForSalesManager_Resize);

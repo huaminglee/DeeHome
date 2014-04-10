@@ -231,7 +231,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = con;
                 cmd.CommandText = @"select CompanyName
                                     from dbo.Customer
-                                    where ContactPerson2Number = @Number 
+                                    where (ContactPerson2Number = @Number
+                                    or ContactPersonNumber = @Number
+                                    or ContactPerson3Number = @Number)
                                     and CustomerId != @CustomerId";
                 cmd.Parameters.AddWithValue("@Number", number);
                 cmd.Parameters.AddWithValue("@CustomerId", customerId);
@@ -265,7 +267,9 @@ namespace DiHaoOA.DataContract.DAO
                 cmd.Connection = con;
                 cmd.CommandText = @"select CompanyName
                                     from dbo.Customer
-                                    where ContactPerson3Number = @Number 
+                                    where (ContactPerson3Number = @Number
+                                    or ContactPersonNumber = @Number
+                                    or ContactPerson2Number = @Number) 
                                     and CustomerId != @CustomerId";
                 cmd.Parameters.AddWithValue("@Number", number);
                 cmd.Parameters.AddWithValue("@CustomerId", customerId);

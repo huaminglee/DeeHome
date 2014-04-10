@@ -65,19 +65,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ox/ummtOCQ20yz2m4cCz71qcqMk=</dsig:DigestValue>
+        <dsig:DigestValue>EZN6lwBCy+qqDIWSAZu+lQh2eTk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="107008">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="107520">
       <assemblyIdentity name="DiHaoOA.DataContract" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>MqU9XEDAks1W/jJr/zoyj+1r/N4=</dsig:DigestValue>
+        <dsig:DigestValue>/6v0+D+mW21IYqeHUdGkl0coDx4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,7 +89,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>LIczr55c+X1PNgEGWCLLtoH7bEU=</dsig:DigestValue>
+        <dsig:DigestValue>t2HznH1WIvk0uqpylcX+373CDzE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -101,7 +101,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>TK/FyEvBG1VYcB8RGs7QXwKWvVA=</dsig:DigestValue>
+        <dsig:DigestValue>Tphp5KGgeVpAPo348GXyku2fdYI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

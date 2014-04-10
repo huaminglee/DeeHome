@@ -324,7 +324,7 @@ namespace DiHaoOA.DataContract
                 {
                     conn.Open();
                     cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
-                    result = cmd.ExecuteScalar().ToString();
+                    result = Convert.ToString(cmd.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {

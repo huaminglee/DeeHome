@@ -41,7 +41,10 @@ namespace DiHaoOA.WinForm.Forms
                 string menuItem = menu.Attribute("name").Value;
                 string eventCode = menu.Attribute("eventCode").Value;
                 NavBar.NavItem nv = new NavBar.NavItem(menuItem, eventCode);
-                nv.Selected = true;
+                if(eventCode == "CustomerChat")
+                {
+                    nv.Selected = true;
+                }
                 ArrayList childNavItems = new ArrayList();
                 foreach (var childMenu in menu.Elements())
                 {
@@ -66,10 +69,10 @@ namespace DiHaoOA.WinForm.Forms
             this.Height = 768;
             this.Width = 1250;
             lblDateTime.Text = GetDateInfor();
-            AddOrderList();
-            navBarForDesigner.ChangeNavItem("CustomerChat", "已谈");
-            orderList.orderStatus = OrderStatus.OnChatting;
-            orderList.ReLoadData();
+            //AddOrderList();
+            //navBarForDesigner.ChangeNavItem("CustomerChat", "已谈");
+            //orderList.orderStatus = OrderStatus.OnChatting;
+            //orderList.ReLoadData();
         }
 
         private void AddOrderList(string status)
@@ -91,24 +94,10 @@ namespace DiHaoOA.WinForm.Forms
 
         }
 
-        private void AddOrderList()
-        {
-            if (!pMainContent.Contains(orderList))
-            {
-                orderList = new OrderList();
-                pMainContent.Controls.Add(orderList);
-            }
-            orderList.Name = DiHaoUserControl.OrderList;
-            orderList.ParentPanel = pMainContent;
-            orderList.NavigationBar = navBarForDesigner;
-            orderList.employee = employee;
-            orderList.Dock = DockStyle.Fill;
-            orderList.Show();
-        }
-
         private void childbtnbtn_Click(object sender, EventArgs e)
         {
             Label btn = (Label)sender;
+            ShowSpecificMenu();
             AddOrderList(btn.Name);
         }
 
@@ -118,6 +107,8 @@ namespace DiHaoOA.WinForm.Forms
             lblDateTime2.Text = GetDateInfor();
             lblDateTime.Text = GetDateInfor();
             lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
+            AddOrderList(OrderStatus.OnChatting);
+            navBarForDesigner.ChangeNavItem("CustomerChat", "在谈");
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -153,6 +144,11 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Visible = false;
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
+        }
+
+        private void DashboardForDesigner_Activated(object sender, EventArgs e)
+        {
+            panelcontent.Focus();
         }
 
     }

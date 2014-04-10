@@ -92,6 +92,10 @@ namespace DiHaoOA.Controls
                     orderDescriptionPopUp.OrderStatusChanged += new OrderDescription.ModifyOrderStatus(ModifyOrderStatus);
                     orderDescriptionPopUp.Show();
                 }
+                if (radioButtonModify.Checked)
+                {
+                    ModifyOrderStatus(order, customer, order.OrderStatus);
+                }
             }
         }
 

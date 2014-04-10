@@ -2,6 +2,7 @@
 @pageIndex int,
 @pageSize int,
 @orderStatus nvarchar(50),
+@EmployeeId nvarchar(50),
 @input nvarchar(500),
 @BlackEmployeeId nvarchar(50),
 @TotalRecords int output
@@ -29,6 +30,7 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
+	and o.DesignerId = @EmployeeId
    and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
@@ -52,6 +54,7 @@ from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
 	left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
 	left outer join Employee e on e.EmployeeId = c.EmployeeId
 where e.EmployeeId != @BlackEmployeeId
+   and o.DesignerId = @EmployeeId
    and o.OrderStatus = @orderStatus
    and (o.OrderNumber like '%'+@input+'%'
    or c.CompanyName like '%'+@input+'%'
@@ -68,6 +71,4 @@ where e.EmployeeId != @BlackEmployeeId
    or @input='')
 end
 return @TotalRecords
-
-
 GO

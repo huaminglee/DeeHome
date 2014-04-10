@@ -465,5 +465,10 @@ namespace DiHaoOA.WinForm
                 navBarForSalesManager.ChangeNavItem("Manager", "审批栏");
             }
         }
+
+        private void DashboardForSalesManager_Activated(object sender, EventArgs e)
+        {
+            panelContent.Focus();
+        }
     }
 }

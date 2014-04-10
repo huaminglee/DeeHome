@@ -30,6 +30,7 @@ namespace DiHaoOA.WinForm.Controls
         public void ClearContent()
         {
             lblMsg.Visible = false;
+            btnSubmit.Enabled = true;
         }
 
         public void LoadDetailInformation()
@@ -82,6 +83,7 @@ namespace DiHaoOA.WinForm.Controls
             orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Rejected);
             lblMsg.Text = "*订单已打回给业务员，状态为被打回";
             lblMsg.Visible = true;
+            btnSubmit.Enabled = false;
         }
 
         private void OrderDetail_Load(object sender, EventArgs e)
