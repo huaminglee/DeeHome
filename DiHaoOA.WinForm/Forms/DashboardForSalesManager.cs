@@ -83,7 +83,7 @@ namespace DiHaoOA.WinForm
             {
                 orderList = new OrderList();
                 orderList.Name = DiHaoUserControl.OrderList;
-                orderList.ParentPanel = pMainContent; ;
+                orderList.ParentPanel = pMainContent;
                 orderList.NavigationBar = navBarForSalesManager;
                 orderList.employee = employee;
                 orderList.Dock = DockStyle.Fill;
@@ -150,7 +150,13 @@ namespace DiHaoOA.WinForm
                 approvalList.ClearSearchText();
                 approvalList.ReLoadData();
             }
+            if (childMenu == ManagerChildMenu.SecondSigning)
+            {
+                ShowSpecificMenu();
+                AddOrderList(OrderStatus.NotSigned);
+            }
         }
+
 
         private void AddApprovalList(string pro_ApprovalListForMarketingManager)
         {

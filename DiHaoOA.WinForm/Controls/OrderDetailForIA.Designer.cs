@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -97,6 +97,8 @@
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.回访内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.回访时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAllocate = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,6 +112,7 @@
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReVisit)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel8
@@ -163,7 +166,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
             this.tableLayoutPanel1.Controls.Add(this.lblCustomerType, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblContactPerson2Number, 5, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblContactPerson, 5, 2);
@@ -237,7 +240,7 @@
             this.lblCustomerType.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblCustomerType.Location = new System.Drawing.Point(765, 114);
             this.lblCustomerType.Name = "lblCustomerType";
-            this.lblCustomerType.Size = new System.Drawing.Size(243, 25);
+            this.lblCustomerType.Size = new System.Drawing.Size(245, 25);
             this.lblCustomerType.TabIndex = 9;
             this.lblCustomerType.Text = "label7";
             this.lblCustomerType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,7 +252,7 @@
             this.lblContactPerson2Number.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblContactPerson2Number.Location = new System.Drawing.Point(765, 85);
             this.lblContactPerson2Number.Name = "lblContactPerson2Number";
-            this.lblContactPerson2Number.Size = new System.Drawing.Size(243, 28);
+            this.lblContactPerson2Number.Size = new System.Drawing.Size(245, 28);
             this.lblContactPerson2Number.TabIndex = 76;
             this.lblContactPerson2Number.Text = "label7";
             this.lblContactPerson2Number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,7 +264,7 @@
             this.lblContactPerson.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblContactPerson.Location = new System.Drawing.Point(765, 58);
             this.lblContactPerson.Name = "lblContactPerson";
-            this.lblContactPerson.Size = new System.Drawing.Size(243, 26);
+            this.lblContactPerson.Size = new System.Drawing.Size(245, 26);
             this.lblContactPerson.TabIndex = 75;
             this.lblContactPerson.Text = "label7";
             this.lblContactPerson.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -431,7 +434,7 @@
             this.labelJaJu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.labelJaJu.Location = new System.Drawing.Point(765, 31);
             this.labelJaJu.Name = "labelJaJu";
-            this.labelJaJu.Size = new System.Drawing.Size(243, 26);
+            this.labelJaJu.Size = new System.Drawing.Size(245, 26);
             this.labelJaJu.TabIndex = 49;
             this.labelJaJu.Text = "家具未提交";
             this.labelJaJu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -482,7 +485,7 @@
             this.lblEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblEmployee.Location = new System.Drawing.Point(765, 1);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(243, 29);
+            this.lblEmployee.Size = new System.Drawing.Size(245, 29);
             this.lblEmployee.TabIndex = 44;
             this.lblEmployee.Text = "试用员工";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -748,7 +751,7 @@
             this.lblUsableArea.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblUsableArea.Location = new System.Drawing.Point(765, 140);
             this.lblUsableArea.Name = "lblUsableArea";
-            this.lblUsableArea.Size = new System.Drawing.Size(243, 28);
+            this.lblUsableArea.Size = new System.Drawing.Size(245, 28);
             this.lblUsableArea.TabIndex = 78;
             this.lblUsableArea.Text = "label7";
             this.lblUsableArea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -760,7 +763,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblEmail.Location = new System.Drawing.Point(765, 169);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(243, 29);
+            this.lblEmail.Size = new System.Drawing.Size(245, 29);
             this.lblEmail.TabIndex = 79;
             this.lblEmail.Text = "label7";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -824,7 +827,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(765, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 33);
+            this.panel3.Size = new System.Drawing.Size(245, 33);
             this.panel3.TabIndex = 84;
             // 
             // lblRidePath
@@ -845,10 +848,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(0, 262);
+            this.panel6.Location = new System.Drawing.Point(0, 282);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1003, 133);
+            this.panel6.Size = new System.Drawing.Size(1003, 144);
             this.panel6.TabIndex = 6;
             // 
             // panel7
@@ -860,7 +863,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1003, 133);
+            this.panel7.Size = new System.Drawing.Size(1003, 144);
             this.panel7.TabIndex = 0;
             // 
             // tabControl2
@@ -871,7 +874,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1003, 133);
+            this.tabControl2.Size = new System.Drawing.Size(1003, 144);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage2
@@ -881,7 +884,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(995, 107);
+            this.tabPage2.Size = new System.Drawing.Size(995, 118);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "设计师回访";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -891,40 +894,40 @@
             this.dataGridReVisit.AllowUserToAddRows = false;
             this.dataGridReVisit.AllowUserToDeleteRows = false;
             this.dataGridReVisit.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridReVisit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridReVisit.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReVisit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridReVisit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReVisit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
             this.回访内容,
             this.回访时间});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridReVisit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReVisit.Location = new System.Drawing.Point(2, 2);
             this.dataGridReVisit.Name = "dataGridReVisit";
             this.dataGridReVisit.RowHeadersVisible = false;
             this.dataGridReVisit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridReVisit.Size = new System.Drawing.Size(991, 103);
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridReVisit.Size = new System.Drawing.Size(991, 114);
             this.dataGridReVisit.TabIndex = 1;
             this.dataGridReVisit.VirtualMode = true;
             this.dataGridReVisit.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridReVisit_CellValueNeeded);
@@ -942,9 +945,9 @@
             // 回访内容
             // 
             this.回访内容.DataPropertyName = "RevisitContent";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.回访内容.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.回访内容.DefaultCellStyle = dataGridViewCellStyle18;
             this.回访内容.FillWeight = 237.7222F;
             this.回访内容.HeaderText = "回访内容";
             this.回访内容.Name = "回访内容";
@@ -962,14 +965,37 @@
             this.回访时间.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.回访时间.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnAllocate);
+            this.panel4.Location = new System.Drawing.Point(4, 263);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(998, 21);
+            this.panel4.TabIndex = 7;
+            // 
+            // btnAllocate
+            // 
+            this.btnAllocate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllocate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAllocate.Location = new System.Drawing.Point(922, -5);
+            this.btnAllocate.Name = "btnAllocate";
+            this.btnAllocate.Size = new System.Drawing.Size(75, 23);
+            this.btnAllocate.TabIndex = 0;
+            this.btnAllocate.Text = "分配订单";
+            this.btnAllocate.UseVisualStyleBackColor = true;
+            this.btnAllocate.Visible = false;
+            this.btnAllocate.Click += new System.EventHandler(this.btnAllocate_Click);
+            // 
             // OrderDetailForIA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel8);
             this.Name = "OrderDetailForIA";
-            this.Size = new System.Drawing.Size(1005, 397);
+            this.Size = new System.Drawing.Size(1005, 428);
             this.Load += new System.EventHandler(this.OrderDetailForIA_Load);
             this.panel8.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -988,6 +1014,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReVisit)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1058,5 +1085,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 回访内容;
         private System.Windows.Forms.DataGridViewTextBoxColumn 回访时间;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnAllocate;
     }
 }

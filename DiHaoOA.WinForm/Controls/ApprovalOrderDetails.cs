@@ -96,7 +96,6 @@ namespace DiHaoOA.WinForm.Controls
                 {
                     orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Signed, SubmittedBy.MarketingManager);
                 }
-                //orderManager.UpdateOrderStatus(order.OrderId, OrderStatus, SubmittedBy.MarketingManager);
                 order = orderManager.GetOrderById(order.OrderId);
                 lblMsg.Text = "*市场部经理审批" + order.OrderStatus;
             }

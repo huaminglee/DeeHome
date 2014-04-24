@@ -71,5 +71,10 @@ namespace DiHaoOA.WinForm.Controls
         {
             LoadReVisit();
         }
+
+        private void btnAllocate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -171,6 +171,7 @@ namespace DiHaoOA.WinForm.Controls
                 modifyCustomer.Name = "ModifyCustomer";
                 modifyCustomer.ParentPanel = ParentPanel;
                 modifyCustomer.NavigationBar = NavigationBar;
+                modifyCustomer.customerTrace = this;
                 modifyCustomer.employee = employee;
                 modifyCustomer.Dock = DockStyle.Fill;
                 modifyCustomer._informationAssistant = _informationAssistant;

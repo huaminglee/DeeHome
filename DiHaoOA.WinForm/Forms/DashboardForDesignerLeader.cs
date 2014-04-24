@@ -145,5 +145,13 @@ namespace DiHaoOA.WinForm.Forms
                 lblDateTime2.Location = new Point(panelfooter.Location.X - lblDateTime.Width, lblDateTime.Location.Y);
             }
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            dashboardEntry.ClearContent();
+            dashboardEntry.Show();
+            dashboardEntry.SetDefault();
+            this.Hide();
+        }
     }
 }

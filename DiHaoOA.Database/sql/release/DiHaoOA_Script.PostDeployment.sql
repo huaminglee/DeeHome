@@ -64,6 +64,13 @@ INSERT [dbo].[Employee]  VALUES ('swb800028', 'swb800028', '800028','Marketing',
 INSERT [dbo].[Employee]  VALUES ('swb800029', 'swb800029', '800029','Marketing', '15503106463',1,1,null)
 INSERT [dbo].[Employee]  VALUES ('swb800030', 'swb800030', '800030','Marketing', '15509106463',1,1,null)
 INSERT [dbo].[Employee]  VALUES ('swb800031', 'swb800031', '800031','Marketing', '15502108863',1,1,null)
+INSERT [dbo].[Employee]  VALUES ('sjbjl800001', 'sjbjl800001', 'jl800001','Design', '15502108866',4,1,null)
+INSERT [dbo].[Employee]  VALUES ('sjbzg800001', 'sjbzg800001', 'zg800001','Design', '15502108867',6,1,1)
+INSERT [dbo].[Employee]  VALUES ('sjbzg800002', 'sjbzg800002', 'zg800002','Design', '15502108868',6,1,2)
+INSERT [dbo].[Employee]  VALUES ('sjbzg800003', 'sjbzg800003', 'zg800003','Design', '15502108869',6,1,3)
+INSERT [dbo].[Employee]  VALUES ('sjbzg800004', 'sjbzg800004', 'zg800004','Design', '15502108860',6,1,4)
+INSERT [dbo].[Employee]  VALUES ('sjbzg800005', 'sjbzg800005', 'zg800005','Design', '15502108870',6,1,5)
+INSERT [dbo].[Employee]  VALUES ('sjb800001', 'sjb800001', '800001','Design', '15502108845',2,1,1)
 
 -- =============================================
 -- Initial InformationAssistant

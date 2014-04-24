@@ -47,6 +47,7 @@ namespace DiHaoOA.DataContract
         public const string MarketReturnBackList = "市场打回列表";
         public const string MySubordinate = "我的下属";
         public const string Approval = "审批栏";
+        public const string SecondSigning = "二次签单";
     }
 
     public struct VisitType

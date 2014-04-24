@@ -15,14 +15,7 @@
 
 GO
 
-ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_EmployeeGroup] FOREIGN KEY([GroupId])
-REFERENCES [dbo].[EmployeeGroup] ([GroupId])
-GO
-
-ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_EmployeeGroup]
-GO
-
-ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_SecurityRoles] FOREIGN KEY([RoleId])
+ALTER TABLE [dbo].[Employee]  WITH NOCHECK ADD  CONSTRAINT [FK_Employee_SecurityRoles] FOREIGN KEY([RoleId])
 REFERENCES [dbo].[SecurityRoles] ([Id])
 GO
 

@@ -59,6 +59,7 @@ namespace DiHaoOA.WinForm.Controls
             if (this.Name == Approvaler.DesignerManager)
             {
                 AllocateOrderToDesigner();
+                
             }
             else
             {
@@ -66,6 +67,7 @@ namespace DiHaoOA.WinForm.Controls
                 lblMsg.Text = "*订单已提交给设计部经理";
                 lblMsg.Visible = true;
             }
+            btnReturn.Enabled = false;
         }
 
         private void AllocateOrderToDesigner()

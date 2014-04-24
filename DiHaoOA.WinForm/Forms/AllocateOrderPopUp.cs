@@ -48,6 +48,7 @@ namespace DiHaoOA.WinForm.Forms
             string designerId = Convert.ToString(cbDesinger.SelectedValue);
             orderManager.AllocateOrderToDesigner(designerId, order.OrderId);
             this.Hide();
+            MessageBox.Show("分配订单成功");
         }
     }
 }

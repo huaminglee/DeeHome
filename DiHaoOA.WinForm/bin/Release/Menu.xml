@@ -58,6 +58,7 @@
 	<ChildMenu eventCode="被删除的客户列表">被删除的客户列表</ChildMenu>
 	<ChildMenu eventCode="市场打回列表">市场打回列表</ChildMenu>
 	<ChildMenu eventCode="审批栏">审批栏</ChildMenu>
+	<ChildMenu eventCode="二次签单">二次签单</ChildMenu>
   </SalesManagerMenu>
   
   <DesignerMenu id="dCustomerConversation" name = "》客户洽谈" eventCode="CustomerChat">

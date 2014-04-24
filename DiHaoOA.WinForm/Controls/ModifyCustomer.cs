@@ -12,6 +12,7 @@ using DiHaoOA.WinForm.Common;
 using DiHaoOA.WinForm;
 using DiHaoOA.DataContract;
 using DiHaoOA.WinForm.Forms;
+using DiHaoOA.WinForm.Controls;
 
 namespace DiHaoOA.Controls
 {
@@ -24,6 +25,7 @@ namespace DiHaoOA.Controls
         public ReVisitPopUp popUp;
         RevisitPopUpManager revisitManager;
         public OrderDescription orderDescriptionPopUp;
+        public CustomerTrace customerTrace;
 
         public ModifyCustomer()
         {
@@ -254,6 +256,15 @@ namespace DiHaoOA.Controls
             if (e.ColumnIndex == 0)
             {
                 e.Value = e.RowIndex + 1;//set serial number of the table rows.
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if (customerTrace != null)
+            {
+                this.Hide();
+                customerTrace.Show();
             }
         }
 

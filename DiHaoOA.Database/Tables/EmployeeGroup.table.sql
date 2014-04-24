@@ -11,9 +11,3 @@
 
 GO
 
-ALTER TABLE [dbo].[EmployeeGroup]  WITH CHECK ADD  CONSTRAINT [FK_EmployeeGroup_Employee] FOREIGN KEY([LeaderId])
-REFERENCES [dbo].[Employee] ([EmployeeId])
-GO
-
-ALTER TABLE [dbo].[EmployeeGroup] CHECK CONSTRAINT [FK_EmployeeGroup_Employee]
-GO

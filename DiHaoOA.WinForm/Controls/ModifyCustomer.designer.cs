@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -110,6 +110,7 @@
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.回访内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.回访时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -180,7 +181,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 242F));
             this.tableLayoutPanel1.Controls.Add(this.label34, 4, 7);
             this.tableLayoutPanel1.Controls.Add(this.lblOrderStatus, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.label32, 2, 7);
@@ -411,7 +412,7 @@
             this.labelJaJu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.labelJaJu.Location = new System.Drawing.Point(765, 39);
             this.labelJaJu.Name = "labelJaJu";
-            this.labelJaJu.Size = new System.Drawing.Size(235, 25);
+            this.labelJaJu.Size = new System.Drawing.Size(236, 25);
             this.labelJaJu.TabIndex = 49;
             this.labelJaJu.Text = "家具未提交";
             this.labelJaJu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,7 +484,7 @@
             this.lblEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
             this.lblEmployee.Location = new System.Drawing.Point(765, 1);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(235, 37);
+            this.lblEmployee.Size = new System.Drawing.Size(236, 37);
             this.lblEmployee.TabIndex = 44;
             this.lblEmployee.Text = "试用员工";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -893,7 +894,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(765, 252);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(235, 38);
+            this.panel10.Size = new System.Drawing.Size(236, 38);
             this.panel10.TabIndex = 68;
             // 
             // txtRidePath
@@ -910,6 +911,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnAddVisit);
+            this.panel4.Controls.Add(this.btnReturn);
             this.panel4.Controls.Add(this.lblMsg);
             this.panel4.Controls.Add(this.radioButtonSubmit);
             this.panel4.Controls.Add(this.btnConfirm);
@@ -1014,7 +1017,6 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Controls.Add(this.btnAddVisit);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(0, 414);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
@@ -1028,7 +1030,7 @@
             this.btnAddVisit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnAddVisit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddVisit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            this.btnAddVisit.Location = new System.Drawing.Point(911, -3);
+            this.btnAddVisit.Location = new System.Drawing.Point(843, 68);
             this.btnAddVisit.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(70, 21);
@@ -1077,39 +1079,39 @@
             this.dataGridReVisit.AllowUserToAddRows = false;
             this.dataGridReVisit.AllowUserToDeleteRows = false;
             this.dataGridReVisit.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.dataGridReVisit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridReVisit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridReVisit.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReVisit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridReVisit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReVisit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
             this.回访内容,
             this.回访时间});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReVisit.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridReVisit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReVisit.Location = new System.Drawing.Point(2, 2);
             this.dataGridReVisit.Name = "dataGridReVisit";
             this.dataGridReVisit.RowHeadersVisible = false;
             this.dataGridReVisit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReVisit.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridReVisit.Size = new System.Drawing.Size(993, 110);
             this.dataGridReVisit.TabIndex = 1;
             this.dataGridReVisit.VirtualMode = true;
@@ -1128,9 +1130,9 @@
             // 回访内容
             // 
             this.回访内容.DataPropertyName = "RevisitContent";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.回访内容.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.回访内容.DefaultCellStyle = dataGridViewCellStyle18;
             this.回访内容.FillWeight = 237.7222F;
             this.回访内容.HeaderText = "回访内容";
             this.回访内容.Name = "回访内容";
@@ -1147,6 +1149,21 @@
             this.回访时间.ReadOnly = true;
             this.回访时间.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.回访时间.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            this.btnReturn.Location = new System.Drawing.Point(917, 68);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(70, 21);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "返回列表";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // ModifyCustomer
             // 
@@ -1258,5 +1275,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 回访内容;
         private System.Windows.Forms.DataGridViewTextBoxColumn 回访时间;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
