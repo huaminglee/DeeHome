@@ -736,9 +736,7 @@ namespace DiHaoOA.DataContract.DAO
                                        or c.ContactPersonNumber like '%'+@input+'%' 
                                        or c.ContactPerson2Number like '%'+@input+'%' 
                                        or c.ContactPerson3Number like '%'+@input+'%' 
-                                       or @input='')
-                                      )as tempTable
-                                    where rowNumber between @startRow and @lastRow";
+                                       or @input='')";
                 cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
                 cmd.Parameters.AddWithValue("@pageSize", pageSize);
                 cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
@@ -866,9 +864,7 @@ namespace DiHaoOA.DataContract.DAO
                                        or c.ContactPersonNumber like '%'+@input+'%' 
                                        or c.ContactPerson2Number like '%'+@input+'%' 
                                        or c.ContactPerson3Number like '%'+@input+'%' 
-                                       or @input='')
-                                      )as tempTable
-                                    where rowNumber between @startRow and @lastRow";
+                                       or @input='')";
                 cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
                 cmd.Parameters.AddWithValue("@pageSize", pageSize);
                 cmd.Parameters.AddWithValue("@orderStatus", orderStatus);

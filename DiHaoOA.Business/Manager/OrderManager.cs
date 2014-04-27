@@ -86,8 +86,8 @@ namespace DiHaoOA.Business.Manager
             }
             if (orderStatus == "当月在谈")
             {
-                result = orderDao.GetCurrentMonthOrdersByOrderStatus(pageIndex, pageSize, 
-                    input, orderStatus.Split('有')[1]);
+                result = orderDao.GetCurrentMonthOrdersByOrderStatus(pageIndex, pageSize,
+                    input, "在谈");
             }
             if (orderStatus == "上月累积到本月在谈")
             {
