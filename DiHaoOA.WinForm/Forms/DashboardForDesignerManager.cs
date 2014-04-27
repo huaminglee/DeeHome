@@ -20,6 +20,7 @@ namespace DiHaoOA.WinForm.Forms
         OrderList orderList;
         ApprovalList approvalList;
         AllocateDesignerGroup allocateDesignerGroup;
+        ManagerOrderList managerOrderList;
         MyDesigner myDesigner;
         OrderManager orderManager;
         const string pro_ApprovalListForDesignManager = "pro_ApprovalListForDesignManager";
@@ -90,6 +91,12 @@ namespace DiHaoOA.WinForm.Forms
                 ShowSpecificMenu();
                 AddOrderList(btn.Name);
             }
+            if (menu == DiHaoMenu.Orders)
+            {
+                ShowSpecificMenu();
+                AddManagerOrderList(btn.Name);
+                managerOrderList.ClearSearchText();
+            }
         }
 
         private void HandManagerMenu(string childMenu)
@@ -140,7 +147,24 @@ namespace DiHaoOA.WinForm.Forms
             orderList.orderStatus = status;
             orderList.ReLoadData();
             orderList.Show();
+        }
 
+        private void AddManagerOrderList(string status)
+        {
+            if (!panelContent.Contains(managerOrderList))
+            {
+                managerOrderList = new ManagerOrderList();
+                managerOrderList.Name = DiHaoUserControl.OrderList;
+                managerOrderList.orderStatus = OrderStatus.SubmittedToDesigner;
+                managerOrderList.ParentPanel = pMainContent; ;
+                managerOrderList.NavigationBar = navBarForDesignerManager;
+                managerOrderList.employee = employee;
+                managerOrderList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(managerOrderList);
+            }
+            managerOrderList.orderStatus = status;
+            managerOrderList.ReLoadData();
+            managerOrderList.Show();
         }
 
         private void AddAllocateDesignerGroup()

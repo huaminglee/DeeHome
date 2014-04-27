@@ -148,6 +148,12 @@
     <Compile Include="Controls\CustomerTrace.Designer.cs">
       <DependentUpon>CustomerTrace.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ManagerOrderList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ManagerOrderList.Designer.cs">
+      <DependentUpon>ManagerOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DisplayVisitContent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomerTrace.resx">
       <DependentUpon>CustomerTrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ManagerOrderList.resx">
+      <DependentUpon>ManagerOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DisplayVisitContent.resx">
       <DependentUpon>DisplayVisitContent.cs</DependentUpon>

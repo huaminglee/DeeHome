@@ -16,6 +16,7 @@ namespace DiHaoOA.WinForm
         public const string UnSubordinateCustomer = "panel_UnSubordinateCustomer";
         public const string Manager = "panel_Manager";
         public const string Allocate = "panel_Allocate";
+        public const string Orders = "panel_Orders";
     }
 
     public struct DiHaoUserControl

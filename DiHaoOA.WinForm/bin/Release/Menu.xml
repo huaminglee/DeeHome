@@ -100,6 +100,14 @@
   <DesignerManagerMenu id="dAllocate" name="》主案部" eventCode="Allocate">
 	<ChildMenu eventCode="设计师分组">设计师分组</ChildMenu>
   </DesignerManagerMenu>
+  <DesignerManagerMenu id="dOrders" name="》订单" eventCode="Orders">
+	<ChildMenu eventCode="所有在谈">所有在谈</ChildMenu>
+	<ChildMenu eventCode="所有未签">所有未签</ChildMenu>
+	<ChildMenu eventCode="所有已签">所有已签</ChildMenu>
+	<ChildMenu eventCode="所有不准">所有不准</ChildMenu>
+	<ChildMenu eventCode="当月在谈">当月在谈</ChildMenu>
+	<ChildMenu eventCode="上月累积到本月在谈">上月累积到本月在谈</ChildMenu>
+  </DesignerManagerMenu>
 </MenuConfiguration>
 
 

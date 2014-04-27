@@ -76,5 +76,42 @@ namespace DiHaoOA.Business.Manager
         {
             return orderDao.GetDesignerManagerApprovalCount();
         }
+
+        public DataSet GetAllOrdersByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            DataSet result = null;
+            if (orderStatus.Contains("所有"))
+            {
+                result = orderDao.GetAllOrdersByOrderStatus(pageIndex, pageSize, input, orderStatus.Split('有')[1]);
+            }
+            if (orderStatus == "当月在谈")
+            {
+                result = orderDao.GetCurrentMonthOrdersByOrderStatus(pageIndex, pageSize, 
+                    input, orderStatus.Split('有')[1]);
+            }
+            if (orderStatus == "上月累积到本月在谈")
+            {
+                result = orderDao.GetLastMonthToCurrentMonthOrdersByOrderStatus(pageIndex, pageSize, input, "在谈");
+            }
+            return result;
+        }
+
+        public int GetAllOrdersCountByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            int totalCount = 0;
+            if (orderStatus.Contains("所有"))
+            {
+                totalCount = orderDao.GetAllOrdersCountByOrderStatus(pageIndex, pageSize, input, orderStatus.Split('有')[1]);
+            }
+            if (orderStatus == "当月在谈")
+            {
+                totalCount = orderDao.GetCurrentMonthTotalCountByOrderStatus(pageIndex, pageSize, input, "在谈");
+            }
+            if (orderStatus == "上月累积到本月在谈")
+            {
+                totalCount = orderDao.GetLastMonthToCurrentMonthTotalCountByOrderStatus(pageIndex, pageSize, input, "在谈");  
+            }
+            return totalCount;
+        }
     }
 }

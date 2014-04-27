@@ -508,5 +508,388 @@ namespace DiHaoOA.DataContract.DAO
                 return result;
             }
         }
+
+        public DataSet GetAllOrdersByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"declare @startRow int
+                                    declare @lastRow int
+                                    
+
+                                    set @startRow = (@pageIndex -1)*@pageSize + 1
+                                    set @lastRow = @pageIndex * @pageSize
+
+                                    select * from(
+                                    select Row_Number() over(order by o.OrderId desc) rowNumber,
+	                                      o.OrderId,
+	                                      c.CustomerId,
+	                                      o.OrderNumber as orderNumber,
+	                                      o.OrderStatus as OrderStatus,
+	                                      c.CompanyName,
+	                                      o.RecordDate as RecordDate,
+	                                      c.DecorationAddress as decorateAddress,
+                                          i.InformationAssistantName as InformationAssistantName,
+	                                      e.Name as BAName,
+	                                      d.Name as DesignerName,
+	                                      c.City as city
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')
+                                      )as tempTable
+                                    where rowNumber between @startRow and @lastRow";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                try
+                {
+                    conn.Open();
+                    sda.Fill(result);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetAllOrdersCountByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                int totalCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) TotalCount
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                try
+                {
+                    conn.Open();
+                    totalCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return totalCount;
+
+            }
+        }
+
+        public DataSet GetCurrentMonthOrdersByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"declare @startRow int
+                                    declare @lastRow int
+                                    
+
+                                    set @startRow = (@pageIndex -1)*@pageSize + 1
+                                    set @lastRow = @pageIndex * @pageSize
+
+                                    select * from(
+                                    select Row_Number() over(order by o.OrderId desc) rowNumber,
+	                                      o.OrderId,
+	                                      c.CustomerId,
+	                                      o.OrderNumber as orderNumber,
+	                                      o.OrderStatus as OrderStatus,
+	                                      c.CompanyName,
+	                                      o.RecordDate as RecordDate,
+	                                      c.DecorationAddress as decorateAddress,
+                                          i.InformationAssistantName as InformationAssistantName,
+	                                      e.Name as BAName,
+	                                      d.Name as DesignerName,
+	                                      c.City as city
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and o.RecordDate > convert(datetime,convert(varchar(8),getdate(),120)+'01',120)
+                                       and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+2,0))
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')
+                                      )as tempTable
+                                    where rowNumber between @startRow and @lastRow";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                try
+                {
+                    conn.Open();
+                    sda.Fill(result);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetCurrentMonthTotalCountByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                int totalCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Count(*) as totalCount
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and o.RecordDate > convert(datetime,convert(varchar(8),getdate(),120)+'01',120)
+                                       and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+1,0))
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')
+                                      )as tempTable
+                                    where rowNumber between @startRow and @lastRow";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                try
+                {
+                    conn.Open();
+                    totalCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return totalCount;
+            }
+        }
+
+
+        public DataSet GetLastMonthToCurrentMonthOrdersByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                DataSet result = new DataSet();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"declare @startRow int
+                                    declare @lastRow int
+                                    
+
+                                    set @startRow = (@pageIndex -1)*@pageSize + 1
+                                    set @lastRow = @pageIndex * @pageSize
+
+                                    select * from(
+                                    select Row_Number() over(order by o.OrderId desc) rowNumber,
+	                                      o.OrderId,
+	                                      c.CustomerId,
+	                                      o.OrderNumber as orderNumber,
+	                                      o.OrderStatus as OrderStatus,
+	                                      c.CompanyName,
+	                                      o.RecordDate as RecordDate,
+	                                      c.DecorationAddress as decorateAddress,
+                                          i.InformationAssistantName as InformationAssistantName,
+	                                      e.Name as BAName,
+	                                      d.Name as DesignerName,
+	                                      c.City as city
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and o.RecordDate > convert(datetime,DATEADD(mm,DATEDIFF(mm,0,dateadd(mm,-1,getdate())),0),120)
+                                       and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+2,0))
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')
+                                      )as tempTable
+                                    where rowNumber between @startRow and @lastRow";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                try
+                {
+                    conn.Open();
+                    sda.Fill(result);
+                    sda.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return result;
+            }
+        }
+
+        public int GetLastMonthToCurrentMonthTotalCountByOrderStatus(int pageIndex, int pageSize, string input, string orderStatus)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                int totalCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Count(*) as totalCount
+                                    from CustomerOrder o left outer join Customer c on o.CustomerId = c.CustomerId
+	                                    left outer join Employee d on d.EmployeeId = o.DesignerId
+	                                    left outer join InformationAssistant i on c.InformationAssistantId = i.InformationAssistantId
+	                                    left outer join Employee e on e.EmployeeId = c.EmployeeId
+                                    where e.EmployeeId != @BlackEmployeeId
+                                       and o.OrderStatus = @orderStatus
+                                       and o.RecordDate > convert(datetime,DATEADD(mm,DATEDIFF(mm,0,dateadd(mm,-1,getdate())),0),120)
+                                       and o.RecordDate < dateadd(ms,-3,DATEADD(mm,DATEDIFF(m,0,getdate())+1,0))
+                                       and (o.OrderNumber like '%'+@input+'%'
+                                       or c.CompanyName like '%'+@input+'%'
+                                       or o.RecordDate like '%'+@input+'%'
+                                       or o.OrderStatus like '%'+@input+'%'
+                                       or (cast(o.OrderNumber as nvarchar(50))+o.OrderStatus) like '%'+@input+'%' 
+                                       or c.DecorationAddress like '%'+@input+'%'
+                                       or i.InformationAssistantName like '%'+@input+'%'
+                                       or e.Name like '%'+@input+'%'
+                                       or c.City like '%'+@input+'%'
+                                       or c.ContactPersonNumber like '%'+@input+'%' 
+                                       or c.ContactPerson2Number like '%'+@input+'%' 
+                                       or c.ContactPerson3Number like '%'+@input+'%' 
+                                       or @input='')
+                                      )as tempTable
+                                    where rowNumber between @startRow and @lastRow";
+                cmd.Parameters.AddWithValue("@pageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+                cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmd.Parameters.AddWithValue("@input", input);
+                cmd.Parameters.AddWithValue("@BlackEmployeeId", DBHelper.GetBlackListEmployee());
+                try
+                {
+                    conn.Open();
+                    totalCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+                return totalCount;
+            }
+        }
     }
 }
