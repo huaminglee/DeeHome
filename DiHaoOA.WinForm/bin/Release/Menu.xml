@@ -60,6 +60,12 @@
 	<ChildMenu eventCode="审批栏">审批栏</ChildMenu>
 	<ChildMenu eventCode="二次签单">二次签单</ChildMenu>
   </SalesManagerMenu>
+   <SalesManagerMenu id="mBusiness" name="》业务统计图" eventCode="Business">
+	<ChildMenu eventCode="商务部">商务部</ChildMenu>
+	<ChildMenu eventCode="主案部">主案部</ChildMenu>
+  </SalesManagerMenu>
+  
+  
   
   <DesignerMenu id="dCustomerConversation" name = "》客户洽谈" eventCode="CustomerChat">
 	<ChildMenu eventCode="在谈">在谈</ChildMenu>
@@ -79,10 +85,8 @@
 	<ChildMenu eventCode="不准">不准</ChildMenu>
   </DesignerLeaderMenu>
   <DesignerLeaderMenu id="dLeader" name="》主案部" eventCode="Allocate">
-	<ChildMenu eventCode="》所有在谈">所有在谈</ChildMenu>
-	<ChildMenu eventCode="》所有未签">所有未签</ChildMenu>
-	<ChildMenu eventCode="》所有已签">所有已签</ChildMenu>
-	<ChildMenu eventCode="》所有不准">所有不准</ChildMenu>
+	<ChildMenu eventCode="当月在谈">当月在谈</ChildMenu>
+	<ChildMenu eventCode="上月累积到本月在谈">上月累积到本月在谈</ChildMenu>
   </DesignerLeaderMenu>
   
   <DesignerManagerMenu id="dCustomerConversation" name = "︾客户洽谈" eventCode="CustomerChat">

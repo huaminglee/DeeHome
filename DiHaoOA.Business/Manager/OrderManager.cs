@@ -113,5 +113,44 @@ namespace DiHaoOA.Business.Manager
             }
             return totalCount;
         }
+
+        public DataSet GetOrdersForLeaderByOrderStatus(int pageIndex, int pageSize,
+            string input, string orderStatus, string employeeId)
+        { 
+            DataSet result = null;
+             if (orderStatus == "当月在谈")
+            {
+                result = orderDao.GetCurrentMonthOrdersForLeaderByOrderStatus(pageIndex, pageSize,
+                    input, "在谈",employeeId);
+            }
+            if (orderStatus == "上月累积到本月在谈")
+            {
+                result = orderDao.GetLastMonthToCurrentMonthOrdersForLeaderByOrderStatus(pageIndex, pageSize,
+                    input, "在谈", employeeId);
+            }
+            return result;
+        }
+
+        public int GetOrdersCountForLeaderByOrderStatus(int pageIndex, int pageSize,
+            string input, string orderStatus,string employeeID)
+        {
+            int totalCount = 0;
+            if (orderStatus == "当月在谈")
+            {
+                totalCount = orderDao.GetCurrentMonthCountForLeaderByOrderStatus(pageIndex, pageSize,
+                    input, "在谈", employeeID);
+            }
+            if (orderStatus == "上月累积到本月在谈")
+            {
+                totalCount = orderDao.GetLastMonthToCurrentMonthCountOrdersForLeaderByOrderStatus(pageIndex, pageSize, 
+                    input, "在谈",employeeID);
+            }
+            return totalCount;
+        }
+
+        public int GetLastMonthToCurrentMonthCountByOrderStatus(string employeeId, string orderStatus)
+        { 
+            return orderDao.GetLastMonthToCurrentMonthCountByOrderStatus(employeeId,orderStatus);
+        }
     }
 }

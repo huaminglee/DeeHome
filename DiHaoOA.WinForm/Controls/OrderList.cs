@@ -39,6 +39,12 @@ namespace DiHaoOA.WinForm.Controls
                 ds = orderManager.GetOrderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatus");
                 totalRecords = orderManager.GetTotalRecords(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatus");
             }
+            if (role == Roles.DesignerLeader)
+            {
+                ds = orderManager.GetOrdersForLeaderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId);
+                totalRecords = orderManager.GetOrdersCountForLeaderByOrderStatus(_index, _pageSize,
+                    txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId);
+            }
             else
             {
                 ds = orderManager.GetOrderByOrderStatus(_index, _pageSize, txtSearch.Text.Replace(" ", ""), orderStatus, employee.EmployeeId, "dbo.pro_GetOrderByOrderStatusForIA");

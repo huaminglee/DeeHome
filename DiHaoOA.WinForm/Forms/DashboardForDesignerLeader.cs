@@ -17,6 +17,7 @@ namespace DiHaoOA.WinForm.Forms
     public partial class DashboardForDesignerLeader : BaseForm
     {
         OrderList orderList;
+        ManagerOrderList managerOrderList;
 
         public DashboardForDesignerLeader()
         {
@@ -76,7 +77,8 @@ namespace DiHaoOA.WinForm.Forms
             if (menu == DiHaoMenu.Allocate)
             {
                 ShowSpecificMenu();
-                AddOrderList(btn.Name);
+                AddManagerOrderList(btn.Name);
+                managerOrderList.ClearSearchText();
             }
         }
 
@@ -99,6 +101,23 @@ namespace DiHaoOA.WinForm.Forms
             navBarForDesignerLeader.ChangeNavItem("CustomerChat", "在谈");
         }
 
+        private void AddManagerOrderList(string status)
+        {
+            if (!panelContent.Contains(managerOrderList))
+            {
+                managerOrderList = new ManagerOrderList();
+                managerOrderList.Name = DiHaoUserControl.OrderList;
+                managerOrderList.ParentPanel = pMainContent; ;
+                managerOrderList.NavigationBar = navBarForDesignerLeader;
+                managerOrderList.employee = employee;
+                managerOrderList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(managerOrderList);
+            }
+            managerOrderList.orderStatus = status;
+            managerOrderList.ReLoadData();
+            managerOrderList.Show();
+        }
+
         private void AddOrderList(string status)
         {
             if (!panelContent.Contains(orderList))
@@ -110,7 +129,7 @@ namespace DiHaoOA.WinForm.Forms
                 orderList.NavigationBar = navBarForDesignerLeader;
                 orderList.employee = employee;
                 orderList.Dock = DockStyle.Fill;
-                orderList.role = Roles.Designer;
+                orderList.role = Roles.DesignerLeader;
                 pMainContent.Controls.Add(orderList);
             }
             orderList.orderStatus = status;

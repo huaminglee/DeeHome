@@ -142,6 +142,18 @@
     <Compile Include="Controls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\BusinessStatisticsForDesign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BusinessStatisticsForDesign.Designer.cs">
+      <DependentUpon>BusinessStatisticsForDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BusinessStatisticsForMarketing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BusinessStatisticsForMarketing.Designer.cs">
+      <DependentUpon>BusinessStatisticsForMarketing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomerTrace.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -375,6 +387,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ApprovalOrderDetails.resx">
       <DependentUpon>ApprovalOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BusinessStatisticsForDesign.resx">
+      <DependentUpon>BusinessStatisticsForDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BusinessStatisticsForMarketing.resx">
+      <DependentUpon>BusinessStatisticsForMarketing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomerTrace.resx">
       <DependentUpon>CustomerTrace.cs</DependentUpon>

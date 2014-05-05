@@ -17,6 +17,7 @@ namespace DiHaoOA.WinForm
         public const string Manager = "panel_Manager";
         public const string Allocate = "panel_Allocate";
         public const string Orders = "panel_Orders";
+        public const string Business = "panel_Business";
     }
 
     public struct DiHaoUserControl
@@ -36,6 +37,7 @@ namespace DiHaoOA.WinForm
         public const string DisplayVisitContent = "DisplayVisitContent";
         public const string ApprovalList = "ApprovalList";
         public const string OrderList = "OrderList";
+        public const string BusinessStatistics = "BusinessStatistics";
     }
 
     public struct SearchInput

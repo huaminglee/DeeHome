@@ -31,6 +31,7 @@ namespace DiHaoOA.WinForm
         ApprovalList approvalList;
         OrderList orderList;
         OrderManager orderManager;
+        BusinessStatisticsForMarketing businessStatisticsForMarketing;
 
         const string pro_AllCustomersPaging = "pro_AllCustomersPaging";
         const string pro_DeletedCustomersPaging = "pro_DeletedCustomersPaging";
@@ -74,7 +75,30 @@ namespace DiHaoOA.WinForm
                 ShowSpecificMenu();
                 AddOrderList(btn.Name);
             }
+            if (menu == DiHaoMenu.Business)
+            {
+                ShowSpecificMenu();
+                if (btn.Name == "商务部")
+                {
+                    AddBusinessStatics(btn.Name);
+                }
+            }
 
+        }
+
+        private void AddBusinessStatics(string department)
+        {
+            if (!panelContent.Contains(businessStatisticsForMarketing))
+            {
+                businessStatisticsForMarketing = new BusinessStatisticsForMarketing();
+                businessStatisticsForMarketing.Name = DiHaoUserControl.OrderList;
+                businessStatisticsForMarketing.ParentPanel = pMainContent;
+                businessStatisticsForMarketing.NavigationBar = navBarForSalesManager;
+                businessStatisticsForMarketing.employee = employee;
+                businessStatisticsForMarketing.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(businessStatisticsForMarketing);
+            }
+            businessStatisticsForMarketing.Show();
         }
 
         private void AddOrderList(string status)
