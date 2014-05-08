@@ -220,3 +220,4 @@ D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.Dashbo
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.OrderListForDesignerLeader.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.ManagerOrderList.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.BusinessStatisticsForMarketing.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.BusinessStatisticsForDesign.resources

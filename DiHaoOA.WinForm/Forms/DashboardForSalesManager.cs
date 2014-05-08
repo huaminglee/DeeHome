@@ -32,6 +32,7 @@ namespace DiHaoOA.WinForm
         OrderList orderList;
         OrderManager orderManager;
         BusinessStatisticsForMarketing businessStatisticsForMarketing;
+        BusinessStatisticsForDesign businessStaticsForDesign;
 
         const string pro_AllCustomersPaging = "pro_AllCustomersPaging";
         const string pro_DeletedCustomersPaging = "pro_DeletedCustomersPaging";
@@ -82,8 +83,27 @@ namespace DiHaoOA.WinForm
                 {
                     AddBusinessStatics(btn.Name);
                 }
+                if (btn.Name == "主案部")
+                {
+                    AddBusinessStaticsForDesign();
+                }
             }
 
+        }
+
+        private void AddBusinessStaticsForDesign()
+        {
+            if (!panelContent.Contains(businessStaticsForDesign))
+            {
+                businessStaticsForDesign = new BusinessStatisticsForDesign();
+                businessStaticsForDesign.Name = DiHaoUserControl.OrderList;
+                businessStaticsForDesign.ParentPanel = pMainContent;
+                businessStaticsForDesign.NavigationBar = navBarForSalesManager;
+                businessStaticsForDesign.employee = employee;
+                businessStaticsForDesign.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(businessStaticsForDesign);
+            }
+            businessStaticsForDesign.Show();
         }
 
         private void AddBusinessStatics(string department)

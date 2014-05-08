@@ -39,11 +39,10 @@
             this.dgMySuordinate = new System.Windows.Forms.DataGridView();
             this.gridColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nnn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VisitCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IACount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IACount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMySuordinate)).BeginInit();
@@ -74,11 +73,10 @@
             this.dgMySuordinate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridColumnName,
             this.EmployeeName,
-            this.nnn,
             this.VisitCount,
-            this.IACount,
-            this.CustomerCount,
             this.Level,
+            this.CustomerCount,
+            this.IACount,
             this.Employee});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
@@ -97,6 +95,7 @@
             this.dgMySuordinate.Size = new System.Drawing.Size(922, 414);
             this.dgMySuordinate.TabIndex = 1;
             this.dgMySuordinate.VirtualMode = true;
+            this.dgMySuordinate.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgMySuordinate_CellValueNeeded);
             // 
             // gridColumnName
             // 
@@ -110,18 +109,10 @@
             // 
             this.EmployeeName.DataPropertyName = "Name";
             this.EmployeeName.FillWeight = 49.81301F;
-            this.EmployeeName.HeaderText = "商务部";
+            this.EmployeeName.HeaderText = "主案部";
             this.EmployeeName.Name = "EmployeeName";
             this.EmployeeName.ReadOnly = true;
             this.EmployeeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // nnn
-            // 
-            this.nnn.FillWeight = 95.70717F;
-            this.nnn.HeaderText = "当月量房";
-            this.nnn.Name = "nnn";
-            this.nnn.ReadOnly = true;
-            this.nnn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // VisitCount
             // 
@@ -134,15 +125,15 @@
             this.VisitCount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VisitCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // IACount
+            // Level
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.IACount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.IACount.FillWeight = 197.1154F;
-            this.IACount.HeaderText = "当月不准";
-            this.IACount.Name = "IACount";
-            this.IACount.ReadOnly = true;
-            this.IACount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Level.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Level.FillWeight = 95.70717F;
+            this.Level.HeaderText = "当月已签";
+            this.Level.Name = "Level";
+            this.Level.ReadOnly = true;
+            this.Level.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CustomerCount
             // 
@@ -154,15 +145,15 @@
             this.CustomerCount.ReadOnly = true;
             this.CustomerCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Level
+            // IACount
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Level.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Level.FillWeight = 95.70717F;
-            this.Level.HeaderText = "当月已签";
-            this.Level.Name = "Level";
-            this.Level.ReadOnly = true;
-            this.Level.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IACount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.IACount.FillWeight = 197.1154F;
+            this.IACount.HeaderText = "当月不准";
+            this.IACount.Name = "IACount";
+            this.IACount.ReadOnly = true;
+            this.IACount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Employee
             // 
@@ -181,6 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BusinessStatisticsForDesign";
             this.Size = new System.Drawing.Size(922, 414);
+            this.Load += new System.EventHandler(this.BusinessStatisticsForDesign_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgMySuordinate)).EndInit();
             this.ResumeLayout(false);
@@ -193,11 +185,10 @@
         private System.Windows.Forms.DataGridView dgMySuordinate;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nnn;
         private System.Windows.Forms.DataGridViewTextBoxColumn VisitCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IACount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Level;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IACount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee;
     }
 }
