@@ -24,6 +24,8 @@ namespace DiHaoOA.WinForm.Forms
         MyDesigner myDesigner;
         OrderManager orderManager;
         const string pro_ApprovalListForDesignManager = "pro_ApprovalListForDesignManager";
+        BusinessStatisticsForMarketing businessStatisticsForMarketing;
+        BusinessStatisticsForDesign businessStaticsForDesign;
 
         public DashboardForDesignerManager()
         {
@@ -91,12 +93,55 @@ namespace DiHaoOA.WinForm.Forms
                 ShowSpecificMenu();
                 AddOrderList(btn.Name);
             }
+            if (menu == DiHaoMenu.Business)
+            {
+                ShowSpecificMenu();
+                if (btn.Name == "商务部")
+                {
+                    AddBusinessStatics(btn.Name);
+                }
+                if (btn.Name == "主案部")
+                {
+                    AddBusinessStaticsForDesign();
+                }
+            }
             if (menu == DiHaoMenu.Orders)
             {
                 ShowSpecificMenu();
                 AddManagerOrderList(btn.Name);
                 managerOrderList.ClearSearchText();
             }
+        }
+
+        private void AddBusinessStaticsForDesign()
+        {
+            if (!panelContent.Contains(businessStaticsForDesign))
+            {
+                businessStaticsForDesign = new BusinessStatisticsForDesign();
+                businessStaticsForDesign.Name = DiHaoUserControl.OrderList;
+                businessStaticsForDesign.ParentPanel = pMainContent;
+                businessStaticsForDesign.NavigationBar = navBarForDesignerManager;
+                businessStaticsForDesign.employee = employee;
+                businessStaticsForDesign.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(businessStaticsForDesign);
+            }
+            businessStaticsForDesign.LoadData();
+            businessStaticsForDesign.Show();
+        }
+
+        private void AddBusinessStatics(string department)
+        {
+            if (!panelContent.Contains(businessStatisticsForMarketing))
+            {
+                businessStatisticsForMarketing = new BusinessStatisticsForMarketing();
+                businessStatisticsForMarketing.Name = DiHaoUserControl.OrderList;
+                businessStatisticsForMarketing.ParentPanel = pMainContent;
+                businessStatisticsForMarketing.NavigationBar = navBarForDesignerManager;
+                businessStatisticsForMarketing.employee = employee;
+                businessStatisticsForMarketing.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(businessStatisticsForMarketing);
+            }
+            businessStatisticsForMarketing.Show();
         }
 
         private void HandManagerMenu(string childMenu)
@@ -263,9 +308,8 @@ namespace DiHaoOA.WinForm.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.ClearContent();
+            dashboardEntryForDesigner.Show();
             this.Hide();
         }
 

@@ -18,6 +18,7 @@ namespace DiHaoOA.WinForm.Controls
         EmployeeManager empManager;
         int totalRecords = 0;
         OrderManager orderManager;
+        VisitContentForDesigner visitContentForDesigner;
 
         public BusinessStatisticsForMarketing()
         {
@@ -28,8 +29,8 @@ namespace DiHaoOA.WinForm.Controls
 
         public void LoadData()
         {
-            dgMySuordinate.AutoGenerateColumns = false;
-            dgMySuordinate.DataSource = empManager.GetSalesMan().Tables[0];
+            OrderList.AutoGenerateColumns = false;
+            OrderList.DataSource = empManager.GetSalesMan().Tables[0];
             totalRecords = empManager.GetAll().Tables[0].Rows.Count;
         }
 
@@ -44,7 +45,7 @@ namespace DiHaoOA.WinForm.Controls
             {
                 if (e.RowIndex == i)
                 {
-                    string employeeId = Convert.ToString(dgMySuordinate.Rows[e.RowIndex].Cells[0].Value);
+                    string employeeId = Convert.ToString(OrderList.Rows[e.RowIndex].Cells[0].Value);
                     if (e.ColumnIndex == 2)
                     {
                         e.Value = 0;
@@ -71,6 +72,30 @@ namespace DiHaoOA.WinForm.Controls
                     }
                 }
             
+            }
+        }
+
+        private void dgMySuordinate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    int orderId = Convert.ToInt32(OrderList.Rows[e.RowIndex].Cells[0].Value);
+                    if (visitContentForDesigner == null)
+                    {
+                        visitContentForDesigner = new VisitContentForDesigner();
+                        visitContentForDesigner.orderID = orderId;
+                        visitContentForDesigner.Name = "ModifyCustomer";
+                        visitContentForDesigner.ParentPanel = ParentPanel;
+                        visitContentForDesigner.NavigationBar = NavigationBar;
+                        visitContentForDesigner.employee = employee;
+                        visitContentForDesigner.Dock = DockStyle.Fill;
+                        ParentPanel.Controls.Add(visitContentForDesigner);
+                    }
+                    visitContentForDesigner.orderID = orderId;
+                    visitContentForDesigner.Show();
+                }
             }
         }
     }

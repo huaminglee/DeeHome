@@ -16,7 +16,7 @@ namespace DiHaoOA.WinForm.Forms
 {
     public partial class DashboardForDesignerLeader : BaseForm
     {
-        OrderList orderList;
+        OrderListForDesignerLeader orderList;
         ManagerOrderList managerOrderList;
 
         public DashboardForDesignerLeader()
@@ -122,14 +122,14 @@ namespace DiHaoOA.WinForm.Forms
         {
             if (!panelContent.Contains(orderList))
             {
-                orderList = new OrderList();
+                orderList = new OrderListForDesignerLeader();
                 orderList.Name = DiHaoUserControl.OrderList;
                 orderList.orderStatus = OrderStatus.SubmittedToDesigner;
                 orderList.ParentPanel = pMainContent;
                 orderList.NavigationBar = navBarForDesignerLeader;
                 orderList.employee = employee;
                 orderList.Dock = DockStyle.Fill;
-                orderList.role = Roles.DesignerLeader;
+                //orderList.role = Roles.DesignerLeader;
                 pMainContent.Controls.Add(orderList);
             }
             orderList.orderStatus = status;
@@ -167,9 +167,8 @@ namespace DiHaoOA.WinForm.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.ClearContent();
+            dashboardEntryForDesigner.Show();
             this.Hide();
         }
     }

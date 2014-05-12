@@ -227,9 +227,8 @@ namespace DiHaoOA
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.ClearContent();
+            dashboardEntryForDesigner.Show();
             this.Hide();
         }
 

@@ -232,6 +232,7 @@
             this.InformationAssistantName.Name = "InformationAssistantName";
             this.InformationAssistantName.ReadOnly = true;
             this.InformationAssistantName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.InformationAssistantName.Visible = false;
             // 
             // DesignerName
             // 

@@ -28,6 +28,7 @@ namespace DiHaoOA.WinForm
         AllMarketingCustomer allMarketingCustomer;
         InformationAssistantList informationAssistantList;
         MySubordinate mySubordinate;
+        ManagerOrderList managerOrderList;
         ApprovalList approvalList;
         OrderList orderList;
         OrderManager orderManager;
@@ -88,7 +89,31 @@ namespace DiHaoOA.WinForm
                     AddBusinessStaticsForDesign();
                 }
             }
+            if (menu == DiHaoMenu.Orders)
+            {
+                ShowSpecificMenu();
+                AddManagerOrderList(btn.Name);
+                managerOrderList.ClearSearchText();
+            }
 
+        }
+
+        private void AddManagerOrderList(string status)
+        {
+            if (!panelContent.Contains(managerOrderList))
+            {
+                managerOrderList = new ManagerOrderList();
+                managerOrderList.Name = DiHaoUserControl.OrderList;
+                managerOrderList.orderStatus = OrderStatus.SubmittedToDesigner;
+                managerOrderList.ParentPanel = pMainContent;
+                managerOrderList.NavigationBar = navBarForSalesManager;
+                managerOrderList.employee = employee;
+                managerOrderList.Dock = DockStyle.Fill;
+                pMainContent.Controls.Add(managerOrderList);
+            }
+            managerOrderList.orderStatus = status;
+            managerOrderList.ReLoadData();
+            managerOrderList.Show();
         }
 
         private void AddBusinessStaticsForDesign()
@@ -103,6 +128,7 @@ namespace DiHaoOA.WinForm
                 businessStaticsForDesign.Dock = DockStyle.Fill;
                 pMainContent.Controls.Add(businessStaticsForDesign);
             }
+            businessStaticsForDesign.LoadData();
             businessStaticsForDesign.Show();
         }
 
@@ -499,9 +525,10 @@ namespace DiHaoOA.WinForm
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.ClearContent();
+            //dashboardEntry.Show();
+            //dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.Show();
         }
 
         private void lblApproval_Click(object sender, EventArgs e)

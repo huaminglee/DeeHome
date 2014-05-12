@@ -75,8 +75,8 @@ namespace DiHaoOA.WinForm.Controls
             if (allocateOrderPopUp == null)
             {
                 allocateOrderPopUp = new AllocateOrderPopUp();
-                allocateOrderPopUp.order = order;
             }
+            allocateOrderPopUp.order = order;
             allocateOrderPopUp.Show();
         }
 

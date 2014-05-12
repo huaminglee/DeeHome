@@ -113,9 +113,8 @@ namespace DiHaoOA.WinForm.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            dashboardEntry.ClearContent();
-            dashboardEntry.Show();
-            dashboardEntry.SetDefault();
+            dashboardEntryForDesigner.ClearContent();
+            dashboardEntryForDesigner.Show();
             this.Hide();
         }
 

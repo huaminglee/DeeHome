@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pHeader = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -130,8 +130,8 @@
             this.dgOrderList.AllowUserToDeleteRows = false;
             this.dgOrderList.AllowUserToResizeColumns = false;
             this.dgOrderList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.dgOrderList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
+            this.dgOrderList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgOrderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -150,14 +150,14 @@
             this.DesignerName,
             this.BAName,
             this.city});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgOrderList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(113)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgOrderList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgOrderList.Location = new System.Drawing.Point(0, 39);
             this.dgOrderList.Name = "dgOrderList";
             this.dgOrderList.RowHeadersVisible = false;
@@ -188,8 +188,8 @@
             // orderNumber
             // 
             this.orderNumber.DataPropertyName = "orderNumber1";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
-            this.orderNumber.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            this.orderNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.orderNumber.FillWeight = 86.69612F;
             this.orderNumber.HeaderText = "任务单号";
             this.orderNumber.Name = "orderNumber";
@@ -231,6 +231,7 @@
             this.InformationAssistantName.Name = "InformationAssistantName";
             this.InformationAssistantName.ReadOnly = true;
             this.InformationAssistantName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.InformationAssistantName.Visible = false;
             // 
             // DesignerName
             // 
@@ -259,14 +260,14 @@
             this.city.ReadOnly = true;
             this.city.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // DesignerManagerOrderList
+            // ManagerOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgOrderList);
             this.Controls.Add(this.pFooter);
             this.Controls.Add(this.pHeader);
-            this.Name = "DesignerManagerOrderList";
+            this.Name = "ManagerOrderList";
             this.Size = new System.Drawing.Size(958, 388);
             this.Load += new System.EventHandler(this.DesignerManagerOrderList_Load);
             this.pHeader.ResumeLayout(false);

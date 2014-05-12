@@ -26,6 +26,16 @@ namespace DiHaoOA.Business.Manager
         {
             return displayVisitContentDao.GetTotalRecords(employeeId, pageIndex, pageSize);
         }
+
+        public int GetTotalRecordsForDesignerVisit(int OrderId)
+        {
+            return displayVisitContentDao.GetTotalRecordsForDesignerVisit(OrderId);
+        }
+
+        public DataSet GetDesignerVisitContent(int OrderId, int pageIndex, int pageSize)
+        {
+            return displayVisitContentDao.GetDesignerVisitContent(OrderId, pageIndex, pageSize);
+        }
     }
 
 }

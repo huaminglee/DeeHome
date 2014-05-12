@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using DiHaoOA.WinForm;
+using DiHaoOA.WinForm.Forms;
 
 namespace DiHaoOA
 {
@@ -16,7 +17,7 @@ namespace DiHaoOA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashboardEntry());
+            Application.Run(new NewEntryForDesigner());
         }
     }
 }

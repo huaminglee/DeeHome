@@ -224,7 +224,7 @@ namespace DiHaoOA.DataContract
                 cmd.CommandText = @"select EmployeeId,Name
                                     from Employee
                                     where EmployeeId != 'swb800024'
-                                    and RoleId=2";
+                                    and RoleId in (2,4,6)";
                 try
                 {
                     conn.Open();

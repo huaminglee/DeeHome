@@ -20,6 +20,8 @@ namespace DiHaoOA.WinForm.Forms
         public Employee employee { get; set; }
         public Login login;
         public DashboardEntry dashboardEntry;
+        public NewEntryForSales dashboardEntryForSales;
+        public NewEntryForDesigner dashboardEntryForDesigner;
         private bool _Moving = false;
         private Point _Offset;
         protected static readonly ILog logger = LogManager.GetLogger("DiHaoLogging");

@@ -88,7 +88,7 @@
             // 
             this.MainContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
             this.MainContent.Controls.Add(this.panel2);
-            this.MainContent.Location = new System.Drawing.Point(300, 133);
+            this.MainContent.Location = new System.Drawing.Point(265, 113);
             this.MainContent.Margin = new System.Windows.Forms.Padding(2);
             this.MainContent.Name = "MainContent";
             this.MainContent.Size = new System.Drawing.Size(308, 189);

@@ -4,14 +4,14 @@
   <description asmv2:publisher="Jason" co.v1:suiteName="帝豪OA" asmv2:product="帝豪OA" asmv2:supportUrl="http://jason_xie:8999/" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DiHaoOA.WinForm.exe.manifest" size="7718">
+    <dependentAssembly dependencyType="install" codebase="DiHaoOA.WinForm.exe.manifest" size="7719">
       <assemblyIdentity name="DiHaoOA.WinForm.exe" version="1.0.0.34" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6+KvfMQ4UZTP50Pz3rJVtg6GLBI=</dsig:DigestValue>
+        <dsig:DigestValue>dh9su6AkNFSia9AuatmDSyteSAk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

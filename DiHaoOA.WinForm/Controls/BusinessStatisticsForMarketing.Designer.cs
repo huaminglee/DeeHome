@@ -30,48 +30,48 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgMySuordinate = new System.Windows.Forms.DataGridView();
-            this.Employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IACount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VisitCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nnn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderList = new System.Windows.Forms.DataGridView();
             this.gridColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nnn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VisitCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IACount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMySuordinate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.dgMySuordinate);
+            this.panel1.Controls.Add(this.OrderList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 451);
             this.panel1.TabIndex = 7;
             // 
-            // dgMySuordinate
+            // OrderList
             // 
-            this.dgMySuordinate.AllowUserToAddRows = false;
-            this.dgMySuordinate.AllowUserToDeleteRows = false;
-            this.dgMySuordinate.AllowUserToResizeColumns = false;
-            this.dgMySuordinate.AllowUserToResizeRows = false;
+            this.OrderList.AllowUserToAddRows = false;
+            this.OrderList.AllowUserToDeleteRows = false;
+            this.OrderList.AllowUserToResizeColumns = false;
+            this.OrderList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(232)))), ((int)(((byte)(241)))));
-            this.dgMySuordinate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgMySuordinate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgMySuordinate.BackgroundColor = System.Drawing.Color.White;
-            this.dgMySuordinate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgMySuordinate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMySuordinate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.OrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.OrderList.BackgroundColor = System.Drawing.Color.White;
+            this.OrderList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrderList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridColumnName,
             this.EmployeeName,
             this.nnn,
@@ -87,57 +87,43 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgMySuordinate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgMySuordinate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgMySuordinate.Location = new System.Drawing.Point(0, 0);
-            this.dgMySuordinate.Name = "dgMySuordinate";
-            this.dgMySuordinate.RowHeadersVisible = false;
-            this.dgMySuordinate.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgMySuordinate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgMySuordinate.Size = new System.Drawing.Size(915, 451);
-            this.dgMySuordinate.TabIndex = 1;
-            this.dgMySuordinate.VirtualMode = true;
-            this.dgMySuordinate.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgMySuordinate_CellValueNeeded);
+            this.OrderList.DefaultCellStyle = dataGridViewCellStyle7;
+            this.OrderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderList.Location = new System.Drawing.Point(0, 0);
+            this.OrderList.Name = "OrderList";
+            this.OrderList.RowHeadersVisible = false;
+            this.OrderList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.OrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.OrderList.Size = new System.Drawing.Size(915, 451);
+            this.OrderList.TabIndex = 1;
+            this.OrderList.VirtualMode = true;
+            this.OrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMySuordinate_CellContentClick);
+            this.OrderList.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgMySuordinate_CellValueNeeded);
             // 
-            // Employee
+            // gridColumnName
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Employee.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Employee.FillWeight = 95.70717F;
-            this.Employee.HeaderText = "上月累计本月在谈";
-            this.Employee.Name = "Employee";
-            this.Employee.ReadOnly = true;
-            this.Employee.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gridColumnName.DataPropertyName = "EmployeeId";
+            this.gridColumnName.HeaderText = "PrimarKey";
+            this.gridColumnName.Name = "gridColumnName";
+            this.gridColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gridColumnName.Visible = false;
             // 
-            // Level
+            // EmployeeName
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Level.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Level.FillWeight = 95.70717F;
-            this.Level.HeaderText = "当月已签";
-            this.Level.Name = "Level";
-            this.Level.ReadOnly = true;
-            this.Level.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmployeeName.DataPropertyName = "Name";
+            this.EmployeeName.FillWeight = 49.81301F;
+            this.EmployeeName.HeaderText = "商务部";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            this.EmployeeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // CustomerCount
+            // nnn
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CustomerCount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CustomerCount.FillWeight = 95.70717F;
-            this.CustomerCount.HeaderText = "当月未签";
-            this.CustomerCount.Name = "CustomerCount";
-            this.CustomerCount.ReadOnly = true;
-            this.CustomerCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // IACount
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.IACount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.IACount.FillWeight = 197.1154F;
-            this.IACount.HeaderText = "当月不准";
-            this.IACount.Name = "IACount";
-            this.IACount.ReadOnly = true;
-            this.IACount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nnn.FillWeight = 95.70717F;
+            this.nnn.HeaderText = "当月量房";
+            this.nnn.Name = "nnn";
+            this.nnn.ReadOnly = true;
+            this.nnn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // VisitCount
             // 
@@ -150,30 +136,45 @@
             this.VisitCount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VisitCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // nnn
+            // IACount
             // 
-            this.nnn.FillWeight = 95.70717F;
-            this.nnn.HeaderText = "当月量房";
-            this.nnn.Name = "nnn";
-            this.nnn.ReadOnly = true;
-            this.nnn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.IACount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.IACount.FillWeight = 197.1154F;
+            this.IACount.HeaderText = "当月不准";
+            this.IACount.Name = "IACount";
+            this.IACount.ReadOnly = true;
+            this.IACount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // EmployeeName
+            // CustomerCount
             // 
-            this.EmployeeName.DataPropertyName = "Name";
-            this.EmployeeName.FillWeight = 49.81301F;
-            this.EmployeeName.HeaderText = "商务部";
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            this.EmployeeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CustomerCount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CustomerCount.FillWeight = 95.70717F;
+            this.CustomerCount.HeaderText = "当月未签";
+            this.CustomerCount.Name = "CustomerCount";
+            this.CustomerCount.ReadOnly = true;
+            this.CustomerCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // gridColumnName
+            // Level
             // 
-            this.gridColumnName.DataPropertyName = "EmployeeId";
-            this.gridColumnName.HeaderText = "PrimarKey";
-            this.gridColumnName.Name = "gridColumnName";
-            this.gridColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.gridColumnName.Visible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Level.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Level.FillWeight = 95.70717F;
+            this.Level.HeaderText = "当月已签";
+            this.Level.Name = "Level";
+            this.Level.ReadOnly = true;
+            this.Level.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Employee
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Employee.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Employee.FillWeight = 95.70717F;
+            this.Employee.HeaderText = "上月累计本月在谈";
+            this.Employee.Name = "Employee";
+            this.Employee.ReadOnly = true;
+            this.Employee.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // BusinessStatisticsForMarketing
             // 
@@ -184,7 +185,7 @@
             this.Size = new System.Drawing.Size(915, 451);
             this.Load += new System.EventHandler(this.BusinessStatisticsForMarketing_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgMySuordinate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,7 +193,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgMySuordinate;
+        private System.Windows.Forms.DataGridView OrderList;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn nnn;

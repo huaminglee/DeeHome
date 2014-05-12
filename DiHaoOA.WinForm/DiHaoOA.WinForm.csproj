@@ -280,6 +280,12 @@
     <Compile Include="Controls\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\VisitContentForDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VisitContentForDesigner.Designer.cs">
+      <DependentUpon>VisitContentForDesigner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AllocateOrderPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,12 @@
     <Compile Include="Forms\EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +361,24 @@
     </Compile>
     <Compile Include="Forms\ModifyIA.Designer.cs">
       <DependentUpon>ModifyIA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewDashboardEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewDashboardEntry.Designer.cs">
+      <DependentUpon>NewDashboardEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewEntryForDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewEntryForDesigner.Designer.cs">
+      <DependentUpon>NewEntryForDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewEntryForSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewEntryForSales.Designer.cs">
+      <DependentUpon>NewEntryForSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OrderDescription.cs">
       <SubType>Form</SubType>
@@ -457,6 +487,9 @@
     <EmbeddedResource Include="Controls\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VisitContentForDesigner.resx">
+      <DependentUpon>VisitContentForDesigner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AllocateOrderPopUp.resx">
       <DependentUpon>AllocateOrderPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +517,9 @@
     <EmbeddedResource Include="Forms\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +528,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyIA.resx">
       <DependentUpon>ModifyIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewDashboardEntry.resx">
+      <DependentUpon>NewDashboardEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewEntryForDesigner.resx">
+      <DependentUpon>NewEntryForDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewEntryForSales.resx">
+      <DependentUpon>NewEntryForSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderDescription.resx">
       <DependentUpon>OrderDescription.cs</DependentUpon>
