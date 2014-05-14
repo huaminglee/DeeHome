@@ -16,6 +16,7 @@ namespace DiHaoOA.WinForm.Controls
     public partial class ApprovalOrderDetails : BaseUserControl
     {
         OrderManager orderManager;
+        InformationAssistantManager iaManager;
         public Order order;
 
 
@@ -23,6 +24,7 @@ namespace DiHaoOA.WinForm.Controls
         {
             InitializeComponent();
             orderManager = new OrderManager();
+            iaManager = new InformationAssistantManager();
         }
 
         public void ClearContent()
@@ -76,6 +78,7 @@ namespace DiHaoOA.WinForm.Controls
             if (order.OrderStatus == OrderStatus.SubmittedSignedForMarketing)
             {
                 orderManager.UpdateOrderStatus(order.OrderId, OrderStatus.Signed);
+                iaManager.UpdateLevelToGold(order.Customers.InformationAssistants);
             }
             if (order.SubmittedBy == SubmittedBy.Designer)
             {

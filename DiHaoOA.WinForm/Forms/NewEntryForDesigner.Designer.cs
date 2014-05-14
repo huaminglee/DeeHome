@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEntryForDesigner));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picEditPwd = new System.Windows.Forms.PictureBox();
+            this.picHome = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,19 +40,58 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditPwd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(851, 434);
             this.panel1.TabIndex = 0;
+            // 
+            // picEditPwd
+            // 
+            this.picEditPwd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picEditPwd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEditPwd.Enabled = false;
+            this.picEditPwd.Image = ((System.Drawing.Image)(resources.GetObject("picEditPwd.Image")));
+            this.picEditPwd.Location = new System.Drawing.Point(157, 44);
+            this.picEditPwd.Margin = new System.Windows.Forms.Padding(2);
+            this.picEditPwd.Name = "picEditPwd";
+            this.picEditPwd.Size = new System.Drawing.Size(105, 105);
+            this.picEditPwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picEditPwd.TabIndex = 3;
+            this.picEditPwd.TabStop = false;
+            this.picEditPwd.Visible = false;
+            this.picEditPwd.WaitOnLoad = true;
+            this.picEditPwd.Click += new System.EventHandler(this.picEditPwd_Click);
+            // 
+            // picHome
+            // 
+            this.picHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picHome.Enabled = false;
+            this.picHome.Image = ((System.Drawing.Image)(resources.GetObject("picHome.Image")));
+            this.picHome.Location = new System.Drawing.Point(48, 31);
+            this.picHome.Margin = new System.Windows.Forms.Padding(2);
+            this.picHome.Name = "picHome";
+            this.picHome.Size = new System.Drawing.Size(105, 105);
+            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picHome.TabIndex = 2;
+            this.picHome.TabStop = false;
+            this.picHome.Visible = false;
+            this.picHome.WaitOnLoad = true;
+            this.picHome.Click += new System.EventHandler(this.picHome_Click);
             // 
             // panel2
             // 
@@ -62,7 +103,7 @@
             this.panel2.Controls.Add(this.txtUserName);
             this.panel2.Controls.Add(this.lblPassword);
             this.panel2.Controls.Add(this.lblUserName);
-            this.panel2.Location = new System.Drawing.Point(262, 121);
+            this.panel2.Location = new System.Drawing.Point(296, 136);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(298, 174);
             this.panel2.TabIndex = 0;
@@ -154,6 +195,17 @@
             this.lblUserName.TabIndex = 2;
             this.lblUserName.Text = "用户名:";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(178)))), ((int)(((byte)(221)))));
+            this.panel3.Controls.Add(this.picHome);
+            this.panel3.Controls.Add(this.picEditPwd);
+            this.panel3.Location = new System.Drawing.Point(296, 149);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(301, 151);
+            this.panel3.TabIndex = 4;
+            this.panel3.Visible = false;
+            // 
             // NewEntryForDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -168,8 +220,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OA企业办公系统";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picEditPwd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -185,5 +241,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.PictureBox picHome;
+        private System.Windows.Forms.PictureBox picEditPwd;
+        private System.Windows.Forms.Panel panel3;
     }
 }

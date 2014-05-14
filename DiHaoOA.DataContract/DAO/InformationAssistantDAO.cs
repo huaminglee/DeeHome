@@ -239,6 +239,62 @@ namespace DiHaoOA.DataContract.DAO
             }
         }
 
+        public void UpdateLevelToSilver(InformationAssistant ia)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Update dbo.InformationAssistant
+                                    Set InformationLevel = @InformationLevel
+                                    Where InformationAssistantId = @InformationAssistantId";
+                cmd.Parameters.AddWithValue("@InformationLevel", InformationAssistantLevels.Silver);
+                cmd.Parameters.AddWithValue("@InformationAssistantId", ia.InformationAssistantId);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+            }
+        }
+
+        public void UpdateLevelToGold(InformationAssistant ia)
+        {
+            using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = @"Update dbo.InformationAssistant
+                                    Set InformationLevel = @InformationLevel
+                                    Where InformationAssistantId = @InformationAssistantId";
+                cmd.Parameters.AddWithValue("@InformationLevel", InformationAssistantLevels.Gold);
+                cmd.Parameters.AddWithValue("@InformationAssistantId", ia.InformationAssistantId);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Dispose();
+                }
+            }
+        }
+
         public void TransferInformationAssistant(string employeeId, int informationAssistantId)
         {
             using (SqlConnection conn = new SqlConnection(DBHelper.GetConnection()))
@@ -312,6 +368,8 @@ namespace DiHaoOA.DataContract.DAO
                 return informationAssistant;
             }
         }
+
+
 
     }
 }

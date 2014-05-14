@@ -17,12 +17,14 @@ namespace DiHaoOA.WinForm.Forms
         public Order order;
         EmployeeManager empManager;
         OrderManager orderManager;
+        InformationAssistantManager iaManager;
 
         public AllocateOrderPopUp()
         {
             InitializeComponent();
             empManager = new EmployeeManager();
             orderManager = new OrderManager();
+            iaManager = new InformationAssistantManager();
         }
 
         private void AllocateOrderPopUp_Load(object sender, EventArgs e)
@@ -47,6 +49,7 @@ namespace DiHaoOA.WinForm.Forms
         {
             string designerId = Convert.ToString(cbDesinger.SelectedValue);
             orderManager.AllocateOrderToDesigner(designerId, order.OrderId);
+            iaManager.UpdateLevelToSilver(order.Customers.InformationAssistants);
             this.Hide();
             MessageBox.Show("分配订单成功");
         }

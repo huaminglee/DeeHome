@@ -58,26 +58,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.Business.dll" size="13824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.Business.dll" size="14336">
       <assemblyIdentity name="DiHaoOA.Business" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Xg+AeQSOn8QKhBWWlJQEARi2vzA=</dsig:DigestValue>
+        <dsig:DigestValue>5tp7tXgiQXHbHaNQnUpDX3vlrss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="164352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.DataContract.dll" size="167424">
       <assemblyIdentity name="DiHaoOA.DataContract" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7tfztLIHaZ//znuwDR6zLnge9XY=</dsig:DigestValue>
+        <dsig:DigestValue>hWFHphsb6tbQPB+dalh9zQhyj/Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,19 +89,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>84v2GLgf7h67H0aELQ8HV99LUIs=</dsig:DigestValue>
+        <dsig:DigestValue>PAC4jmC9LqwcR/wq0jEzUK4wG58=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="1929728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiHaoOA.WinForm.exe" size="1961472">
       <assemblyIdentity name="DiHaoOA.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uCXy8ihd7FYlp7jRvvuCUjmOc1w=</dsig:DigestValue>
+        <dsig:DigestValue>pNTgkRymf8QkKePEg7Ze0UpiNGE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

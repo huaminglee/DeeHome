@@ -27,12 +27,15 @@ namespace DiHaoOA
         ModifyCustomer modifyCustomer;
         public InformationAssistant _informationAssistant;
         DataSet datas;
+        OrderDetail orderDetail;
+        OrderManager orderManager;
 
         public EditMessenger()
         {
             InitializeComponent();
             editMessenger = new EditMessengerManager();
             revisitManager = new RevisitPopUpManager();
+            orderManager = new OrderManager();
         }
 
 
@@ -224,11 +227,51 @@ namespace DiHaoOA
                                 control.Visible = false;
                             }
                         }
-                        LoadModifyCustomer(orderId);
-                        NavigationBar.ChangeNavItem("CustomerTrace", childMenu);
+                        
+                        if (childMenu == OrderStatus.OnChatting || childMenu == OrderStatus.Signed
+                            || childMenu == OrderStatus.SubmittedNotSigned || childMenu == OrderStatus.SubmittedNotAllowed
+                            || childMenu == OrderStatus.NotSigned || childMenu == OrderStatus.Denied)
+                        {
+                            LoadOrderDetail(orderId);
+                            NavigationBar.ChangeNavItem("CustomerChat", childMenu);
+                        }
+                        else
+                        {
+                            LoadModifyCustomer(orderId);
+                            NavigationBar.ChangeNavItem("CustomerTrace", childMenu);
+                        }
+                       
                     }
                 }
             }
+        }
+
+        private void LoadOrderDetail(int orderId)
+        {
+            Order order = orderManager.GetOrderById(orderId);
+            if (_informationAssistant == null)
+            {
+                _informationAssistant = customerTraceManager.GetInformationAssistantByOrderId(orderId);
+            }
+            if (!ParentPanel.Contains(modifyCustomer))
+            {
+                orderDetail = new OrderDetail();
+                orderDetail.Name = "orderDetail";
+                orderDetail.ParentPanel = ParentPanel;
+                orderDetail.NavigationBar = NavigationBar;
+                orderDetail.employee = employee;
+                orderDetail.Dock = DockStyle.Fill;
+                orderDetail.order = order;
+                ParentPanel.Controls.Add(orderDetail);
+            }
+            else
+            {
+                orderDetail.Show();
+                orderDetail.ClearContent();
+            }
+            orderDetail.LoadDetailInformation();
+            orderDetail.order = order;
+            orderDetail.LoadReVisit();
         }
 
         private void LoadModifyCustomer(int orderId)

@@ -70,7 +70,7 @@ namespace DiHaoOA.WinForm.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            entry.Show();
+            dashboardEntryForDesigner.Show();
         }
 
         private void EditEmployee_Load(object sender, EventArgs e)

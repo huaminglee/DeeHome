@@ -61,5 +61,14 @@ namespace DiHaoOA.Business.Manager
         {
             return informationAssistantDao.GetInformationAssistantById(informationAssistantId);
         }
+
+        public void UpdateLevelToSilver(InformationAssistant ia)
+        {
+            informationAssistantDao.UpdateLevelToSilver(ia);
+        }
+        public void UpdateLevelToGold(InformationAssistant ia)
+        {
+            informationAssistantDao.UpdateLevelToGold(ia);
+        }
     }
 }

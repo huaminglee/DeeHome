@@ -44,9 +44,33 @@ namespace DiHaoOA.WinForm.Forms
         {
             txtPassword.Text = "";
             lblMsg.Visible = false;
+            panel3.Hide();
+            panel2.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+           
+            employee = empManager.GetEmployeeById(txtUserName.Text);
+            if (!empManager.ValidateEmployee(txtUserName.Text, txtPassword.Text) ||
+                txtPassword.Text == "" || txtUserName.Text == "")
+            {
+                lblMsg.Visible = true;
+            }
+            else
+            {
+                this.employee = employee;
+                picEditPwd.Enabled = true;
+                picHome.Enabled = true;
+                picHome.Visible = true;
+                picEditPwd.Visible = true;
+                panel3.Show();
+                panel2.Hide();
+            }
+            
+        }
+
+        private void picHome_Click(object sender, EventArgs e)
         {
             employee = empManager.GetEmployeeById(txtUserName.Text);
             if (!empManager.ValidateEmployee(txtUserName.Text, txtPassword.Text) ||
@@ -129,6 +153,25 @@ namespace DiHaoOA.WinForm.Forms
                 //TODO
                 MessageBox.Show("GeneralManager's Dashboard");
             }
+        }
+
+        private void picEditPwd_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (editEmployeeboard == null)
+            {
+                editEmployeeboard = new EditEmployee();
+            }
+            editEmployeeboard.dashboardEntryForDesigner = this;
+            editEmployeeboard.employee = employee;
+            editEmployeeboard.SetDefaultValue();
+            editEmployeeboard.Show();
+        }
+
+        public void ReturnToEntry()
+        {
+            panel3.Hide();
+            panel2.Show();
         }
     }
 }

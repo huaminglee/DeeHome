@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DiHaoOA.Business.Manager;
 using DiHaoOA.Controls;
+using DiHaoOA.DataContract.Entity;
 
 namespace DiHaoOA.WinForm.Controls
 {
@@ -19,6 +20,7 @@ namespace DiHaoOA.WinForm.Controls
         OrderManager orderManager;
         OrderDetail orderDetails;
         OrderDetailForIA orderDetailsForIA;
+        VisitContentForDesigner visitContentForDesigner;
         public string role = string.Empty;
 
         public ManagerOrderList()
@@ -103,6 +105,43 @@ namespace DiHaoOA.WinForm.Controls
         {
             dgOrderList.AutoGenerateColumns = false;
             pagingForCustomer.OnDataLoad += new DiHaoOA.WinForm.Controls.PagingControl.LoadData(GetDataSource);
+        }
+
+        private void dgOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    int orderId = Convert.ToInt32(dgOrderList.Rows[e.RowIndex].Cells[0].Value);
+                    if (ParentPanel != null)
+                    {
+                        foreach (Control control in ParentPanel.Controls)
+                        {
+                            control.Visible = false;
+                        }
+                        AddVisitContentForDesigner(orderId);
+                    }
+                }
+            }
+        }
+
+        private void AddVisitContentForDesigner(int orderId)
+        {
+            if (!ParentPanel.Contains(visitContentForDesigner))
+            {
+                visitContentForDesigner = new VisitContentForDesigner();
+                visitContentForDesigner.Name = "OrderDetailForDesigner";
+                visitContentForDesigner.ParentPanel = ParentPanel;
+                visitContentForDesigner.NavigationBar = NavigationBar;
+                visitContentForDesigner.employee = employee;
+                visitContentForDesigner.Dock = DockStyle.Fill;
+                visitContentForDesigner.orderID = orderId;
+                ParentPanel.Controls.Add(orderDetails);
+            }
+            visitContentForDesigner.orderID = orderId;
+            visitContentForDesigner.Show();
+            visitContentForDesigner.employee = employee;
         }
     }
 }

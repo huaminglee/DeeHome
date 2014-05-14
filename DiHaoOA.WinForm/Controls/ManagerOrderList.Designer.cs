@@ -166,6 +166,7 @@
             this.dgOrderList.Size = new System.Drawing.Size(958, 310);
             this.dgOrderList.TabIndex = 9;
             this.dgOrderList.VirtualMode = true;
+            this.dgOrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOrderList_CellContentClick);
             this.dgOrderList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgOrderList_CellPainting);
             this.dgOrderList.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgOrderList_CellValueNeeded);
             // 

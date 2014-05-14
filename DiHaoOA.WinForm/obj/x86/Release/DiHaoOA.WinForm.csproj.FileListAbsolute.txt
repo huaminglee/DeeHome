@@ -225,3 +225,4 @@ D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.Form1.
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.NewDashboardEntry.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.NewEntryForDesigner.resources
 D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Forms.NewEntryForSales.resources
+D:\Projects\DiHaoOA\DiHaoOA.WinForm\obj\x86\Release\DiHaoOA.WinForm.Controls.VisitContentForDesigner.resources
