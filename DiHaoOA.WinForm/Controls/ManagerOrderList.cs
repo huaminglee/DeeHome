@@ -137,11 +137,42 @@ namespace DiHaoOA.WinForm.Controls
                 visitContentForDesigner.employee = employee;
                 visitContentForDesigner.Dock = DockStyle.Fill;
                 visitContentForDesigner.orderID = orderId;
-                ParentPanel.Controls.Add(orderDetails);
+                ParentPanel.Controls.Add(visitContentForDesigner);
             }
             visitContentForDesigner.orderID = orderId;
             visitContentForDesigner.Show();
             visitContentForDesigner.employee = employee;
+        }
+
+        private void dgOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    int orderId = Convert.ToInt32(dgOrderList.Rows[e.RowIndex].Cells[0].Value);
+                    if (ParentPanel != null)
+                    {
+                        foreach (Control control in ParentPanel.Controls)
+                        {
+                            control.Visible = false;
+                        }
+                        AddVisitContentForDesigner(orderId);
+                    }
+                }
+            }
+        }
+
+        private void dgOrderList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                dgOrderList.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                dgOrderList.Cursor = Cursors.Arrow;
+            }
         }
     }
 }

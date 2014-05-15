@@ -34,10 +34,12 @@ namespace DiHaoOA.WinForm.Forms
                 employee.PhoneNumber = txtPhone.Text;
                 editEmpManager.EditEmployee(employee);
                 employee = empManager.GetEmployeeById(lblEmpNo.Text);
-                entry.employee = employee;
-                entry.SetUserInfor(employee.Name);
+                //entry.employee = employee;
+                dashboardEntryForDesigner.employee = employee;
+                //entry.SetUserInfor(employee.Name);
                 this.Hide();
-                entry.Show();
+                dashboardEntryForDesigner.Show();
+                dashboardEntryForDesigner.ReturnToEntry();
             }
         }
 
@@ -71,6 +73,7 @@ namespace DiHaoOA.WinForm.Forms
         {
             this.Hide();
             dashboardEntryForDesigner.Show();
+            //dashboardEntryForDesigner.ReturnToEntry();
         }
 
         private void EditEmployee_Load(object sender, EventArgs e)

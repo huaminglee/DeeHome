@@ -160,5 +160,10 @@ namespace DiHaoOA.DataContract.DAO
                 return result;
             }
         }
+
+        public int GetDesignerID()
+        { 
+            
+        }
     }
 }
